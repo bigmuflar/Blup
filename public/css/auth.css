@@ -10,9 +10,19 @@ body {
     width: 480px;
     margin: 40px auto;
 }
-
-#tabs .tab-content {
-    padding: 40px;
-    border: 1px solid #dddddd;
-    border-top: none;
+.nav-tabs, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+    border: none;
+}
+section#tabs {
+    margin: 0 auto;
+    text-align: center;
+        width: 50%;
+}
+.nav-tabs>li{
+  float: none;
+}
+button.btn.dropdown-toggle {
+  background-color: white;
+  width: 100%;
+  text-align: left;
 }

@@ -15,17 +15,8 @@
             <a class="btn btn-default" href="/">Homepage</a>
         </p>
         <section id="tabs">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                    <a href="#login" aria-controls="home" role="tab" data-toggle="tab">Login</a>
-                </li>
-                <li role="presentation">
-                    <a href="#register" aria-controls="profile" role="tab" data-toggle="tab">Register</a>
-                </li>
-            </ul>
             <!-- Tab panes -->
-            <div class="tab-content col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4">
+            <div class="tab-content">
                 <div id="login" role="tabpanel" class="tab-pane active">
                     <form ng-submit="auth.login.submit($event)">
                         <h1 class="text-center">Login!</h1>
@@ -46,10 +37,36 @@
                         <input class="btn btn-primary" type="submit" value="Login">
                         <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
                     </form>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li role="presentation">
+                          <a href="#register" class="active" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a>
+                      </li>
+                    </ul>
                 </div>
                 <div id="register" role="tabpanel" class="tab-pane">
                     <form ng-submit="auth.register.submit($event)">
-                        <h1 class="text-center">Register!</h1>
+                        <h1 class="text-center">Sign Up!</h1>
+                        <fieldset class="form-group">
+                            <label class="sr-only" for="username">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                                <input required placeholder="Username" class="form-control" type="text" ng-model="auth.payload.username"/>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label class="sr-only" for="age">Age</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-gift"></span></div>
+                                <div class="dropdown" ng-model="auth.payload.age">
+                                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"> Age
+                                  <span class="caret"></span></button>
+                                  <select class="dropdown-menu">
+                                    <option ng-repeat="item in items" value="{{item}}">{{item}}</option>
+                                  </select>
+                                </div>
+                            </div>
+                        </fieldset>
                         <fieldset class="form-group">
                             <label class="sr-only" for="email">Email</label>
                             <div class="input-group">
@@ -67,6 +84,12 @@
                         <button class="btn btn-primary" type="submit">Register</button>
                         <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
                     </form>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation">
+                            <a href="#login" aria-controls="home" role="tab" data-toggle="tab">Login</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
