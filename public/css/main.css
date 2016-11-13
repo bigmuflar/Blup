@@ -32,7 +32,32 @@ li.menu-item{
   float: right;
 }
 .logo img{
-  width: 125px;
+  width: 100px;
+}
+#tabs h1 {
+    margin: 0;
+}
+
+#tabs {
+    width: 480px;
+    margin: 40px auto;
+}
+.nav-tabs, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+    border: none;
+    font-size: 20px;
+}
+section#tabs {
+    margin: 0 auto;
+    text-align: center;
+        width: 50%;
+}
+.nav-tabs>li{
+  float: none;
+}
+button.btn.dropdown-toggle {
+  background-color: white;
+  width: 100%;
+  text-align: left;
 }
 
 /** Styles for Screen Sizes**/

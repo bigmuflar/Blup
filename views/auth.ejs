@@ -3,7 +3,7 @@
     <head>
         <title>Login</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/auth.css">
+        <link rel="stylesheet" href="/css/main.css">
 
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -11,9 +11,11 @@
         <script src="/js/module.auth.js"></script>
     </head>
     <body ng-controller="module.auth.controller as auth" class="container">
-        <p class="text-center">
-            <a class="btn btn-default" href="/">Homepage</a>
-        </p>
+        <header>
+            <nav class="navbar navbar-default">
+                <span role="presentation" class="logo"><a href="#dashboard"><img src="images/logo.png" /></a></span>
+            </nav>
+        </header>
         <section id="tabs">
             <!-- Tab panes -->
             <div class="tab-content">
@@ -55,19 +57,6 @@
                             </div>
                         </fieldset>
                         <fieldset class="form-group">
-                            <label class="sr-only" for="age">Age</label>
-                            <div class="input-group">
-                                <div class="input-group-addon"><span class="glyphicon glyphicon-gift"></span></div>
-                                <div class="dropdown" ng-model="auth.payload.age">
-                                  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"> Age
-                                  <span class="caret"></span></button>
-                                  <select class="dropdown-menu">
-                                    <option ng-repeat="item in items" value="{{item}}">{{item}}</option>
-                                  </select>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <fieldset class="form-group">
                             <label class="sr-only" for="email">Email</label>
                             <div class="input-group">
                                 <div class="input-group-addon">@</div>
@@ -78,10 +67,10 @@
                             <label class="sr-only" for="password">Password</label>
                             <div class="input-group">
                                 <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                                <input required placeholder="Create a password" class="form-control" type="password" ng-model="auth.payload.password"/>
+                                <input required placeholder="Create a password" class="form-control" type="password" ng-required="" ng-model="auth.payload.password"/>
                             </div>
                         </fieldset>
-                        <button class="btn btn-primary" type="submit">Register</button>
+                        <button class="btn btn-primary" type="submit">Sign Up</button>
                         <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
                     </form>
                     <!-- Nav tabs -->

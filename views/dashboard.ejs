@@ -11,42 +11,35 @@
         <script src="/js/module.dashboard.js"></script>
     </head>
     <body ng-controller="DashboardController as dashboard" class="container">
-        <div class="jumbotron">
-            <h1>Welcome to your dashboard!</h1>
-            <p>One day this page will be filled with imagination...</p>
-            <p>Mongo UserID: <%= uid %></p>
-            <a href="/" class="btn btn-lg btn-default">Homepage</a>
-            <a href="/logout" class="btn btn-lg btn-danger">Logout</a>
-        </div>
-        <section id="wrapper" class="container">
-            <header>
-                <nav class="navbar navbar-default">
-                    <span role="presentation" class="logo"><a href="#dashboard"><img src="images/logo.png" /></a></span>
-                    <div class="dropdown">
-                      <button class="btn btn-primary btn-info btn-lg visible-xs visible-sm dropdown-toggle glyphicon glyphicon-th" type="button" data-toggle="dropdown"> Menu
-                      <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li class="drop-menu-item"><a href="#">Profile</a></li>
-                        <li class="drop-menu-item"><a href="#">Map</a></li>
-                        <li class="drop-menu-item"><a href="#">About</a></li>
-                      </ul>
-                    </div>
-                    <ul class="nav navbar-nav col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 hidden-xs hidden-sm">
-                        <li role="presentation" class="active menu-item"><a href="#home">Home</a></li>
-                        <li role="presentation" class="menu-item"><a href="#profile">Profile</a></li>
+      <section id="wrapper" class="container">
+          <header>
+              <nav class="navbar navbar-default">
+                  <span role="presentation" class="logo"><a href="#dashboard"><img src="images/logo.png" /></a></span>
+                  <div class="dropdown">
+                    <button class="btn btn-primary btn-info btn-lg visible-xs visible-sm dropdown-toggle glyphicon glyphicon-th" type="button" data-toggle="dropdown"> Menu
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li class="drop-menu-item"><a href="#">Profile</a></li>
+                      <li class="drop-menu-item"><a href="#">Map</a></li>
+                      <li class="drop-menu-item"><a href="#">About</a></li>
                     </ul>
-                </nav>
-            </header>
-            <div class="jumbotron row">
-                <h1 class="col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 col-centered">Sign Up</h1>
-                <p class="col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 col-centered">Take the Tour</p>
-                <p class="col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 col-centered">
-                    <a class="btn btn-primary btn-lg" href="/login" role="button">Login Now!</a>
-                </p>
-            </div>
-        </section>
-        <ng-view>
-        </ng-view>
-        <footer class="text-center">&copy; <%= new Date().getFullYear() %></footer>
+                  </div>
+                  <ul class="nav navbar-nav col-xs-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 hidden-xs hidden-sm">
+                      <li role="presentation" class="active menu-item"><a href="#home">Home</a></li>
+                      <li role="presentation" class="menu-item"><a href="#profile">Profile</a></li>
+                  </ul>
+              </nav>
+          </header>
+      </section>
+      <div class="jumbotron">
+          <h1>Welcome to your dashboard!</h1>
+          <p>One day this page will be filled with imagination...</p>
+          <p>Mongo UserID: <%= uid %></p>
+          <a href="/" class="btn btn-lg btn-default">Homepage</a>
+          <a href="/logout" class="btn btn-lg btn-danger">Logout</a>
+      </div>
+      <ng-view>
+      </ng-view>
+      <footer class="text-center">&copy; <%= new Date().getFullYear() %></footer>
     </body>
 </html>

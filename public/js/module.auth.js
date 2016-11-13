@@ -1,5 +1,5 @@
 angular.module('module.auth', []) // declaring an angular module
-    .controller('module.auth.controller', Auth); // chaining a controller
+      .controller('module.auth.controller', Auth); // chaining a controller
 
 Auth.$inject = ['$http']; // injecting the $http service
 

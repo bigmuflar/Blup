@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
     bcrypt = require('bcryptjs'),
     UserSchema = new mongoose.Schema({
         username     : String,
-        age      : Number,
+        dob      : Number,
         email    : { type: String, unique: true },
         password : String,
         created  : Number // Date.now()
