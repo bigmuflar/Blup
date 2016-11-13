@@ -1,11 +1,15 @@
-angular.module('module.auth', []) // declaring an angular module
-    .controller('module.formcheck.controller', Form); // chaining a controller
-
-Auth.$inject = ['$http']; // injecting the $http service
-
-function Form($http) { // auth controller constructor function
-    var check = this;
-    this.age = function(){
-      for(var i = 0;i<=120;)
+angular.module('module.directives', [])
+    .directive('pwCheck', [function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+              var firstPassword = '#' + attrs.pwCheck;
+              elem.add(firstPassword).on('keyup', function () {
+                  scope.$apply(function () {
+                      // console.info(elem.val() === $(firstPassword).val());
+                      ctrl.$setValidity('pwmatch', elem.val() === $(firstPassword).val());
+                  });
+              });
+        }
     }
-}
+}]);
