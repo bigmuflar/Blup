@@ -12,31 +12,30 @@
         <link rel="stylesheet" href="/css/main.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="/js/module.home.js"></script>
 
         <title>BLUP</title>
     </head>
-    <body>
+    <body ng-app="module.home">
 
       <!-- Navigation
       ================================================== -->
-      <nav class="navbar navbar-static-top navbar-light bg-faded">
+      <nav ng-controller="menuHover" class="navbar navbar-fixed-top navbar-light bg-faded">
           <a href="." class="navbar-brand"><img src="images/logo.png" /></a></span>
           <div class="nav navbar-nav dropdown">
-            <button class="btn btn-primary btn-info btn-lg visible-xs visible-sm dropdown-toggle glyphicon glyphicon-th" type="button" data-toggle="dropdown"> MENU
+            <button class="btn btn-primary btn-info btn-lg hidden-md-up dropdown-toggle glyphicon glyphicon-th" type="button" data-toggle="dropdown"> MENU
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li class="nav-item active drop-menu-item"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
-              <li class="nav-item drop-menu-item"><a href="#" class="nav-link">Features</a></li>
-              <li class="nav-item drop-menu-item"><a href="#" class="nav-link">Pricing</a></li>
-              <li class="nav-item drop-menu-item"><a href="#" class="nav-link">About</a></li>
-              <li class="nav-item drop-menu-item"><a href="./login" class="nav-link">Sign Up</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#" class="nav-link">Features</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#" class="nav-link">Pricing</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#" class="nav-link">About</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="./login" class="nav-link">Sign Up</a></li>
             </ul>
-            <ul class="nav navbar-nav hidden-xs hidden-sm">
-              <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
+            <ul class="nav navbar-nav hidden-sm-down">
               <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
               <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
               <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="./login" class="nav-link">Sign Up</a></li>
+              <li class="nav-item signup"><a href="./login" class="nav-link signup">Sign Up</a></li>
             </ul>
           </div>
       </nav>
@@ -57,8 +56,10 @@
             </div>
             <div class="container">
               <div class="carousel-caption text-xs-left">
-                <h1>Physical Web Experience</h1>
-                <p>Digital prototyping for an individualize experience!</p>
+                <div class="description"
+                  <h1>Physical Web Experience</h1>
+                  <p>Individualize the digital environment!</p>
+                </div>
                 <p><a class="btn btn-lg btn-primary" href="./login" role="button">Sign Up</a></p>
               </div>
             </div>
@@ -69,8 +70,8 @@
             </div>
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <h1>Engage Digital Consumers</h1>
+                <p>Offer discounts to prompt sales</p>
                 <p><a class="btn btn-lg btn-primary" href="./login" role="button">Sign Up</a></p>
               </div>
             </div>
@@ -81,8 +82,8 @@
             </div>
             <div class="container">
               <div class="carousel-caption text-xs-right">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <h1>Increase Sales</h1>
+                <p>Beacon-triggered messages will see a nearly tenfold increase between 2015 and 2016</p>
                 <p><a class="btn btn-lg btn-primary" href="./login" role="button">Sign Up</a></p>
               </div>
             </div>

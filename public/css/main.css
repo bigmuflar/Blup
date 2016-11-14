@@ -10,7 +10,7 @@ nav.navbar.navbar-static-top.navbar-light.bg-faded{
 
 ul.nav.navbar-nav {
     float: right;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .ul.nav.navbar-nav {
@@ -44,34 +44,45 @@ footer {
     font-size: 14px;
 }
 
+/** Menu Items **/
 .dropdown, .dropdown.open {
     float: right;
-    right: 50px;
 }
-
 .dropdown-toggle.btn-info, .open>.dropdown-toggle.btn-info:hover, .btn-info:active:hover {
     background-color: rgb(3, 115, 251);
     border-color: rgb(3, 115, 251);
 }
-
 .dropdown-menu {
     min-width: auto;
     right: 0px;
 }
-
 .dropdown-menu>li>a {
     font-size: 20px;
 }
-
+a.nav-link:hover {
+    background-color: blue;
+}
+.navbar-nav .nav-item, .nav-item {
+    margin-left: 1rem;
+}
 ul li .drop-menu-item a:hover {
     background: lightgrey;
 }
-
 button.btn.dropdown-toggle {
-    width: 100%;
     text-align: left;
 }
+li.nav-item.signup {
+    background: blue;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+a.nav-link.signup {
+    color: white !important;
+    font-size: 18px !important;
+}
 
+/** Login/Signup Tab Items **/
 .nav-tabs, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
     border: none;
     font-size: 20px;
@@ -101,7 +112,7 @@ button.btn.dropdown-toggle {
     max-width: 400px;
     margin: 0 auto;
 }
-.layer {
+.layer{
     /*background-color: rgba(105,105,105, 0.2);*/
     position: absolute;
     top: 0;
@@ -120,6 +131,9 @@ button.btn.dropdown-toggle {
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
+}
+.carousel-inner{
+  padding-top: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -146,6 +160,7 @@ button.btn.dropdown-toggle {
   left: auto;
   width: 1rem;
   margin-left: 0;
+  padding-top: 75px;
 }
 
 .carousel-indicators > li {
