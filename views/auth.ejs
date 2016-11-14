@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="module.auth">
+<html ng-app="module.auth" lang="en">
     <head>
-        <title>Login</title>
+        <title>BluP Login</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/main.css">
 
@@ -9,11 +9,13 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="/js/module.auth.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body ng-controller="module.auth.controller as auth" class="container">
         <header>
-            <nav class="navbar navbar-default">
-                <span role="presentation" class="logo"><a href="#dashboard"><img src="images/logo.png" /></a></span>
+            <nav class="navbar navbar-static-top navbar-light bg-faded">
+                <span role="presentation" class="logo"><a class="dashboard" href="."><img src="images/logo.png" /></a></span>
             </nav>
         </header>
         <section id="tabs">
@@ -21,7 +23,7 @@
             <div class="tab-content">
                 <div id="login" role="tabpanel" class="tab-pane active">
                     <form ng-submit="auth.login.submit($event)">
-                        <h1 class="text-center">Login!</h1>
+                        <h1 class="text-center">Log In</h1>
                         <fieldset class="form-group">
                             <label class="sr-only" for="email">Email</label>
                             <div class="input-group">
@@ -36,8 +38,8 @@
                                 <input required placeholder="Password" class="form-control" type="password" ng-model="auth.payload.password"/>
                             </div>
                         </fieldset>
+                                                <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
                         <input class="btn btn-primary" type="submit" value="Login">
-                        <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
                     </form>
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
@@ -48,7 +50,7 @@
                 </div>
                 <div id="register" role="tabpanel" class="tab-pane">
                     <form ng-submit="auth.register.submit($event)">
-                        <h1 class="text-center">Sign Up!</h1>
+                        <h1 class="text-center">Sign Up</h1>
                         <fieldset class="form-group">
                             <label class="sr-only" for="username">Username</label>
                             <div class="input-group">
@@ -70,8 +72,8 @@
                                 <input required placeholder="Create a password" class="form-control" type="password" ng-required="" ng-model="auth.payload.password"/>
                             </div>
                         </fieldset>
-                        <button class="btn btn-primary" type="submit">Sign Up</button>
                         <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
+                        <button class="btn btn-primary" type="submit">Sign Up</button>
                     </form>
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
