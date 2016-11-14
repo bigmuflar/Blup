@@ -20,22 +20,22 @@
 
       <!-- Navigation
       ================================================== -->
-      <nav ng-controller="menuHover" class="navbar navbar-fixed-top navbar-light bg-faded">
+      <nav class="navbar navbar-fixed-top navbar-light bg-faded">
           <a href="." class="navbar-brand"><img src="images/logo.png" /></a></span>
           <div class="nav navbar-nav dropdown">
             <button class="btn btn-primary btn-info btn-lg hidden-md-up dropdown-toggle glyphicon glyphicon-th" type="button" data-toggle="dropdown"> MENU
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#" class="nav-link">Features</a></li>
-              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#" class="nav-link">Pricing</a></li>
-              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#" class="nav-link">About</a></li>
-              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="./login" class="nav-link">Sign Up</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#features" class="nav-link">Features</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#services" class="nav-link">Services</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="#pricing" class="nav-link">Pricing</a></li>
+              <li class="nav-item drop-menu-item" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"><a href="/login" class="nav-link">Sign Up</a></li>
             </ul>
             <ul class="nav navbar-nav hidden-sm-down">
-              <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-              <li class="nav-item signup"><a href="./login" class="nav-link signup">Sign Up</a></li>
+              <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+              <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+              <li class="nav-item signup"><a href="/login" class="nav-link signup">Sign Up</a></li>
             </ul>
           </div>
       </nav>
@@ -83,7 +83,7 @@
             <div class="container">
               <div class="carousel-caption text-xs-right">
                 <h1>Increase Sales</h1>
-                <p>Beacon-triggered messages will see a nearly tenfold increase between 2015 and 2016</p>
+                <p>See a nearly tenfold increase between 2016 and 2017</p>
                 <p><a class="btn btn-lg btn-primary" href="./login" role="button">Sign Up</a></p>
               </div>
             </div>
@@ -104,34 +104,34 @@
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
-      <div class="container marketing">
+      <div class="container marketing" id="features">
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <img class="img-circle" src="/images/feature1.png" alt="Generic placeholder image">
+            <h2>Message Prompts</h2>
+            <p>Send push notifications with tailored sales pitches and coupons at specific locations within stores.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Learn More »</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <img class="img-circle" src="/images/feature2.png" alt="Generic placeholder image">
+            <h2>Location Intelligence</h2>
+            <p>Get real-time “Heat Mapping” data on how many people are in each section of your store (traffic) and how long they’re spending there</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Get Data »</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <img class="img-circle" src="/images/feature3.png" alt="Generic placeholder image">
+            <h2>Waiting Reinvented</h2>
+            <p>Remove long lines by having customers place a reservation while they are sent a link to the menu or other user engaged content.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Queue Up »</a></p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
 
         <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="services">
 
         <div class="row featurette">
           <div class="col-md-7">
@@ -166,11 +166,39 @@
             <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1585f68cd47%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1585f68cd47%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.125%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 500px; height: 500px;">
           </div>
         </div>
+      </div>
 
         <hr class="featurette-divider">
 
-        <!-- /END THE FEATURETTES -->
-
+        <!-- Contact Info and Pricing
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+      <div class="services" ng-controller="contact">
+        <div class="row">
+          <h1 class="text-center"><a href="#myModal" role="button" class="btn btn-primary btn-lg" data-toggle="modal">Contact Us</a></h1>
+        </div>
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">We'd Love to Hear From You</h3>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal col-sm-12">
+                <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
+                <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message here.." data-placement="top" data-trigger="manual"></textarea></div>
+                <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="email@you.com (so that we can contact you)" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+                <div class="form-group"><label>Phone</label><input class="form-control phone" placeholder="999-999-9999" data-placement="top" data-trigger="manual" data-content="Must be a valid phone number (999-999-9999)" type="text"></div>
+                <div class="form-group"><button type="submit" class="btn btn-success pull-right">Send It!</button> <p class="help-block pull-left text-danger hide" id="form-error">&nbsp; The form is not valid. </p></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
         <!-- FOOTER -->
         <footer>

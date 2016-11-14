@@ -43,6 +43,9 @@ body [class*="col-lg-"] {
 footer {
     font-size: 14px;
 }
+div#features {
+    top: -50px;
+}
 
 /** Menu Items **/
 .dropdown, .dropdown.open {
@@ -59,9 +62,6 @@ footer {
 .dropdown-menu>li>a {
     font-size: 20px;
 }
-a.nav-link:hover {
-    background-color: blue;
-}
 .navbar-nav .nav-item, .nav-item {
     margin-left: 1rem;
 }
@@ -72,14 +72,27 @@ button.btn.dropdown-toggle {
     text-align: left;
 }
 li.nav-item.signup {
-    background: blue;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
 }
 a.nav-link.signup {
-    color: white !important;
+    color: blue !important;
     font-size: 18px !important;
+    font-weight: 900;
+}
+li.nav-item.signup:hover  {
+    background-color: blue;
+}
+a.nav-link.signup:hover {
+    color: white !important;
+}
+a.nav-link {
+    padding: 5px;
+    border-radius: 10px;
+}
+a.nav-link:hover {
+    color: rgb(0,0, 0) !important;
 }
 
 /** Login/Signup Tab Items **/
@@ -88,8 +101,7 @@ a.nav-link.signup {
     font-size: 20px;
 }
 .btn.btn-primary {
-    margin: 0 auto;
-    display: block;
+    max-width: 150px;
 }
 .nav-tabs>li{
   text-align: center;
@@ -131,8 +143,6 @@ a.nav-link.signup {
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
-}
-.carousel-inner{
   padding-top: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -141,7 +151,7 @@ a.nav-link.signup {
 }
 
 /* Declare heights because of positioning of img element */
-.carousel-item {
+.carousel-item, .carousel-item.active, .carousel-item.active.left {
   height: 32rem;
   background-color: #777;
 }
@@ -152,7 +162,6 @@ a.nav-link.signup {
   min-width: 100%;
   height: 32rem;
 }
-
 .carousel-indicators {
   top: 1.5rem;
   right: 1.5rem;
@@ -160,28 +169,34 @@ a.nav-link.signup {
   left: auto;
   width: 1rem;
   margin-left: 0;
-  padding-top: 75px;
+  padding-top: 60px;
 }
-
 .carousel-indicators > li {
   margin-bottom: .25rem;
 }
-
+.carousel-caption{
+  background-color:rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
 .marketing h2 {
   font-weight: normal;
+  font-weight: 900;
+  color: black;
 }
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
+  font-size: 22px;
 }
 
 
@@ -189,7 +204,7 @@ a.nav-link.signup {
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 2rem 0; 
 }
 
 /* Thin out the marketing headings */
@@ -197,6 +212,12 @@ a.nav-link.signup {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -.05rem;
+}
+.btn-secondary {
+    color: white;
+    background-color: #0275d8;
+    border-color: #ccc;
+    border-radius: 10px;
 }
 
 
