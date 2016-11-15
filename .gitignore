@@ -38,3 +38,6 @@ jspm_packages
 
 # Images
 public/images
+
+# Certbot
+certbot-auto
