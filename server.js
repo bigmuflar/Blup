@@ -1,6 +1,8 @@
 require('colors') // awesome colors in your console logs!
 
-var config = require('./package'),
+var HTTP = require('http'),
+    HTTPS = require('https'),
+    config = require('./package'),
     express = require('express'), // our framework!
     bodyParser = require('body-parser'), // used for POST routes to obtain the POST payload as a property on `req`
     logger = require('morgan')('dev'), // log the routes being accessed by the frontend
@@ -42,7 +44,7 @@ app.all('*', ( req, res, next ) => {
     }
 });
 
-HTTP.createServer( app ).listen( ports.http );
+HTTP.createServer(app).listen( ports.http );
 
 try {
     var httpsConfig = { // https://nodejs.org/api/https.html
@@ -71,5 +73,3 @@ app.use(
 app.set('view engine','ejs');
 // do all the routing stuff in a separate file by passing a reference of the app!
 require('./routes')(app);
-
-
