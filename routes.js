@@ -5,9 +5,9 @@ var express = require('express');
 
 module.exports = function(app) {
     var blup = function(req,res,next){
-      if(req.subdomains[0]==="blup"){
+      if(req.subdomains[0]!="blup"){
         console.log('hitting sub');
-	next();
+	       next();
       }else{
       	console.log('not hitting sub');
 	}
@@ -31,8 +31,6 @@ module.exports = function(app) {
     });
     app.get('/', (req, res, next) => {
 	console.log('portfolio');
-     	res.sendfile('Home.html', { root: '../portfolio' });
+     	res.send('There was an issue rendering the portfolio site....');
     })
-   var fileserver = express.static('public');
-   app.use(fileserver);
 }
