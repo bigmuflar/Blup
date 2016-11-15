@@ -48,8 +48,8 @@ HTTP.createServer(app).listen( ports.http );
 
 try {
     var httpsConfig = { // https://nodejs.org/api/https.html
-         key:  fs.readFileSync('/etc/letsencrypt/live/<your_domain>/privkey.pem'),
-         cert: fs.readFileSync('/etc/letsencrypt/live/<your_domain>/cert.pem')
+         key:  fs.readFileSync('/etc/letsencrypt/live/justindegonda.com/privkey.pem'),
+         cert: fs.readFileSync('/etc/letsencrypt/live/justindegonda.com/cert.pem')
     };
     HTTPS.createServer( httpsConfig, app ).listen( ports.https );
 } catch (e) {
