@@ -27,7 +27,7 @@ module.exports = function(app) {
         res.render('dashboard', req.session)
     });
     app.get('/', (req, res, next){
-    
+
       res.send('Welcome to Blup');
     })
 }
