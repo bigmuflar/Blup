@@ -1,13 +1,16 @@
 'use strict'
 
 var Auth = require('./controllers/auth');
+var express = require('express');
 
 module.exports = function(app) {
     var blup = function(req,res,next){
       if(req.subdomains[0]==="blup"){
-        next();
-      }
-      console.log('not hitting sub');
+        console.log('hitting sub');
+	next();
+      }else{
+      	console.log('not hitting sub');
+	}
     };
 
     // SITE ROOT
@@ -27,6 +30,9 @@ module.exports = function(app) {
         res.render('dashboard', req.session)
     });
     app.get('/', (req, res, next) => {
-      res.render('blup');
+	console.log('portfolio');
+     	res.sendfile('Home.html', { root: '../portfolio' });
     })
+   var fileserver = express.static('public');
+   app.use(fileserver);
 }

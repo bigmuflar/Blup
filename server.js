@@ -4,7 +4,7 @@ var config = require('./package'),
     express = require('express'), // our framework!
     bodyParser = require('body-parser'), // used for POST routes to obtain the POST payload as a property on `req`
     logger = require('morgan')('dev'), // log the routes being accessed by the frontend
-    fileserver = express.static('public'), // turn the public folder into a file server
+    // turn the public folder into a file server
     mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
         if( error ) {
             console.error('ERROR starting mongoose!', error);
@@ -31,7 +31,7 @@ var config = require('./package'),
 app.use(
     logger,    // mounting dev logging
     sessions,  // mounting HTTPs session cookies
-    fileserver, // mounting the static middlware
+    // mounting the static middlware
     bodyParser.json(), // mount the body-parsing middleware (parse payloads into req.body)
     bodyParser.urlencoded({ extended:true })
 );
