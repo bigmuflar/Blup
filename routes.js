@@ -4,7 +4,7 @@ var Auth = require('./controllers/auth');
 
 module.exports = function(app) {
     var blup = function(req,res,next){
-      if(req.subdomain[0]==="blup"){
+      if(req.subdomains[0]==="blup"){
         next();
       }
       console.log('not hitting sub');
@@ -26,8 +26,7 @@ module.exports = function(app) {
     app.get('/dashboard', (req, res) => { // renders the dashboard, break this out into another controller if needed!
         res.render('dashboard', req.session)
     });
-    app.get('/', (req, res, next){
-
-      res.send('Welcome to Blup');
+    app.get('/', (req, res, next) => {
+      res.render('blup');
     })
 }
