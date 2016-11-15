@@ -1,21 +1,21 @@
 'use strict'
 
 var Auth = require('./controllers/auth');
-var express = require('express');
+//var express = require('express');
 
 module.exports = function(app) {
-    var blup = function(req,res,next){
-      if(req.subdomains[0]!="blup"){
-        console.log('hitting sub');
-	       next();
-      }else{
-      	console.log('not hitting sub');
-	}
-    };
+//    var blup = function(req,res,next){
+//      if(req.subdomains[0]!="blup"){
+//        console.log('hitting sub');
+//	next();
+//     }else{
+//      	console.log('not hitting sub');
+//	}
+//    };
 
     // SITE ROOT
-    app.get('/', (req, res, next) => { // replace this route with a landing or home page, or break this out into another controller if needed!
-        blup(req,res,next);
+    app.get('/', (req, res) => { // replace this route with a landing or home page, or break this out into another controller if needed!
+        //blup(req,res,next);
         res.render('home');
     });
     app.get('/login', Auth.render); // route for the login page
@@ -27,10 +27,10 @@ module.exports = function(app) {
     // DAHSBOARD
     app.all('/dashboard*', Auth.session); // protect all dashboard routes from unauthorized users
     app.get('/dashboard', (req, res) => { // renders the dashboard, break this out into another controller if needed!
-        res.render('dashboard', req.session)
+    	res.render('dashboard', req.session)
     });
-    app.get('/', (req, res, next) => {
-	console.log('portfolio');
-     	res.send('There was an issue rendering the portfolio site....');
-    })
+//    app.get('/', (req, res, next) => {
+//	console.log('portfolio');
+//     	res.send('There was an issue rendering the portfolio site....');
+//    });
 }
