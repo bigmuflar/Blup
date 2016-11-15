@@ -35,8 +35,9 @@ app.use(
     bodyParser.json(), // mount the body-parsing middleware (parse payloads into req.body)
     bodyParser.urlencoded({ extended:true })
 );
-app.use(function(){
+app.use(function(req,res,next){
   console.log(req.subdomain);
+  next();
 })
 
 
