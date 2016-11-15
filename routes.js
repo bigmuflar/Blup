@@ -3,8 +3,16 @@
 var Auth = require('./controllers/auth');
 
 module.exports = function(app) {
+    var blup = function(req,res,next){
+      if(req.subdomain[0]==="blup"){
+        next();
+      }
+      console.log('not hitting sub');
+    };
+
     // SITE ROOT
-    app.get('/', (req, res) => { // replace this route with a landing or home page, or break this out into another controller if needed!
+    app.get('/', (req, res, next) => { // replace this route with a landing or home page, or break this out into another controller if needed!
+        blup(req,res,next);
         res.render('home');
     });
     app.get('/login', Auth.render); // route for the login page
@@ -18,4 +26,8 @@ module.exports = function(app) {
     app.get('/dashboard', (req, res) => { // renders the dashboard, break this out into another controller if needed!
         res.render('dashboard', req.session)
     });
+    app.get('/', (req, res, next){
+    
+      res.send('Welcome to Blup');
+    })
 }

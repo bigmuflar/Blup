@@ -35,6 +35,16 @@ app.use(
     bodyParser.json(), // mount the body-parsing middleware (parse payloads into req.body)
     bodyParser.urlencoded({ extended:true })
 );
+app.use(function(){
+  console.log(req.subdomain);
+})
+
+var blup = function(req,res,next){
+  if(req.subdomain[0]===""){
+    next();
+  }
+  console.log('not hitting sub');
+}
 
 // enable server-side rendering
 app.set('view engine','ejs');
