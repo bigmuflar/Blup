@@ -102,6 +102,8 @@ a.nav-link:hover {
 }
 .btn.btn-primary {
     max-width: 150px;
+    margin: 0 auto;
+    display: block;
 }
 .nav-tabs>li{
   text-align: center;
@@ -204,7 +206,7 @@ a.nav-link:hover {
 ------------------------- */
 
 .featurette-divider {
-  margin: 2rem 0; 
+  margin: 2rem 0;
 }
 
 /* Thin out the marketing headings */

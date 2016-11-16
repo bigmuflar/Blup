@@ -2,6 +2,9 @@
 
 var User = require('../models/user'),
     bcrypt = require('bcryptjs'), // used for encryption
+    // async = require('async'),
+    // crypto = require('crypto'),
+    // nodemailer = require('nodemailer'),
     errors = { // response errors
         general: {
             status: 500,

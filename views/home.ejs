@@ -21,7 +21,7 @@
       <!-- Navigation
       ================================================== -->
       <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-          <a href="." class="navbar-brand"><img src="images/logo.png" /></a></span>
+          <a href="/" class="navbar-brand"><img src="images/logo.png" /></a></span>
           <div class="nav navbar-nav dropdown">
             <button class="btn btn-primary btn-info btn-lg hidden-md-up dropdown-toggle glyphicon glyphicon-th" type="button" data-toggle="dropdown"> MENU
             <span class="caret"></span></button>
@@ -36,6 +36,9 @@
               <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
               <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
               <li class="nav-item signup"><a href="/login" class="nav-link signup">Sign Up</a></li>
+              <% if (user) { %>
+                  <h2><%= user.name %></h2>
+              <% } %>
             </ul>
           </div>
       </nav>
