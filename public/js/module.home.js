@@ -2,7 +2,7 @@ angular.module('module.home', [])
     .controller('contact', contact);
 
   /* form validation plugin */
-var goValidate = function() {
+var contact = function() {
     var $form = this,
         $inputs = $form.find('input:text');
 
@@ -90,4 +90,4 @@ var goValidate = function() {
     });
     return this;
 };
-$('form').goValidate();
+contact();
