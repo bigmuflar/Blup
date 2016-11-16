@@ -2,6 +2,7 @@ require('colors') // awesome colors in your console logs!
 
 var HTTP = require('http'),
     HTTPS = require('https'),
+    dotenv  = require('dotenv').config(),
     config = require('./package'),
     mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
         if( error ) {

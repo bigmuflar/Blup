@@ -1,6 +1,7 @@
 'use strict'
 
-var Auth = require('./controllers/auth');
+var Auth = require('./controllers/auth'),
+    API = require('./controllers/api.js');
 //var express = require('express');
 
 module.exports = function(app) {
@@ -29,6 +30,10 @@ module.exports = function(app) {
     app.get('/dashboard', (req, res) => { // renders the dashboard, break this out into another controller if needed!
     	res.render('dashboard', req.session)
     });
+
+    //API routes
+    // app.get('/api/client/decade', API.decade;
+    app.get('/api/client/exhibit', API.exhibit);
 //    app.get('/', (req, res, next) => {
 //	console.log('portfolio');
 //     	res.send('There was an issue rendering the portfolio site....');
