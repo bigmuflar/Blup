@@ -3,6 +3,17 @@ require('colors') // awesome colors in your console logs!
 var HTTP = require('http'),
     HTTPS = require('https'),
     config = require('./package'),
+    mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
+        if( error ) {
+            console.error('ERROR starting mongoose!', error);
+            process.exit(128);
+        } else {
+            console.info('Mongoose connected to MongoDB successfully'.yellow);
+        }
+    }),
+    nodemailer = require('nodemailer'),
+    async = require('async'),
+    crypto = require('crypto'),
     express = require('express'), // our framework!
     bodyParser = require('body-parser'), // used for POST routes to obtain the POST payload as a property on `req`
     logger = require('morgan')('dev'), // log the routes being accessed by the frontend
@@ -12,14 +23,6 @@ var HTTP = require('http'),
         http:  process.env.PORT || 80,      // default HTTP port
         https: process.env.PORT_SSL || 443  // default HTTPS port
     },
-    mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
-        if( error ) {
-            console.error('ERROR starting mongoose!', error);
-            process.exit(128);
-        } else {
-            console.info('Mongoose connected to MongoDB successfully'.yellow);
-        }
-    }),
     sessions = require('client-sessions')({ // session cookie
         cookieName : config.name, // cookie name (within document.cookies on the Frontend)
         secret: 'My$uP3R@W3$0M3$3CR3+', // encryption secret
