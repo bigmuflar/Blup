@@ -10,12 +10,13 @@ function clientFactory($http) {
             console.log("getting me");
             return $http.get('/api/me');
         },
-        getAPIData: function(){
+        getExhibit: function(){
             return $http.get('/api/client/exhibit');
         },
         getObject: function(){
             return $http.get('/api/client/object');
         },
+
 
     }
 }

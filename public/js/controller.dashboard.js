@@ -8,7 +8,7 @@ function dashboard(clientFactory, $http){
 
     console.info('Dashboard initialized');
 
-    clientFactory.getExhibits().then(function(success){
+    clientFactory.getExhibit().then(function(success){
       getExhibit.data = success.data.data;
       // console.log("dashboard data", getExhibit.data);
       // console.log('API is working', success);
