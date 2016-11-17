@@ -26,6 +26,7 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
               if (!error && response.statusCode == 200) {
                 var info = JSON.parse(body);
                 console.log(info.body);
+                console.log("response",response);
                 res.send(info.body);
               }else{
                 console.log('error on api');
