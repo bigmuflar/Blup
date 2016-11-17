@@ -10,7 +10,7 @@ function clientFactory($http) {
         //     console.log(newUser);
         //     return $http.post('/register', newUser);
         // }
-        getAPIData: function($http){
+        getAPIData: function(){
             return $http.get('/api/client/exhibit')
         }
     }
