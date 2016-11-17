@@ -41,3 +41,6 @@ public/images
 
 # Certbot
 certbot-auto
+
+#ENV
+.env
