@@ -299,11 +299,11 @@
                 <h6>with Bootstrap 4 flexbox</h6>
 
                 <div class="card-columns">
-                    <div class="card">
+                    <div class="card" ng-repeat="api in getAPIData">
                         <img class="card-img-top img-responsive" src="//placehold.it/600x200/444/fff?text=..." alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">Card title that wraps to a new line</h4>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">{{api.title}}</p>
                         </div>
                     </div>
                     <div class="card card-block">
