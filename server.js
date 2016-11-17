@@ -2,8 +2,8 @@ require('colors') // awesome colors in your console logs!
 
 var HTTP = require('http'),
     HTTPS = require('https'),
-    dotenv  = require('dotenv').config(),
     config = require('./package'),
+    request = require('request'),
     mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
         if( error ) {
             console.error('ERROR starting mongoose!', error);
@@ -15,7 +15,6 @@ var HTTP = require('http'),
     nodemailer = require('nodemailer'),
     async = require('async'),
     crypto = require('crypto'),
-    request = require('request'),
     express = require('express'), // our framework!
     bodyParser = require('body-parser'), // used for POST routes to obtain the POST payload as a property on `req`
     logger = require('morgan')('dev'), // log the routes being accessed by the frontend
@@ -60,24 +59,6 @@ try {
 } catch (e) {
     console.error('Could not HTTPS server:', e);
 }
-
-var options = {
-  url: 'https://www.brooklynmuseum.org/api/v2/exhibition/',
-  headers: {
-    'api_key': process.env.API_KEY
-  }
-};
-
-function callback(error, response, body) {
-  if (!error && response.statusCode == 200) {
-    var info = JSON.parse(body);
-    console.log(info.data[0]);
-  }else{
-    console.log('error on api');
-  }
-}
-
-request(options, callback);
 
 // server setup
 app.use(
