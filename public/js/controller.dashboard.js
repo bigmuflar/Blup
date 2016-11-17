@@ -7,13 +7,12 @@ function dashboard(clientFactory, $http){
     var dashboard = this;
     console.log('hitting dashboard');
 
-    this.getExhibit = function(clientFactory, $http){
-      var getExhibit = this;
-
-      console.info('getExhibit initialized');
+    this.exhibit = function(clientFactory, $http){
+      var exhibit = this;
+      console.info('exhibit initialized');
 
       clientFactory.getExhibit().then(function(success){
-        getExhibit.data = success.data.data;
+        exhibit.data = success.data.data;
         // console.log("dashboard data", getExhibit.data);
         // console.log('API is working', success);
       },  function(error){
@@ -21,25 +20,25 @@ function dashboard(clientFactory, $http){
       });
     };
 
-    this.getObject = function(clientFactory, $http){
-      var getObject = this;
-      console.info('getObject initialized');
+    this.artifact = function(clientFactory, $http){
+      var artifact = this;
+      console.info('artifact initialized');
 
       clientFactory.getObject().then(function(success){
-        getObject.data = success.data.data;
-        console.log("Object Data", getObject.data);
+        artifact.data = success.data.data;
+        console.log("Object Data", artifact.data);
       }, function(error){
         console.log('error on get Object API', error);
       });
     };
 
-    this.getUser = function(clientFactory, $http){
-      var getUser = this;
+    this.user = function(clientFactory, $http){
+      var user = this;
       console.info('getUser initialized');
 
       clientFactory.getUser().then(function(success){
-        getUser.data = success.data.data;
-        console.log("getUser Data", getUser.data);
+        user.data = success.data.data;
+        console.log("getUser Data", user.data);
       }, function(error){
         console.log('error on API', error);
       });
