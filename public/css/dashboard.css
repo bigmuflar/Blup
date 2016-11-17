@@ -6,8 +6,13 @@ body {
 body, html {
   height:100%;
 }
-.navbar-brand>img{}
+.navbar-brand>img{
     width: 75px;
+}
+input.form-control.ng-pristine.ng-valid.ng-empty.ng-touched {
+    width: 200px;
+    float: left;
+    margin-top: 5px;
 }
 
 /* workaround modal-open padding issue */
