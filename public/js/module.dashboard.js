@@ -1,9 +1,9 @@
 angular.module('module.dashboard', [])
     .controller('DashboardController', dashboard);
 
-dashboard.$inject = ["clientFactory", '$http'];
+dashboard.$inject = ['$http','clientFactory'];
 
-function dashboard(clientFactory, $http){
+function dashboard($http, clientFactory){
     console.info('Dashboard initialized');
     clientFactory.getAPIData().then(function(success){
       console.log('API is working', success);
