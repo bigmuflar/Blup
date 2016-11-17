@@ -20,6 +20,9 @@
             ☰
         </button>
         <a class="navbar-brand" href="/"><img src="images/logo.png" /></a>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search a Topic" ng-model="userSearch">
+        </div>
         <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
             <ul class="nav navbar-nav pull-right">
                 <li class="nav-item active">
@@ -151,25 +154,6 @@
 
                 <hr>
                 <div class="row">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="card">
-                            <img class="card-img-top img-responsive" src="//placehold.it/740x180/bbb/fff?text=..." alt="Card image cap">
-                            <div class="card-block">
-                                <h4 class="card-title">Card title</h4>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Button</a>
-                            </div>
-                        </div>
-
-                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
-                            <div class="card-block">
-                                <h3 class="card-title">Dark background</h3>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-secondary-outline">Outline</a>
-                            </div>
-                        </div>
-
-                    </div>
                     <div class="col-lg-9 col-md-8">
                         <div class="table-responsive">
                             <table class="table table-striped">
@@ -251,47 +235,7 @@
                         </div>
                     </div>
                 </div>
-                <!--/row-->
 
-                <a id="more"></a>
-                <hr>
-                <h2 class="sub-header">Use card decks for equal height rows of cards</h2>
-                <div class="card-deck-wrapper">
-                    <div class="card-deck">
-                        <div class="card card-inverse card-success text-center">
-                            <div class="card-block">
-                                <blockquote class="card-blockquote">
-                                    <p>It's really good news that the new Bootstrap 4 now has support for CSS 3 flexbox.</p>
-                                    <footer>Makes flexible layouts <cite title="Source Title">Faster</cite></footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="card card-inverse card-danger text-center">
-                            <div class="card-block">
-                                <blockquote class="card-blockquote">
-                                    <p>The Bootstrap 3.x element that was called "Panel" before, is now called a "Card".</p>
-                                    <footer>All of this makes more <cite title="Source Title">Sense</cite></footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="card card-inverse card-warning text-center">
-                            <div class="card-block">
-                                <blockquote class="card-blockquote">
-                                    <p>There are also some interesting new text classes for uppercase and capitalize.</p>
-                                    <footer>These handy utilities make it <cite title="Source Title">Easy</cite></footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="card card-inverse card-info text-center">
-                            <div class="card-block">
-                                <blockquote class="card-blockquote">
-                                    <p>If you want to use cool icons in Bootstrap 4, you'll have to find your own such as Font Awesome or Ionicons.</p>
-                                    <footer>The Glyphicons are not <cite title="Source Title">Included</cite></footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!--/row-->
 
                 <a id="flexbox"></a>
@@ -299,60 +243,32 @@
                 <h2>Masonry-style grid columns</h2>
                 <h6>with Bootstrap 4 flexbox</h6>
 
-                <div class="card-columns">
-                    <div class="card" ng-repeat="api in getAPIData">
+                <div class="card-columns" ng-repeat="api in getAPIData  | filter:userSearch">
+                    <div class="card">
+                        <img class="card-img-top img-responsive" src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{api.primary_image}}" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">{{api.title}}</h4>
+                            <span>{{api.start_date}} - {{api.end_date}}</span>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Button</a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="card card-inverse" style="background-image: url("https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/")">
+                        <div class="card-block">
+                            <h3 class="card-title">Dark background</h3>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-secondary-outline">Outline</a>
+                        </div>
+                    </div> -->
+                    <div class="card">
                         <img class="card-img-top img-responsive" src="//placehold.it/600x200/444/fff?text=..." alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">Card title that wraps to a new line</h4>
                             <p class="card-text">{{api.data.title}}</p>
                         </div>
                     </div>
-                    <div class="card card-block">
-                        <blockquote class="card-blockquote">
-                            <p>Bootstrap 4 will be lighter and easier to customize.</p>
-                            <footer>
-                                <small class="text-muted">
-                                  Someone famous like <cite title="Source Title">Mark Otto</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top img-responsive" src="//placehold.it/600x200/bbb/fff?text=..." alt="Card image cap">
-                        <div class="card-block">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card card-block card-inverse card-primary text-center">
-                        <blockquote class="card-blockquote">
-                            <p>Create masonry or Pinterest-style card layouts in Bootstrap 4.</p>
-                            <footer>
-                                <small>
-                                  Someone famous in <cite title="Source Title">Bootstrap</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                    <div class="card card-block text-center">
-                        <h4 class="card-title">Clever heading</h4>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
-                    </div>
-                    <div class="card">
-                        <img class="card-img img-responsive" src="//placehold.it/600x200/777/fff?text=..." alt="Card image">
-                    </div>
-                    <div class="card card-block text-right">
-                        <blockquote class="card-blockquote">
-                            <p>There are also some interesting new text classes to uppercase or capitalize.</p>
-                            <footer>
-                                <small class="text-muted">
-                                  Someone famous in <cite title="Source Title">Bootstrap</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
+
                     <div class="card card-block">
                         <h4 class="card-title">Responsive</h4>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>

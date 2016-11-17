@@ -6,6 +6,9 @@ body {
 body, html {
   height:100%;
 }
+.navbar-brand>img{}
+    width: 75px;
+}
 
 /* workaround modal-open padding issue */
 body.modal-open {
