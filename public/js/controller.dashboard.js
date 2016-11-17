@@ -6,10 +6,11 @@ dashboard.$inject = ['clientFactory','$http'];
 function dashboard(clientFactory, $http){
     var dashboard = this;
     console.log('hitting dashboard');
-    dashboard.getExhibit = function(clientFactory, $http){
+
+    this.getExhibit = function(clientFactory, $http){
       var getExhibit = this;
 
-      console.info('Dashboard initialized');
+      console.info('getExhibit initialized');
 
       clientFactory.getExhibit().then(function(success){
         getExhibit.data = success.data.data;
@@ -20,8 +21,9 @@ function dashboard(clientFactory, $http){
       });
     };
 
-    dashboard.getObject = function(clientFactory, $http){
+    this.getObject = function(clientFactory, $http){
       var getObject = this;
+      console.info('getObject initialized');
 
       clientFactory.getObject().then(function(success){
         getObject.data = success.data.data;
@@ -31,8 +33,9 @@ function dashboard(clientFactory, $http){
       });
     };
 
-    dashboard.getUser = function(clientFactory, $http){
+    this.getUser = function(clientFactory, $http){
       var getUser = this;
+      console.info('getUser initialized');
 
       clientFactory.getUser().then(function(success){
         getUser.data = success.data.data;
