@@ -11,10 +11,6 @@ function clientFactory($http) {
             return $http.post('/register', newUser);
         }
         getAPIData: function(){
-          return $http.get('/api/client/exhibit).then(function(success){
-            console.log('API is working', success);
-          },  function(error){
-            console.log('error on API', error);
-          }))
+          return $http.get('/api/client/exhibit)
         }
-}
+      }
