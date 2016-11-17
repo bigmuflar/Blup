@@ -13,4 +13,5 @@ function clientFactory($http) {
         getAPIData: function(){
           return $http.get('/api/client/exhibit)
         }
-      }
+    }
+}
