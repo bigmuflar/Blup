@@ -60,6 +60,24 @@ try {
     console.error('Could not HTTPS server:', e);
 }
 
+var options = {
+  url: 'https://www.brooklynmuseum.org/api/v2/exhibition/',
+  headers: {
+    'api_key': process.env.API_KEY;
+  }
+};
+
+function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+    var info = JSON.parse(body);
+    console.log(data.title);
+  }else{
+    console.log('error on api');
+  }
+}
+
+request(options, callback);
+
 // server setup
 app.use(
     logger,    // mounting dev logging
