@@ -5,7 +5,7 @@ dashboard.$inject = ['clientFactory','$http'];
 
 function dashboard(clientFactory, $http){
     var dashboard = this;
-
+    console.log('hitting dashboard');
     dashboard.getExhibit = function(clientFactory, $http){
       var getExhibit = this;
 
