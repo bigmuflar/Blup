@@ -136,7 +136,7 @@
                 <hr>
                 <h2>Current Exhibitions</h2>
                 <div class="card-columns">
-                    <div class="card" ng-repeat="exhibit in dashboard.exhibit.data">
+                    <div class="card" ng-repeat="exhibit in dashboard.exhibit">
                         <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">{{exhibit.title}}</h4>
@@ -162,7 +162,7 @@
             <hr>
             <h2 id="artifacts">Museum Artifacts</h2>
             <div class="card-columns">
-                <div class="card" ng-repeat="object in dashboard.artifact.data">
+                <div class="card" ng-repeat="object in dashboard.artifact">
                     <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
                     <div class="card-block">
                         <h4 class="card-title">{{object.title}}</h4>
