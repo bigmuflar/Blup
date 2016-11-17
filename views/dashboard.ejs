@@ -245,7 +245,7 @@
 
                 <div class="card-columns" ng-repeat="api in getAPIData  | filter:userSearch">
                     <div class="card">
-                        <img class="card-img-top img-responsive" src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{api.primary_image}}" alt="Card image cap">
+                        <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{api.primary_image}}" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">{{api.title}}</h4>
                             <span>{{api.start_date}} - {{api.end_date}}</span>
