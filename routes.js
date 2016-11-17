@@ -31,8 +31,11 @@ module.exports = function(app) {
     	res.render('dashboard', req.session)
     });
 
+    //USER INFORMATION ONCE LOGGED IN
+    app.get('/api/me', Auth.me);
+
     //API routes
-    // app.get('/api/client/decade', API.decade;
+    app.get('/api/client/object', API.object);
     app.get('/api/client/exhibit', API.exhibit);
 //    app.get('/', (req, res, next) => {
 //	console.log('portfolio');

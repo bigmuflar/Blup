@@ -93,6 +93,10 @@ module.exports = {
             }
         });
     },
+    me: function(req, res, body) {
+        res.json(req.session);
+        console.log("hitting ME", body);
+    },
     session: (req, res, next) => {
         if( req.session.uid ) {
             next();

@@ -25,16 +25,10 @@
         </div>
         <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
             <ul class="nav navbar-nav pull-right">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">Home</span></a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Support</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">UserName</a>
-                </li>
-                <li class="nav-item">
+                <li class="nav-item" >
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
             </ul>
@@ -44,10 +38,9 @@
         <div class="row row-offcanvas row-offcanvas-left">
             <div class="col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="nav-item"><a class="nav-link" href="#">Beacon Status</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Export</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Exhibits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Artifacts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Origin</a></li>
                 </ul>
             </div>
             <!--/col-->
@@ -60,18 +53,8 @@
                 </p>
 
                 <h1 class="display-1 hidden-xs-down">
-                My Dashboard
+                Brooklyn Museum
                 </h1>
-                <p class="lead">(beacon data for your business)</p>
-
-                <div class="alert alert-warning fade collapse" role="alert" id="myAlert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <strong>Holy guacamole!</strong> It's free.. this is an example theme.
-                </div>
-
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-inverse card-success">
@@ -240,14 +223,13 @@
 
                 <a id="flexbox"></a>
                 <hr>
-                <h2>Masonry-style grid columns</h2>
-                <h6>with Bootstrap 4 flexbox</h6>
+                <h2>Current Exhibitions</h2>
                 <div class="card-columns">
-                    <div class="card" ng-repeat="api in dashboard.data">
-                        <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{api.primary_image}}" alt="Card image cap">
+                    <div class="card" ng-repeat="exhibit in getExhibit.data">
+                        <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Card image cap">
                         <div class="card-block">
-                            <h4 class="card-title">{{api.title}}</h4>
-                            <span>{{api.start_date}} - {{api.end_date}}</span>
+                            <h4 class="card-title">{{exhibit.title}}</h4>
+                            <span>{{exhibit.start_date}} - {{exhibit.end_date}}</span>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Button</a>
                         </div>
@@ -264,13 +246,43 @@
                 <!--/card-columns-->
 
             </div>
+
+            <a id="flexbox"></a>
+            <hr>
+            <h2 id="artifacts">Museum Artifacts</h2>
+            <div class="card-columns">
+                <div class="card" ng-repeat="object in getObject.data">
+                    <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">{{object.title}}</h4>
+                        <span>{{object.object_date}}</span>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+              </div>
+
+              <!-- <a id="flexbox"></a>
+              <hr>
+              <h2 id="origin">Object Origins</h2>
+              <div class="card-columns">
+                  <div class="card" ng-repeat="object in getObject.data">
+                      <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+                      <div class="card-block">
+                          <h4 class="card-title">{{object.title}}</h4>
+                          <span>{{object.object_date}}</span>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Button</a>
+                      </div>
+                  </div>
+              </div> -->
             <!--/main col-->
         </div>
 
     </div>
     <!--/.container-->
     <footer class="container-fluid">
-        <p class="text-right small">©2015 Company</p>
+        <p class="text-right small"><%= new Date().getFullYear() %> Blup</p>
     </footer>
 
 
@@ -303,7 +315,4 @@
 
         <script src="js/scripts.js"></script>
       </body>
-
-      <footer class="text-center">&copy; <%= new Date().getFullYear() %></footer>
-    </body>
 </html>

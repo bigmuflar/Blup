@@ -6,12 +6,16 @@ clientFactory.$inject = ['$http'];
 function clientFactory($http) {
     return {
         //CREATE NEW USERS
-        // createUser: function(newUser) {
-        //     console.log(newUser);
-        //     return $http.post('/register', newUser);
-        // }
+        getUser: function() {
+            console.log("getting me");
+            return $http.get('/api/me');
+        },
         getAPIData: function(){
             return $http.get('/api/client/exhibit');
-        }
+        },
+        getObject: function(){
+            return $http.get('/api/client/object');
+        },
+
     }
 }
