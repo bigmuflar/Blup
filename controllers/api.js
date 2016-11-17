@@ -21,7 +21,7 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
                 'api_key': process.env.API_KEY
               }
             };
-
+            console.log(options);
             function callback(error, response, body) {
               if (!error && response.statusCode == 200) {
                 var info = JSON.parse(body);
