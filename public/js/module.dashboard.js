@@ -1,7 +1,7 @@
 angular.module('module.dashboard', [])
     .controller('DashboardController', Dashboard);
 
-Dashboard.$inject = ['clientFactory'];
+clientFactory.$inject = ['clientFactory'];
 
 function Dashboard(clientFactory) {
     console.info('Dashboard.initialized');
