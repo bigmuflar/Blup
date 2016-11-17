@@ -4,6 +4,7 @@ angular.module('module.dashboard', [])
 dashboard.$inject = ['clientFactory','$http'];
 
 function dashboard(clientFactory, $http){
+    var dashboard = this;
     console.info('Dashboard initialized');
     clientFactory.getAPIData().then(function(success){
       dashboard.data = success.data.data;
