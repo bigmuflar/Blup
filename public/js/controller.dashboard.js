@@ -4,7 +4,9 @@ angular.module('module.dashboard', [])
 dashboard.$inject = ['clientFactory','$http'];
 
 function dashboard(clientFactory, $http){
-    function getExhibit(clientFactory, $http){
+    var dashboard = this;
+
+    dashboard.getExhibit = function(clientFactory, $http){
       var getExhibit = this;
 
       console.info('Dashboard initialized');
@@ -18,7 +20,7 @@ function dashboard(clientFactory, $http){
       });
     };
 
-    function getObject(clientFactory, $http){
+    dashboard.getObject = function(clientFactory, $http){
       var getObject = this;
 
       clientFactory.getObject().then(function(success){
@@ -29,7 +31,7 @@ function dashboard(clientFactory, $http){
       });
     };
 
-    function getUser(clientFactory, $http){
+    dashboard.getUser = function(clientFactory, $http){
       var getUser = this;
 
       clientFactory.getUser().then(function(success){
