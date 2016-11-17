@@ -44,3 +44,6 @@ certbot-auto
 
 #ENV
 .env
+
+#NODE PASSPORT
+node-passbook
