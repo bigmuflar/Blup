@@ -245,10 +245,10 @@
 
                 <div class="card-columns" ng-repeat="api in getAPIData">
                     <div class="card">
-                        <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{api.primary_image}}" alt="Card image cap">
+                        <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{api.data.primary_image}}" alt="Card image cap">
                         <div class="card-block">
-                            <h4 class="card-title">{{api.title}}</h4>
-                            <span>{{api.start_date}} - {{api.end_date}}</span>
+                            <h4 class="card-title">{{api.data.title}}</h4>
+                            <span>{{api.data.start_date}} - {{api.data.end_date}}</span>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Button</a>
                         </div>
