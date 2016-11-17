@@ -11,7 +11,7 @@ function clientFactory($http) {
         //     return $http.post('/register', newUser);
         // }
         getAPIData: function($http){
-            return $http.get('/api/client/exhibit)
+            return $http.get('/api/client/exhibit')
         }
     }
 }
