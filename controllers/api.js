@@ -24,9 +24,9 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
             console.log(options);
             function callback(error, response, body) {
               if (!error && response.statusCode == 200) {
-                console.log(body.data);
+                console.log(response.data);
                 console.log("response",response);
-                res.send(body.data);
+                res.send(body);
               }else{
                 console.log('error on api');
                 res.send('error api', error);
