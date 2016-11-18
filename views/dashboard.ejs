@@ -20,7 +20,7 @@
         <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
             ☰
         </button>
-        <div class="form-group search col-xs-7 col-md-4">
+        <div class="form-group search col-xs-6 col-sm-5 col-md-4">
           <input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
         </div>
         <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
@@ -209,13 +209,10 @@
               <h3 id="myModalLabel">Museum Map</h3>
             </div
             <div class="modal-body">
-                <h5 class="floor-text" ng-toggle="floormap = 1">1st</h5>
-                <h5 class="floor-text" ng-toggle="floormap = 2">2nd</h5>
-                <h5 class="floor-text" ng-toggle="floormap = 3">3rd</h5>
-                <h5 class="floor-text" ng-toggle="floormap = 4">4th</h5>
               <form class="form-horizontal col-sm-12">
+                <button class="btn btn-primary floor-text" ng-click="count = count + 1">{{count}}</button>
                 <div class="maps">
-                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{floormap}}F.jpg"
+                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{count}}F.jpg"
                 </div>
               </form>
             </div>
