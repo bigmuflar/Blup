@@ -31,6 +31,6 @@ function dashboard(clientFactory, $http){
 };
 
 function fCtrl() {
-  var array = this;
+  var fCtrl = this;
   this.floors = ["1", "2", "3", "4", "5"];
 }
