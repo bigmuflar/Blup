@@ -202,17 +202,17 @@
 
     <!-- Modal -->
     <div class="modal fade" id="mapModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document" ng-controller="floorCtrl as floor">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h3 id="myModalLabel">Museum Map</h3>
             </div
             <div class="modal-body">
-              <form class="form-horizontal col-sm-12">
-                <button class="btn btn-primary floor-text" ng-click="count = count + 1">{{count}}</button>
+              <form class="form-horizontal col-sm-12" ng-model="">
+                <select ng-model="selectedFloor" ng-options="item for item in floors"></select>
                 <div class="maps">
-                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{count}}F.jpg"
+                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{selectedFloor}}F.jpg"
                 </div>
               </form>
             </div>
