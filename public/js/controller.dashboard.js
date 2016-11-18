@@ -27,10 +27,10 @@ function dashboard(clientFactory, $http){
       }, function(error){
         console.log('error on API', error);
       });
-
-      var userFactory = {
-        clientFactory.getUser: clientFacotry.getUser;
-      }
-
-      return userFactory;
+      // 
+      // var userFactory = {
+      //   clientFactory.getUser: clientFacotry.getUser;
+      // }
+      //
+      // return userFactory;
 };
