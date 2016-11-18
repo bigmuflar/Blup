@@ -15,12 +15,12 @@
 
     </head>
     <body ng-controller="DashboardController as dashboard" class="container">
-      <nav class="search col-sm-4 col-md-6 navbar navbar-fixed-top navbar-dark bg-primary">
+      <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
         <a class="navbar-brand" href="/"><img src="images/client_logo.png" /></a>
         <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
             ☰
         </button>
-        <div class="form-group">
+        <div class="form-group search col-sm-4 col-md-6">
           <input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
         </div>
         <div class="collapse navbar-toggleable-xs" id="collapsingNavbar" ng-repeat="user in dashboard.users">
