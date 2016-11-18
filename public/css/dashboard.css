@@ -7,8 +7,17 @@ body, html {
   height:100%;
 }
 .navbar-brand>img {
-    width: 50px;
+    width: 60px;
     float: left;
+}
+
+.search[class*=col] {
+    margin-bottom: 0;
+    top: -5px;
+}
+
+.form-group.search.col-xs-6 input {
+    height: 35px;
 }
 
 /* workaround modal-open padding issue */
