@@ -21,7 +21,6 @@ function dashboard(clientFactory, $http){
       }, function(error){
         console.log('error on get Object API', error);
       });
-    };
 
       clientFactory.getUser().then(function(success){
         dashboard.users = success.data.data;
@@ -29,5 +28,4 @@ function dashboard(clientFactory, $http){
       }, function(error){
         console.log('error on API', error);
       });
-    };
 };
