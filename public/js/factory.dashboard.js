@@ -8,8 +8,8 @@ function clientFactory($http) {
         //CREATE NEW USERS
         getUser: function() {
             var user;
-            return  $http.get({'/whoami',
-              }).then(function(res) {
+            return  $http.get('/whoami')
+              .then(function(res) {
                   console.info("factory.dashboard: ", res.data);
                   // loginThis.getUser();
                   user = res.data;
