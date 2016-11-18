@@ -1,6 +1,6 @@
 angular.module('module.dashboard', [])
     .controller('floorCtrl', function($scope) {
-      $scope.floors = ["1", "2", "3", "4", "5"];
+      $scope.floors = ["1", "2", "3", "4", "5"]
     }),
     .controller('DashboardController', dashboard);
 
