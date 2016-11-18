@@ -17,14 +17,12 @@ function dashboard(clientFactory, $http){
 
       clientFactory.getObject().then(function(success){
         dashboard.artifacts = success.data.data;
-        console.log("Object Data", artifact.data);
       }, function(error){
         console.log('error on get Object API', error);
       });
 
       clientFactory.getUser().then(function(success){
         dashboard.users = success.data.data;
-        console.log("getUser Data", user.data);
       }, function(error){
         console.log('error on API', error);
       });
