@@ -1,5 +1,5 @@
 angular.module('module.dashboard', [])
-    .controller('floorCtrl', fCtrl),
+    .controller('floorCtrl', fCtrl)
     .controller('DashboardController', dashboard);
 
 dashboard.$inject = ['clientFactory','$http'];
@@ -32,5 +32,5 @@ function dashboard(clientFactory, $http){
 
 function fCtrl() {
   var fCtrl = this;
-  this.floors = [1, 2, 3, 4, 5];
+  this.floors = ['1', '2', '3', '4', '5'];
 };
