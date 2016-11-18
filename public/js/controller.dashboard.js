@@ -21,9 +21,9 @@ function dashboard(clientFactory, $http){
         console.log('error on get Object API', error);
       });
 
-      clientFactory.getUser().then(function(res){
-        dashboard.username = res.user;
-        console.log('hitting Username', res.user)
+      clientFactory.getUser().then(function(user){
+        dashboard.username = user;
+        console.log('hitting Username', user)
       }, function(error){
         console.log('error on API', error);
       });
