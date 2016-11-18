@@ -15,10 +15,13 @@ body, html {
     top: -5px;
 }
 .search.col-md-4 {
-    top: -px;
+    top: 4px;
 }
 .form-group.search.col-xs-6 input {
     height: 35px;
+}
+button.btn.btn-primary-outline.btn-sm {
+    margin-top: 10px;
 }
 
 /* workaround modal-open padding issue */
