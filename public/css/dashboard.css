@@ -11,7 +11,7 @@ body, html {
     float: left;
 }
 
-/*input.form-control.ng-pristine.ng-untouched.ng-valid.col-sm-up.ng-empty {
+input.form-control.ng-pristine.ng-untouched.ng-valid.col-sm-up.ng-empty {
     width: 150px;
     margin-left: 20px;
     float: left;
@@ -24,7 +24,7 @@ input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
     float: left;
     height: 30px;
     margin-top: -5px;
-}*/
+}
 
 .pull-right{
     margin-top: -10px;
