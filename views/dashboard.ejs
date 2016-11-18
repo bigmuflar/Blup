@@ -16,20 +16,20 @@
     </head>
     <body ng-controller="DashboardController as dashboard" class="container">
       <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-        <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-            ☰
-        </button>
         <a class="navbar-brand" href="/"><img src="images/logo.png" /></a>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search a Topic" ng-model="userSearch">
         </div>
-        <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
+        <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            ☰
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="collapsingNavbar" >
             <ul class="nav navbar-nav pull-right">
                 <li class="nav-item">
                     <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Support</a>
                 </li>
-                <li class="nav-item" >
-                    <a class="nav-link" href="/logout">Logout</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">{{dashboard.users}} / Logout</a>
                 </li>
             </ul>
         </div>
