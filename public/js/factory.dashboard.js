@@ -11,7 +11,6 @@ function clientFactory($http) {
             return  $http.get('/whoami')
               .then(function(res) {
                   console.info("factory.dashboard: ", res.data);
-                  // loginThis.getUser();
                   user = res.data;
               }, function(err) {
                   console.error(err);

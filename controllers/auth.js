@@ -95,7 +95,7 @@ module.exports = {
     },
     whoami: (req, res ) => {
         //res.send(req.session.userId);
-        User.findById(req.session.userId, (err, user) => {
+        User.findById(req.session.uid, (err, user) => {
           if(err){
             console.error('MongoDB error:', err);
             res.status(500).json(err);
