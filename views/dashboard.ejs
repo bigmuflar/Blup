@@ -198,6 +198,30 @@
 
 
     <!-- Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">Museum Map</h3>
+            </div
+            <div class="modal-body">
+                <h5 class="floor-text" ng-toggle="floormap = 1">1st</h5>
+                <h5 class="floor-text" ng-toggle="floormap = 2">2nd</h5>
+                <h5 class="floor-text" ng-toggle="floormap = 3">3rd</h5>
+                <h5 class="floor-text" ng-toggle="floormap = 4">4th</h5>
+              <form class="form-horizontal col-sm-12">
+                <div class="maps">
+                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{floormap}}F.jpg"
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        <!--scripts loaded here-->
+
+    <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
