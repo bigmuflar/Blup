@@ -6,7 +6,7 @@ clientFactory.$inject = ['$http'];
 function clientFactory($http) {
     return {
         //CREATE NEW USERS
-        getUser = function() {
+        getUser: function() {
             var user;
             $http({
                 method: 'GET',
