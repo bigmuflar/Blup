@@ -6,13 +6,15 @@ body {
 body, html {
   height:100%;
 }
-.navbar-brand>img{
+.navbar-brand>img {
     width: 75px;
+    float: left;
+    margin-top: 10px;
 }
 input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
-    width: 200px;
+    width: 150px;
+    margin-left: 20px;
     float: left;
-    margin-top: 5px;
 }
 
 /* workaround modal-open padding issue */

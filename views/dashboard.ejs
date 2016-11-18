@@ -17,19 +17,19 @@
     <body ng-controller="DashboardController as dashboard" class="container">
       <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
         <a class="navbar-brand" href="/"><img src="images/logo.png" /></a>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search a Topic" ng-model="userSearch">
-        </div>
         <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
             ☰
         </button>
-        <div class="collapse navbar-toggleable-xs" id="collapsingNavbar" >
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
+        </div>
+        <div class="collapse navbar-toggleable-xs" id="collapsingNavbar" ng-repeat="user in dashboard.users">
             <ul class="nav navbar-nav pull-right">
                 <li class="nav-item">
                     <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Support</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">{{dashboard.users}} / Logout</a>
+                    <a class="nav-link" href="/logout">{{user.username}} / Logout</a>
                 </li>
             </ul>
         </div>
@@ -49,7 +49,7 @@
 
                 <!--toggle sidebar button-->
                 <p class="hidden-md-up">
-                    <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Menu</button>
+                    <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Find</button>
                 </p>
 
                 <h1 class="display-1 hidden-xs-down">
@@ -140,7 +140,7 @@
                         <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">{{exhibit.title}}</h4>
-                            <span>{{exhibit.start_date}} - {{exhibit.end_date}}</span>
+                            <h5>Exhibition open from <span>{{exhibit.start_date}} to {{exhibit.end_date}}</span></h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Button</a>
                         </div>
@@ -167,7 +167,7 @@
                     <div class="card-block">
                         <h4 class="card-title">{{object.title}}</h4>
                         <span>{{object.object_date}}</span>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">{{object.description}}</p>
                         <a href="#" class="btn btn-primary">Button</a>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
     </div>
     <!--/.container-->
     <footer class="container-fluid">
-        <p class="text-right small"><%= new Date().getFullYear() %> Blup</p>
+        <p class="text-right small">&copy;<%= new Date().getFullYear() %> Blup</p>
     </footer>
 
 
@@ -203,7 +203,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h3 id="myModalLabel">We'd Love to Hear From You</h3>
+              <h3 id="myModalLabel">Send us your suggestions or questions!</h3>
             </div>
             <div class="modal-body">
               <form class="form-horizontal col-sm-12">
