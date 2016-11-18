@@ -22,7 +22,8 @@ function dashboard(clientFactory, $http){
       });
 
       clientFactory.getUser().then(function(success){
-        dashboard.users = success.data.data;
+        dashboard.username = success.username;
+        console.log('hitting Username', success.username)
       }, function(error){
         console.log('error on API', error);
       });

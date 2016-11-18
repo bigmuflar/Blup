@@ -32,7 +32,7 @@ module.exports = function(app) {
     });
 
     //USER INFORMATION ONCE LOGGED IN
-    app.get('/api/me', Auth.me);
+    app.get('/whoami', Auth.whoami);
 
     //API routes
     app.get('/api/client/object', API.object);

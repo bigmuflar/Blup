@@ -23,6 +23,11 @@ body, html {
 button.btn.btn-primary-outline.btn-sm {
     margin-top: 10px;
 }
+@media (max-width: 34em)
+.navbar .navbar-brand {
+     float: 0;
+     display: 0;
+}
 
 /* workaround modal-open padding issue */
 body.modal-open {

@@ -93,9 +93,15 @@ module.exports = {
             }
         });
     },
-    me: function(req, res, body) {
-        res.json(req.session);
-        console.log("hitting ME", body);
+    whoami: (req, res ) => {
+        //res.send(req.session.userId);
+        User.findById(req.session.userId, (err, user) => {
+          if(err){
+            console.error('MongoDB error:', err);
+            res.status(500).json(err);
+          }
+          res.send(user);
+        })
     },
     session: (req, res, next) => {
         if( req.session.uid ) {
