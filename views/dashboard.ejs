@@ -20,15 +20,15 @@
         <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
             ☰
         </button>
-        <div class="form-group search col-sm-4 col-md-6">
+        <div class="form-group search col-xs-6 col-md-4">
           <input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
         </div>
-        <div class="collapse navbar-toggleable-xs" id="collapsingNavbar" ng-repeat="user in dashboard.users">
+        <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
             <ul class="nav navbar-nav pull-right">
                 <li class="nav-item">
                     <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Support</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" ng-repeat="user in dashboard.users">
                     <a class="nav-link" href="/logout">{{user.username}} / Logout</a>
                 </li>
             </ul>

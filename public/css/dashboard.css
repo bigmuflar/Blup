@@ -11,25 +11,6 @@ body, html {
     float: left;
 }
 
-/*input.form-control.ng-pristine.ng-untouched.ng-valid.col-sm-up.ng-empty {
-    width: 150px;
-    margin-left: 20px;
-    float: left;
-    margin-top: 0px;
-    height: 40px;
-}
-input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
-    width: 150px;
-    margin-left: 20px;
-    float: left;
-    height: 30px;
-    margin-top: -5px;
-}*/
-
-.pull-right{
-    margin-top: -10px;
-}
-
 /* workaround modal-open padding issue */
 body.modal-open {
     padding-right:0 !important;
