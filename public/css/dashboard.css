@@ -7,14 +7,19 @@ body, html {
   height:100%;
 }
 .navbar-brand>img {
-    width: 75px;
+    width: 50px;
     float: left;
-    margin-top: 10px;
 }
 input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty {
     width: 150px;
     margin-left: 20px;
     float: left;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.pull-right{
+    margin-top: -10px;
 }
 
 /* workaround modal-open padding issue */
