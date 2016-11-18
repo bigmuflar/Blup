@@ -22,12 +22,12 @@ function dashboard(clientFactory, $http){
       });
 
       clientFactory.getUser().then(function(success){
-        dashboard.username = success;
-        console.log('hitting Username', success)
+        dashboard.username = success.data;
+        console.log('hitting Username', success.data)
       }, function(error){
         console.log('error on API', error);
       });
-      // 
+      //
       // var userFactory = {
       //   clientFactory.getUser: clientFacotry.getUser;
       // }
