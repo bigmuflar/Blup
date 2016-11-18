@@ -8,13 +8,7 @@ function clientFactory($http) {
         //CREATE NEW USERS
         getUser: function() {
             var user;
-            return  $http.get('/whoami')
-              .then(function(res) {
-                  console.info("factory.dashboard: ", res.data);
-                  user = res.data;
-              }, function(err) {
-                  console.error(err);
-              });
+            return  $http.get('/whoami');
         },
         getExhibit: function(){
             return $http.get('/api/client/exhibit');
