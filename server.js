@@ -52,8 +52,8 @@ HTTP.createServer(app).listen( ports.http );
 
 try {
     var httpsConfig = { // https://nodejs.org/api/https.html
-         key:  fs.readFileSync('/etc/letsencrypt/live/justindegonda.com/privkey.pem'),
-         cert: fs.readFileSync('/etc/letsencrypt/live/justindegonda.com/cert.pem')
+         key:  fs.readFileSync('/etc/letsencrypt/live/ceibapc.com/privkey.pem'),
+         cert: fs.readFileSync('/etc/letsencrypt/live/ceibapc.com/cert.pem')
     };
     HTTPS.createServer( httpsConfig, app ).listen( ports.https );
 } catch (e) {
@@ -68,10 +68,7 @@ app.use(
     bodyParser.json(), // mount the body-parsing middleware (parse payloads into req.body)
     bodyParser.urlencoded({ extended:true })
 );
-//app.use(function(req,res,next){
-//  console.log(req.subdomain);
-//  next();
-//})
+
 
 // enable server-side rendering
 app.set('view engine','ejs');

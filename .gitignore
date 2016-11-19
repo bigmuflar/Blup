@@ -47,3 +47,7 @@ certbot-auto
 
 #NODE PASSPORT
 node-passbook
+
+# Data
+data
+db
