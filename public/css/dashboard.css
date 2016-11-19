@@ -100,7 +100,7 @@ body.modal-open {
         margin-left: .1rem;
     }
     .navbar .navbar-nav {
-        float:none !important;
+        float: left;
     }
 }
 
