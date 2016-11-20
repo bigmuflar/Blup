@@ -1,7 +1,7 @@
 require('colors') // awesome colors in your console logs!
 
 var HTTP = require('http'),
-    // HTTPS = require('https'),
+    HTTPS = require('https'),
     config = require('./package'),
     request = require('request'),
     mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
@@ -22,7 +22,7 @@ var HTTP = require('http'),
     fs = require('fs'),
     ports = {
         http:  process.env.PORT || 80,      // default HTTP port
-        // https: process.env.PORT_SSL || 443  // default HTTPS port
+        https: process.env.PORT_SSL || 443  // default HTTPS port
     },
     sessions = require('client-sessions')({ // session cookie
         cookieName : config.name, // cookie name (within document.cookies on the Frontend)
@@ -39,26 +39,26 @@ var HTTP = require('http'),
 
 
 //MIDLEWARE
-// app.all('*', ( req, res, next ) => {
-//     if( req.protocol === 'http' ) {
-//         res.set('X-Forwarded-Proto','https');
-//         res.redirect('https://'+ req.headers.host + req.url);
-//     } else {
-//         next();
-//     }
-// });
+ app.all('*', ( req, res, next ) => {
+     if( req.protocol === 'http' ) {
+         res.set('X-Forwarded-Proto','https');
+         res.redirect('https://'+ req.headers.host + req.url);
+     } else {
+         next();
+     }
+ });
 
 HTTP.createServer(app).listen( ports.http );
 
-// try {
-//     var httpsConfig = { // https://nodejs.org/api/https.html
-//          key:  fs.readFileSync('/etc/letsencrypt/live/ceibapc.com/privkey.pem'),
-//          cert: fs.readFileSync('/etc/letsencrypt/live/ceibapc.com/cert.pem')
-//     };
-//     HTTPS.createServer( httpsConfig, app ).listen( ports.https );
-// } catch (e) {
-//     console.error('Could not HTTPS server:', e);
-// }
+ try {
+     var httpsConfig = { // https://nodejs.org/api/https.html
+          key:  fs.readFileSync('/etc/letsencrypt/live/www.blup.life/privkey.pem'),
+          cert: fs.readFileSync('/etc/letsencrypt/live/www.blup.life/cert.pem')
+     };
+     HTTPS.createServer( httpsConfig, app ).listen( ports.https );
+ } catch (e) {
+     console.error('Could not HTTPS server:', e);
+ }
 
 // server setup
 app.use(
