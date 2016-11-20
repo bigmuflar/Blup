@@ -95,10 +95,9 @@
               // reset the value in the form
               $('#password').val('');
               // validate password
-              if (password !== 'mypassword') {
+              if ({{ auth.login.message }}==='Invalid username or password') {
                 $('.login-form__padlock-bolt').addClass('open');
               }
-              alert('welcome!');
             });
           });
         </script>
