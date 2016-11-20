@@ -2,6 +2,7 @@
 
 var Auth = require('./controllers/auth'),
     API = require('./controllers/api.js');
+    app.engine('html', require('ejs').renderFile);
 //var express = require('express');
 
 module.exports = function(app) {
@@ -37,15 +38,15 @@ module.exports = function(app) {
     //Beacon routes
     app.get('/purple', (req, res) => {
       console.log('This is purple');
-      res.sendfile('views/purple.ejs')
+      res.render('views/purple')
     });
     app.get('/green', (req, res) => {
       console.log('This is green');
-      res.sendfile('views/green.ejs')
+      res.render('views/green')
     });
     app.get('/blue', (req, res) => {
       console.log('This is blue');
-      res.sendfile('views/blue.ejs')
+      res.render('views/blue')
     });
 
     //API routes
