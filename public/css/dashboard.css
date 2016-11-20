@@ -31,11 +31,10 @@ button.btn.btn-primary-outline.btn-sm {
 
 /* User Nav */
 .open>.dropdown-menu {
-    margin-left: -100px;
+    /*margin-left: -100px;*/
 }
 a.dropdown-item {
     width: 100px;
-    float: right;
 }
 
 /* workaround modal-open padding issue */
