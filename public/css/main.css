@@ -244,3 +244,9 @@ a.nav-link:hover {
     margin-top: 7rem;
   }
 }
+
+/* Modal
+-------------------------------------------------- */
+.modal-footer {
+    border-top: 0px;
+}
