@@ -25,8 +25,8 @@ button.btn.btn-primary-outline.btn-sm {
 }
 @media (max-width: 34em)
 .navbar .navbar-brand {
-     float: 0;
-     display: 0;
+    width: 40px;
+    height: 30px;
 }
 
 /* workaround modal-open padding issue */
@@ -76,7 +76,6 @@ body.modal-open {
 @media screen and (max-width: 34em) {
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -45%;
   }
 
   .row-offcanvas-left.active {
