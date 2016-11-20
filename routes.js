@@ -2,7 +2,6 @@
 
 var Auth = require('./controllers/auth'),
     API = require('./controllers/api.js');
-    app.engine('html', require('ejs').renderFile);
 //var express = require('express');
 
 module.exports = function(app) {
@@ -14,7 +13,7 @@ module.exports = function(app) {
 //      	console.log('not hitting sub');
 //	}
 //    };
-
+    app.engine('html', require('ejs').renderFile);
     // SITE ROOT
     app.get('/', (req, res) => { // replace this route with a landing or home page, or break this out into another controller if needed!
         //blup(req,res,next);
