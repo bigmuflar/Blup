@@ -24,16 +24,16 @@
           <input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
         </div>
         <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
-            <ul class="nav navbar-nav pull-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Support</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="" data-target="#mapModal" data-toggle="modal">Map</a>
-                </li>
-                <li class="nav-item" ng-model="dashboard.username">
-                    <a class="nav-link" href="/logout"><span ng-bind="dashboard.username"></span></a>
-                </li>
+            <ul class="nav navbar-nav pull-right nav-stacked">
+              <li class="nav-item" ng-model="dashboard.username">
+                  <a class="nav-link" href="/logout"><span ng-bind="dashboard.username"></span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Support</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="" data-target="#mapModal" data-toggle="modal">Map</a>
+              </li>
             </ul>
         </div>
     </nav>
