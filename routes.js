@@ -1,8 +1,9 @@
 'use strict'
 
 var Auth = require('./controllers/auth'),
-    API = require('./controllers/api.js');
-//var express = require('express');
+    API = require('./controllers/api.js'),
+    express = require('express'),
+    fileserver = express.static('views');// turn the public folder into a file server
 
 module.exports = function(app) {
 //    var blup = function(req,res,next){
