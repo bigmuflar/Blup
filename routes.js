@@ -34,6 +34,17 @@ module.exports = function(app) {
     //USER INFORMATION ONCE LOGGED IN
     app.get('/whoami', Auth.whoami);
 
+    //Beacon routes
+    app.get('/purple', (req, res) => {
+      res.render('purple', req.session)
+    });
+    app.get('/green', (req, res) => {
+      res.render('green', req.session)
+    });
+    app.get('/blue', (req, res) => {
+      res.render('blue', req.session)
+    });
+
     //API routes
     app.get('/api/client/object', API.object);
     app.get('/api/client/exhibit', API.exhibit);
