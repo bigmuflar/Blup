@@ -36,13 +36,13 @@ module.exports = function(app) {
 
     //Beacon routes
     app.get('/purple', (req, res) => {
-      res.render('purple', req.session)
+      res.render('purple')
     });
     app.get('/green', (req, res) => {
-      res.render('green', req.session)
+      res.render('green')
     });
     app.get('/blue', (req, res) => {
-      res.render('blue', req.session)
+      res.render('blue')
     });
 
     //API routes
