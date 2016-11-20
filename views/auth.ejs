@@ -8,6 +8,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
         <script src="/js/module.auth.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,8 +23,9 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div id="login" role="tabpanel" class="tab-pane active">
-                    <form ng-submit="auth.login.submit($event)">
-                        <h1 class="text-center">Log In</h1>
+                    <form id="logform" ng-submit="auth.login.submit($event)">
+                      <div class="login-form__padlock-bolt"></div>
+                      <div class="login-form__padlock"></div>
                         <fieldset class="form-group">
                             <label class="sr-only" for="email">Email</label>
                             <div class="input-group">
@@ -35,10 +37,10 @@
                             <label class="sr-only" for="password">Password</label>
                             <div class="input-group">
                                 <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                                <input required placeholder="Password" class="form-control" type="password" ng-model="auth.payload.password"/>
+                                <input required placeholder="Password" id="password" class="form-control" type="password" ng-model="auth.payload.password"/>
                             </div>
                         </fieldset>
-                                                <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+                            <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
                         <input class="btn btn-primary" type="submit" value="Login">
                     </form>
                     <!-- Nav tabs -->
@@ -84,5 +86,21 @@
                 </div>
             </div>
         </section>
+        <script>
+          $(document).ready(function() {
+
+            $('#logform').submit((e) => {
+              e.preventDefault();
+              const password = $('#password').val();
+              // reset the value in the form
+              $('#password').val('');
+              // validate password
+              if (password !== 'mypassword') {
+                $('.login-form__padlock-bolt').addClass('open');
+              }
+              alert('welcome!');
+            });
+          });
+        </script>
     </body>
 </html>
