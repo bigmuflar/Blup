@@ -36,7 +36,7 @@ module.exports = function(app) {
 
     //Beacon routes
     app.get('/purple', (req, res) => {
-      res.render('purple')
+      res.send('This is purple')
     });
     app.get('/green', (req, res) => {
       res.render('green')
