@@ -28,7 +28,7 @@ module.exports = function(app) {
     // DAHSBOARD
     app.all('/dashboard*', Auth.session); // protect all dashboard routes from unauthorized users
     app.get('/dashboard', (req, res) => { // renders the dashboard, break this out into another controller if needed!
-    	res.render('dashboard', req.session)
+    	res.render('dashboard', req.session);
     });
 
     //USER INFORMATION ONCE LOGGED IN
@@ -36,13 +36,14 @@ module.exports = function(app) {
 
     //Beacon routes
     app.get('/purple', (req, res) => {
-      res.send('This is purple')
+      res.send('This is purple');
+      res.send('../view/purple')
     });
     app.get('/green', (req, res) => {
-      res.render('green')
+      res.render('green');
     });
     app.get('/blue', (req, res) => {
-      res.render('blue')
+      res.render('blue');
     });
 
     //API routes
