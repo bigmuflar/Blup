@@ -31,7 +31,7 @@ body {
   position: relative;
   top: 65px;
   height: 120px;
-  background: url('../images/lock-bolt.svg') no-repeat center/contain;
+  background: url('/images/lock-bolt.svg') no-repeat center/contain;
 }
 .login-form__padlock-bolt.open {
   animation: open 0.3s;
@@ -42,7 +42,7 @@ body {
 .login-form__padlock {
   position: relative;
   height: 100px;
-  background: url('../images/lock.svg') no-repeat center/contain;
+  background: url('/images/lock.svg') no-repeat center/contain;
 }
 .login-form__input {
   font-weight: 200;
