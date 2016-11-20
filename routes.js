@@ -37,15 +37,15 @@ module.exports = function(app) {
     //Beacon routes
     app.get('/purple', (req, res) => {
       console.log('This is purple');
-      res.sendfile('views/purple.html')
+      res.sendfile('views/purple')
     });
     app.get('/green', (req, res) => {
       console.log('This is green');
-      res.sendfile('views/green.html')
+      res.sendfile('views/green')
     });
     app.get('/blue', (req, res) => {
       console.log('This is blue');
-      res.sendfile('views/blue.html')
+      res.sendfile('views/blue')
     });
 
     //API routes
