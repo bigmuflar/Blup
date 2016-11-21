@@ -19,7 +19,7 @@
       <hr>
       <h2 id="artifacts">Nearby Artifact</h2>
       <div class="card-columns">
-        <div class="card" ng-repeat="object in beaconCtrl.artifacts | filter : {'id': 1628} :true>
+        <div class="card" ng-repeat="object in beaconCtrl.artifacts | filter : {id: 1628} :true>
             <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
             <div class="card-block">
                 <h4 class="card-title">{{object.title}}</h4>
