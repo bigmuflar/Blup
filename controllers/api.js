@@ -52,6 +52,7 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
               exec("curl 'https://cloud.estimote.com/v1/beacons' -X GET -u blup-estimote-app-itz:21d53a7dc431ed68ee49dc437b2f0a83 -H 'Accept: application/json'", (error, stdout, stderr) => {
                 if (error) {
                   console.error(`exec error: ${error}`);
+                  console.log('woops!');
                   return;
                 }
                 console.log('error on devices api');
