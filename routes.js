@@ -2,8 +2,6 @@
 
 var Auth = require('./controllers/auth'),
     API = require('./controllers/api.js'),
-    express = require('express'),
-    fileserver = express.static('views');// turn the public folder into a file server
 
 module.exports = function(app) {
 //    var blup = function(req,res,next){
@@ -14,7 +12,8 @@ module.exports = function(app) {
 //      	console.log('not hitting sub');
 //	}
 //    };
-    app.engine('html', require('ejs').renderFile);
+    app.set('view engine', 'ejs');
+
     // SITE ROOT
     app.get('/', (req, res) => { // replace this route with a landing or home page, or break this out into another controller if needed!
         //blup(req,res,next);
@@ -38,15 +37,15 @@ module.exports = function(app) {
     //Beacon routes
     app.get('/purple', (req, res) => {
       console.log('This is purple');
-      res.render('/purple')
+      res.render('purple')
     });
     app.get('/green', (req, res) => {
       console.log('This is green');
-      res.render('/green')
+      res.render('green')
     });
     app.get('/blue', (req, res) => {
       console.log('This is blue');
-      res.render('/blue')
+      res.render('blue')
     });
 
     //API routes
