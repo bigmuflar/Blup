@@ -46,12 +46,12 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
         },
         devices: (req, res) => {
           var options = {
-              url: 'https://cloud.estimote.com/v2/devices',
-              headers: {
-                  'id': process.env.YOUR_SDK_APP_ID,
-                  'token': process.env.YOUR_SDK_APP_TOKEN,
-                  'Accept': 'application/json'
-              }
+              url: 'https://cloud.estimote.com/v2/devices'
+              // headers: {
+              //     'id': process.env.YOUR_SDK_APP_ID,
+              //     'token': process.env.YOUR_SDK_APP_TOKEN,
+              //     'Accept': 'application/json'
+              // }
           };
           console.log(options);
           function callback(error, response, body) {
@@ -59,7 +59,7 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
                 console.log(response.data);
                 console.log("response",response);
                 res.send(body);
-              } else{
+              }else{
                   console.log('error on devices api');
                   res.send('error api', error);
               }
