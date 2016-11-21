@@ -18,7 +18,7 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
               // console.log("response",response);
               res.send(body);
             }else{
-              console.log('error on api');
+              console.log('error on object api');
               res.send('error api', error);
             }
           }
@@ -38,7 +38,7 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
                 // console.log("response",response);
                 res.send(body);
               }else{
-                console.log('error on api');
+                console.log('error on exhibit api');
                 res.send('error api', error);
               }
             }
@@ -47,17 +47,21 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
         devices: (req, res) => {
           var options = {
               url: 'https://cloud.estimote.com/v2/devices',
-              headers: headers,
-              auth: {
-                  'user': process.env.YOUR_SDK_APP_ID,
-                  'pass': process.env.YOUR_SDK_APP_TOKEN
+              headers: {
+                  'id': process.env.YOUR_SDK_APP_ID,
+                  'token': process.env.YOUR_SDK_APP_TOKEN
               }
           };
-
+          console.log(options);
           function callback(error, response, body) {
               if (!error && response.statusCode == 200) {
-                  console.log(body);
+                console.log(response.data);
+                console.log("response",response);
+                res.send(body);
+              } else{
+                  console.log('error on devices api');
                   res.send('error api', error);
+              }
               }
           }
 
