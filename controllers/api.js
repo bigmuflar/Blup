@@ -49,7 +49,8 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
               url: 'https://cloud.estimote.com/v2/devices',
               headers: {
                   'id': process.env.YOUR_SDK_APP_ID,
-                  'token': process.env.YOUR_SDK_APP_TOKEN
+                  'token': process.env.YOUR_SDK_APP_TOKEN,
+                  'Accept': 'application/json'
               }
           };
           console.log(options);
