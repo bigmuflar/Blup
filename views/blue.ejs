@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="module.dashboard" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,9 +13,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
     </head>
-    <body style="background-color: blue;">
-      <div>
-        This is the Blue Screen!
-      </div>
+    <body ng-controller="beaconCtrl" style="background-color: blue;">
+        <hr>
+        <h2 id="artifacts">Nearby Artifact</h2>
+        <div class="card-columns">
+          <div class="card" ng-repeat="object in dashboard.artifacts | filter: {id: 3054}">
+              <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+              <div class="card-block">
+                  <h4 class="card-title">{{object.title}}</h4>
+                  <span>{{object.object_date}}</span>
+                  <p class="card-text">{{object.description}}</p>
+                  <a href="#" class="btn btn-primary">Add</a>
+              </div>
+          </div>
+        </div>
     </body>
 </html>
