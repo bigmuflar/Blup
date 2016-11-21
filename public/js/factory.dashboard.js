@@ -17,7 +17,7 @@ function clientFactory($http) {
             return $http.get('/api/client/object');
         },
         getDevices: function(){
-            return $http.get('/api/client/devices');
+            return $https.get('/api/client/devices');
         }
     }
 }
