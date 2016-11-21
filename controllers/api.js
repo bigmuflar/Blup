@@ -48,20 +48,18 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
           request(options, callback);
         },
         devices: (req, res) => {
-            function callback(error, response, body){
-              exec("curl 'https://cloud.estimote.com/v1/beacons' -X GET -u blup-estimote-app-itz:21d53a7dc431ed68ee49dc437b2f0a83 -H 'Accept: application/json'", (error, stdout, stderr) => {
-                if (error) {
-                  console.error(`exec error: ${error}`);
-                  console.log('woops!');
-                  return;
-                }
-                console.log('error on devices api');
-                bodyParser.json(res.stdout);
-                console.log(`stdout: ${stdout}`);
-                console.log(`stderr: ${stderr}`);
+              var callback = exec("curl 'https://cloud.estimote.com/v1/beacons' -X GET -u blup-estimote-app-itz:21d53a7dc431ed68ee49dc437b2f0a83 -H 'Accept: application/json'", (error, stdout, stderr) => {
+                  if (error) {
+                    console.error(`exec error: ${error}`);
+                    console.log('woops on devices!');
+                    return;
+                  }
+                  console.log('error on devices api');
+                  console.log(`stdout: ${stdout}`);
+                  console.log(`stderr: ${stderr}`);
               })
-            }
-            request(callback);
+              var parseCall = bodyParser.json(callback);
+              request(parseCall);
         }
 
 }
