@@ -1,7 +1,7 @@
 'use strict'
 
 var Auth = require('./controllers/auth'),
-    API = require('./controllers/api.js'),
+    API = require('./controllers/api.js');
 
 module.exports = function(app) {
 //    var blup = function(req,res,next){
