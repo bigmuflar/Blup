@@ -1,7 +1,9 @@
 var endpoint = 'https://www.brooklynmuseum.org/api/v2',
     dotenv  = require('dotenv').config(),
     request = require('request'),
-    headers = {'Accept': 'application/json'};
+    app = express(),
+    exec = require('child_process').exec;
+
 
     module.exports = {
         object: (req, res) => {
@@ -45,25 +47,18 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
           request(options, callback);
         },
         devices: (req, res) => {
-          var options = {
-              url: 'https://cloud.estimote.com/v2/devices',
-              headers: {
-                  'id': process.env.APPID,
-                  'token': process.env.APPTOKEN,
-                  'Accept': 'application/json'
+          function callback(error,response, body){
+            exec("curl 'https://cloud.estimote.com/v1/beacons' -X GET -u blup-estimote-app-itz:21d53a7dc431ed68ee49dc437b2f0a83 -H 'Accept: application/json'", (error, stdout, stderr) => {
+              if (error) {
+                console.error(`exec error: ${error}`);
+                return;
               }
-          };
-          console.log(options);
-          function callback(error, response, body) {
-              if (!error && response.statusCode == 200) {
-                console.log(response.data);
-                console.log("response",response);
-                res.send(body);
-              }else{
-                  console.log('error on devices api');
-                  res.send('error api', error);
-              }
-          }
-          request(options, callback);
+              console.log('error on devices api');
+              bodyParser.json(res.stdout);
+              console.log(`stdout: ${stdout}`);
+              console.log(`stderr: ${stderr}`);
+            });
         }
+        request(options, callback);
     }
+}
