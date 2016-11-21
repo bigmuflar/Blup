@@ -62,9 +62,7 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
                   console.log('error on devices api');
                   res.send('error api', error);
               }
-              }
           }
-
           request(options, callback);
         }
     }
