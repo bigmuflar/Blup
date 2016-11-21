@@ -44,5 +44,5 @@ module.exports = function(app) {
     //API routes
     app.get('/api/client/object', API.object);
     app.get('/api/client/exhibit', API.exhibit);
-    app.get('/api/client/exhibit', API.devices);
+    app.get('/api/client/devices', API.devices);
 };
