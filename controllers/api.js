@@ -47,11 +47,11 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
         devices: (req, res) => {
           var options = {
               url: 'https://cloud.estimote.com/v2/devices'
-              // headers: {
-              //     'id': process.env.YOUR_SDK_APP_ID,
-              //     'token': process.env.YOUR_SDK_APP_TOKEN,
-              //     'Accept': 'application/json'
-              // }
+              headers: {
+                  'id': process.env.APPID,
+                  'token': process.env.APPTOKEN,
+                  'Accept': 'application/json'
+              }
           };
           console.log(options);
           function callback(error, response, body) {
