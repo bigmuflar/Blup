@@ -1,5 +1,4 @@
-var endpoint = 'https://www.brooklynmuseum.org/api/v2',
-    dotenv  = require('dotenv').config(),
+var dotenv  = require('dotenv').config(),
     request = require('request'),
     express = require('express'),
     app = express(), // initialize express
