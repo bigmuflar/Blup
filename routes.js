@@ -4,14 +4,7 @@ var Auth = require('./controllers/auth'),
     API = require('./controllers/api.js');
 
 module.exports = function(app) {
-//    var blup = function(req,res,next){
-//      if(req.subdomains[0]!="blup"){
-//        console.log('hitting sub');
-//	next();
-//     }else{
-//      	console.log('not hitting sub');
-//	}
-//    };
+
     app.set('view engine', 'ejs');
 
     // SITE ROOT
@@ -51,8 +44,5 @@ module.exports = function(app) {
     //API routes
     app.get('/api/client/object', API.object);
     app.get('/api/client/exhibit', API.exhibit);
-//    app.get('/', (req, res, next) => {
-//	console.log('portfolio');
-//     	res.send('There was an issue rendering the portfolio site....');
-//    });
-}
+    app.get('/api/client/exhibit', API.devices);
+};

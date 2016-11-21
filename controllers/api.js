@@ -1,6 +1,7 @@
 var endpoint = 'https://www.brooklynmuseum.org/api/v2',
     dotenv  = require('dotenv').config(),
-    request = require('request');
+    request = require('request'),
+    headers = {'Accept': 'application/json'};
 
     module.exports = {
         object: (req, res) => {
@@ -41,6 +42,24 @@ var endpoint = 'https://www.brooklynmuseum.org/api/v2',
                 res.send('error api', error);
               }
             }
+          request(options, callback);
+        },
+        devices: (req, res) => {
+          var options = {
+              url: 'https://cloud.estimote.com/v2/devices',
+              headers: headers,
+              auth: {
+                  'user': process.env.YOUR_SDK_APP_ID,
+                  'pass': process.env.YOUR_SDK_APP_TOKEN
+              }
+          };
+
+          function callback(error, response, body) {
+              if (!error && response.statusCode == 200) {
+                  console.log(body);
+                  res.send('error api', error);
+              }
+          }
 
           request(options, callback);
         }

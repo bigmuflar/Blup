@@ -16,5 +16,8 @@ function clientFactory($http) {
         getObject: function(){
             return $http.get('/api/client/object');
         },
+        getDevices: function(){
+            return $http.get('/api/client/devices');
+        }
     }
 }
