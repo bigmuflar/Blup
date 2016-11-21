@@ -28,6 +28,13 @@ function dashboard(clientFactory, $http){
         console.log('error on API', error);
       });
 
+      clientFactory.getDevices().then(function(success){
+        dashboard.device = success.data
+        console.log('devices api is working', success.data);
+      }, function(error){
+        console.log('error on API', error);
+      });
+
 };
 
 function fCtrl() {
