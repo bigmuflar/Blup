@@ -8,7 +8,7 @@ function beaconCtrl(clientFactory, $http){
     console.log('hitting beacon dashboard');
 
       clientFactory.getExhibit().then(function(success){
-        dashboard.exhibits = success.data.data;
+        beaconCtrl.exhibits = success.data.data;
         // console.log("dashboard data", getExhibit.data);
         // console.log('API is working', success);
       },  function(error){
@@ -16,13 +16,13 @@ function beaconCtrl(clientFactory, $http){
       });
 
       clientFactory.getObject().then(function(success){
-        dashboard.artifacts = success.data.data;
+        beaconCtrl.artifacts = success.data.data;
       }, function(error){
         console.log('error on get Object API', error);
       });
 
       clientFactory.getDevices().then(function(success){
-        dashboard.device = success.data
+        beaconCtrl.device = success.data
         console.log('devices api is working', success.data);
       }, function(error){
         console.log('error on API', error);
