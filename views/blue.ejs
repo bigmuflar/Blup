@@ -11,21 +11,22 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="/js/controller.beacons.js"></script>
+        <script src="/js/factory.dashboard.js"></script>
 
     </head>
-    <body ng-controller="beaconCtrl">
-        <hr>
-        <h2 id="artifacts">Nearby Artifact</h2>
-        <div class="card-columns">
-          <div class="card" ng-repeat="object in dashboard.artifacts | filter: {id: 3054}">
-              <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
-              <div class="card-block">
-                  <h4 class="card-title">{{object.title}}</h4>
-                  <span>{{object.object_date}}</span>
-                  <p class="card-text">{{object.description}}</p>
-                  <a href="#" class="btn btn-primary">Add</a>
-              </div>
-          </div>
+    <body ng-controller="BeaconController" style="background-color:green;">
+      <hr>
+      <h2 id="artifacts">Nearby Artifact</h2>
+      <div class="card-columns">
+        <div class="card" ng-repeat="object in beaconCtrl.artifacts">
+            <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">{{object.title}}</h4>
+                <span>{{object.object_date}}</span>
+                <p class="card-text">{{object.description}}</p>
+            </div>
         </div>
+      </div>
     </body>
 </html>
