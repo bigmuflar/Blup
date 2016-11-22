@@ -31,15 +31,28 @@
                   <h6 class="list-group-item-text">{{object.artists.name}}</h6>
                   <p class="card-text">{{object.description}}</p>
               <div class="card-footer">
-                  <span fa fa-google-plus-square></span>
-                  <span fa fa-facebook-square></span>
-                  <span fa fa-linkedin-square></span>
-                  <span fa fa-pinterest-square></span>
-                  <span fa fa-reddit-square></span>
-                  <span fa fa-twitter-square></span>
+                <span class="fa fa-google-plus-square"></span>
+                <span class="fa fa-facebook-square"></span>
+                <span class="fa fa-linkedin-square"></span>
+                <span class="fa fa-pinterest-square"></span>
+                <span class="fa fa-reddit-square"></span>
+                <span class="fa fa-twitter-square"></span>
+                <div class="form-group search">
+                  <input type="text" class="form-control" placeholder="Search" ng-model="query[queryBy]">
+                  <select ng-model="queryBy">
+                      <option value="$" disabled>Filter By</option>
+                      <option value="name">Collections</option>
+                      <option value="company">Exhibits</option>
+                      <option value="designation">Artifacts</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
+          <tr ng-repeat="data in beaconCtrl | filter:query">
+              <td>{{data.exhibits}}</td>
+              <td>{{data.artifacts}}</td>
+          </tr>
         </div>
       </div>
     </body>

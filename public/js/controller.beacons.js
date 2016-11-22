@@ -5,6 +5,8 @@ beaconCtrl.$inject = ['clientFactory','$http'];
 
 function beaconCtrl(clientFactory, $http){
     var beaconCtrl = this;
+    this.query = {};
+    this.queryBy = '$';
     console.log('hitting beacon dashboard');
 
       clientFactory.getExhibit().then(function(success){
