@@ -18,12 +18,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
-    <body ng-controller="BeaconController as beaconCtrl">
+    <body ng-controller="BeaconController as beaconCtrl"  ng-repeat="object in beaconCtrl.artifacts | filter: {id: 1628}:true">
       <div class="tite">
         <hr>
         <h2 class="card-title text-*-center">{{object.title}}</h2>
         <div class="card-block">
-        <div class="card" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 1628}:true">
+        <div class="card">
             <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
             <div class="card-block text-*-center">
                 <h4 class="card-subtitle">{{object.object_date}}</h4>
