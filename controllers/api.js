@@ -1,6 +1,7 @@
 var dotenv  = require('dotenv').config(),
     request = require('request'),
     express = require('express'),
+    bodyParser = require('body-parser'),
     app = express(), // initialize express
     exec = require('child_process').exec;
 
