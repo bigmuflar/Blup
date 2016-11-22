@@ -18,8 +18,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
-    <body ng-controller="BeaconController as beaconCtrl" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 3054}:true">
-      <div class="tite">
+    <body ng-controller="BeaconController as beaconCtrl">
+      <div class="title" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 3054}:true">
         <hr>
         <h2 class="card-title text-*-center">{{object.title}}</h2>
         <div class="card-block">
