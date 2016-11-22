@@ -55,7 +55,7 @@ var dotenv  = require('dotenv').config(),
                   }
                   console.log('error on devices api');
                   console.log(`stdout: ${stdout}`);
-                  var parseCall = bodyParser.json('${stdout}');
+                  var parseCall = bodyParser.json(stdout);
                   console.log(`stderr: ${stderr}`);
               })
               request(parseCall);
