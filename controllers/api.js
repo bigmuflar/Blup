@@ -52,13 +52,12 @@ var dotenv  = require('dotenv').config(),
                   if (error) {
                     console.error(`exec error: ${error}`);
                     console.log('woops on devices!');
-                    return;
-                  }
+                    res.send(error);
+                  }else{
                   console.log(`stdout: ${stdout}`);
                   res.send(bodyParser.json(stdout));
                   console.log(`stderr: ${stderr}`);
-              })
+                })
               callback();
         }
-
 }
