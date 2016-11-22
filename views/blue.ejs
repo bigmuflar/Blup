@@ -33,12 +33,12 @@
               <div class="card-footer">
                 <h6>Share</h6>
                 <div class="social">
-                  <span class="fa fa-google-plus-square fa-3x"></span>
-                  <span class="fa fa-facebook-square fa-3x"></span>
-                  <span class="fa fa-linkedin-square fa-3x"></span>
-                  <span class="fa fa-pinterest-square fa-3x"></span>
-                  <span class="fa fa-reddit-square fa-3x"></span>
-                  <span class="fa fa-twitter-square fa-3x"></span>
+                  <span class="fa fa-google-plus-square fa-3x" href="#"></span>
+                  <span class="fa fa-facebook-square fa-3x" href="#"></span>
+                  <span class="fa fa-linkedin-square fa-3x" href="#"></span>
+                  <span class="fa fa-pinterest-square fa-3x" href="#"></span>
+                  <span class="fa fa-reddit-square fa-3x" href="#"></span>
+                  <span class="fa fa-twitter-square fa-3x" href="#"></span>
                 </div>
               </tr>
                 <div class="input-group search">
@@ -56,8 +56,14 @@
         </div>
       </div>
       <tr ng-repeat="data in beaconCtrl.artifacts | filter:query">
-          <td>{{data.exhibits}}</td>
-          <td>{{data.artifacts}}</td>
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-block">
+              <td>{{data.title}}</td>
+              <td>{{data.description}}</td>
+            </div>
+          </div>
+        </div>
       </tr>
     </div>
   </body>
