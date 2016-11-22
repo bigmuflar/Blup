@@ -54,7 +54,6 @@ var dotenv  = require('dotenv').config(),
                     console.log('woops on devices!');
                     res.send(error);
                   }else{
-                  console.log(`stdout: ${stdout}`);
                   res.send(stdout);
                   console.log(`stderr: ${stderr}`);
                 }
