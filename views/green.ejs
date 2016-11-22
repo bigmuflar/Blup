@@ -21,23 +21,22 @@
     <body ng-controller="BeaconController as beaconCtrl">
       <div class="tite">
         <hr>
-        <h2 class="card-title">Nearby Artifact</h2>
+        <h2 class="card-title text-*-center">{{object.title}}</h2>
         <div class="card-block">
         <div class="card" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 1628}:true">
             <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">{{object.title}}</h4>
-                <h5 class="card-subtitle">{{object.object_date}}</span>
-                <p class="list-group-item-text">{{object.medium}}</p>
-                <p class="list-group-item-text">{{object.artists.name}}</p>
+            <div class="card-block text-*-center">
+                <h4 class="card-subtitle">{{object.object_date}}</h4>
+                <h5> class="list-group-item-text">{{object.medium}}</h5>
+                <h6> class="list-group-item-text">{{object.artists.name}}</h6>
                 <p class="card-text">{{object.description}}</p>
             <div class="card-footer">
-                <span fa fa-google-plus-square></span>
-                <span fa fa-facebook-square></span>
-                <span fa fa-linkedin-square></span>
-                <span fa fa-pinterest-square></span>
-                <span fa fa-reddit-square></span>
-                <span fa fa-twitter-square></span>
+                <span class="fa fa-google-plus-square"></span>
+                <span class="fa fa-facebook-square"></span>
+                <span class="fa fa-linkedin-square"></span>
+                <span class="fa fa-pinterest-square"></span>
+                <span class="fa fa-reddit-square"></span>
+                <span class="fa fa-twitter-square"></span>
             </div>
             </div>
         </div>
