@@ -19,43 +19,46 @@
 
     </head>
     <body ng-controller="BeaconController as beaconCtrl">
-      <div class="title" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 3054}:true">
-        <hr>
-        <h2 class="card-title text-xs-center">{{object.title}}</h2>
-        <div class="card-block">
-          <div class="card">
-              <img class="card-img-top img-fluid" style="margin:0 auto;" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
-              <div class="card-block text-xs-center">
-                  <h4 class="card-subtitle">{{object.object_date}}</h4>
-                  <h5 class="list-group-item-text">{{object.medium}}</h5>
-                  <h6 class="list-group-item-text">{{object.artists.name}}</h6>
-                  <p class="card-text">{{object.description}}</p>
-              <div class="card-footer">
-                <h6>Share</h6>
-                <div class="social">
-                  <span class="fa fa-google-plus-square fa-3x" href="#"></span>
-                  <span class="fa fa-facebook-square fa-3x" href="#"></span>
-                  <span class="fa fa-linkedin-square fa-3x" href="#"></span>
-                  <span class="fa fa-pinterest-square fa-3x" href="#"></span>
-                  <span class="fa fa-reddit-square fa-3x" href="#"></span>
-                  <span class="fa fa-twitter-square fa-3x" href="#"></span>
-                </div>
-              </tr>
-                <div class="input-group search">
-                  <input type="text" class="form-control" placeholder="Search" aria-label="Text input with dropdown button" ng-model="query[queryBy]">
-                  <div class="input-group-btn">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Exhibits</button>
-                      <div class="dropdown-menu" ng-model="queryBy">
-                        <a class="dropdown-item" href="#">Exhibits</a>
-                        <a class="dropdown-item" href="#">Artifacts</a>
-                      </div>
+      <div class="beacon-item">
+        <div class="title" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 3054}:true">
+          <hr>
+          <h2 class="card-title text-xs-center">{{object.title}}</h2>
+          <div class="card-block">
+            <div class="card">
+                <img class="card-img-top img-fluid" style="margin:0 auto;" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+                <div class="card-block text-xs-center">
+                    <h4 class="card-subtitle">{{object.object_date}}</h4>
+                    <h5 class="list-group-item-text">{{object.medium}}</h5>
+                    <h6 class="list-group-item-text">{{object.artists.name}}</h6>
+                    <p class="card-text">{{object.description}}</p>
+                <div class="card-footer">
+                  <h6>Share</h6>
+                  <div class="social">
+                    <span class="fa fa-google-plus-square fa-3x" href="#"></span>
+                    <span class="fa fa-facebook-square fa-3x" href="#"></span>
+                    <span class="fa fa-linkedin-square fa-3x" href="#"></span>
+                    <span class="fa fa-pinterest-square fa-3x" href="#"></span>
+                    <span class="fa fa-reddit-square fa-3x" href="#"></span>
+                    <span class="fa fa-twitter-square fa-3x" href="#"></span>
                   </div>
-                </div>
+                </tr>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <tr ng-repeat="data in beaconCtrl.artifacts | filter:query">
+      <div class="input-group search">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Text input with dropdown button" ng-model="search.artifacts">
+        <div class="input-group-btn">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Exhibits</button>
+            <div class="dropdown-menu" ng-model="queryBy">
+              <a class="dropdown-item" href="#">Exhibits</a>
+              <a class="dropdown-item" href="#">Artifacts</a>
+            </div>
+        </div>
+      </div>
+      <tr ng-repeat="data in beaconCtrl.artifacts | filter:search">
         <div class="card-columns">
           <div class="card">
             <div class="card-block">
