@@ -48,8 +48,7 @@ var dotenv  = require('dotenv').config(),
           request(options, callback);
         },
         devices: (req, res) => {
-            function callback(error, response, body){
-              exec("curl 'https://cloud.estimote.com/v1/beacons' -X GET -u blup-estimote-app-itz:21d53a7dc431ed68ee49dc437b2f0a83 -H 'Accept: application/json'", (error, stdout, stderr) => {
+              var callback = exec("curl 'https://cloud.estimote.com/v1/beacons' -X GET -u blup-estimote-app-itz:21d53a7dc431ed68ee49dc437b2f0a83 -H 'Accept: application/json'", (error, stdout, stderr) => {
                   if (error) {
                     console.error(`exec error: ${error}`);
                     console.log('woops on devices!');
@@ -59,8 +58,6 @@ var dotenv  = require('dotenv').config(),
                   res.send(bodyParser.json(stdout));
                   console.log(`stderr: ${stderr}`);
               })
-              res.send(body);
-            }
-        request(callback);
-      }
+              request(callback);
+        }
 }
