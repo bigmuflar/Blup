@@ -18,18 +18,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
-    <body ng-controller="BeaconController as beaconCtrl" style="background-color:green;">
-      <hr>
-      <h2 id="artifacts">Nearby Artifact</h2>
-      <div class="card-columns">
+    <body ng-controller="BeaconController as beaconCtrl">
+      <div class="tite">
+        <hr>
+        <h2 class="card-title">Nearby Artifact</h2>
+        <div class="card-block">
         <div class="card" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 1628}:true">
             <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
             <div class="card-block">
                 <h4 class="card-title">{{object.title}}</h4>
-                <span>{{object.object_date}}</span>
+                <h5 class="card-subtitle">{{object.object_date}}</span>
+                <p class="list-group-item-text">{{object.medium}}</p>
+                <p class="list-group-item-text">{{object.artists.name}}</p>
                 <p class="card-text">{{object.description}}</p>
+            <div class="card-footer">
+                <span fa fa-google-plus-square></span>
+                <span fa fa-facebook-square></span>
+                <span fa fa-linkedin-square></span>
+                <span fa fa-pinterest-square></span>
+                <span fa fa-reddit-square></span>
+                <span fa fa-twitter-square></span>
+            </div>
             </div>
         </div>
-      </div>
+    </div>
+ </div>
     </body>
 </html>

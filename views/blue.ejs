@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="module.dashboard" lang="en">
+<html ng-app="module.dashboard"  lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,22 +10,37 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
+
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="/js/controller.beacons.js"></script>
         <script src="/js/factory.dashboard.js"></script>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
     </head>
-    <body ng-controller="BeaconController as beaconCtrl" style="background-color:blue;">
-      <hr>
-      <h2 id="artifacts">Nearby Artifact</h2>
-      <div class="card-columns">
-        <div class="card" ng-repeat="object in beaconCtrl.artifacts | filter : {id: 1628} :true>
-            <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">{{object.title}}</h4>
-                <span>{{object.object_date}}</span>
-                <p class="card-text">{{object.description}}</p>
+    <body ng-controller="BeaconController as beaconCtrl">
+      <div class="tite">
+        <hr>
+        <h2 class="card-title">Nearby Artifact</h2>
+        <div class="card-block">
+          <div class="card" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 3054}:true">
+              <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+              <div class="card-block">
+                  <h4 class="card-title">{{object.title}}</h4>
+                  <h5 class="card-subtitle">{{object.object_date}}</span>
+                  <p class="list-group-item-text">{{object.medium}}</p>
+                  <p class="list-group-item-text">{{object.artists.name}}</p>
+                  <p class="card-text">{{object.description}}</p>
+              <div class="card-footer">
+                  <span fa fa-google-plus-square></span>
+                  <span fa fa-facebook-square></span>
+                  <span fa fa-linkedin-square></span>
+                  <span fa fa-pinterest-square></span>
+                  <span fa fa-reddit-square></span>
+                  <span fa fa-twitter-square></span>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </body>
