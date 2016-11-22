@@ -37,23 +37,24 @@
                 <span class="fa fa-pinterest-square"></span>
                 <span class="fa fa-reddit-square"></span>
                 <span class="fa fa-twitter-square"></span>
-                <div class="form-group search">
-                  <input type="text" class="form-control" placeholder="Search" ng-model="query[queryBy]">
-                  <select ng-model="queryBy">
-                      <option value="$" disabled>Filter By</option>
-                      <option value="name">Collections</option>
-                      <option value="company">Exhibits</option>
-                      <option value="designation">Artifacts</option>
-                  </select>
+                <div class="input-group search">
+                  <input type="text" class="form-control" placeholder="Search" aria-label="Text input with dropdown button" ng-model="query[queryBy]">
+                  <div class="input-group-btn">
+                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Exhibits</button>
+                      <div class="dropdown-menu" ng-model="queryBy">
+                        <a class="dropdown-item" href="#">Exhibits</a>
+                        <a class="dropdown-item" href="#">Artifacts</a>
+                      </div>
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
-          <tr ng-repeat="data in beaconCtrl | filter:query">
-              <td>{{data.exhibits}}</td>
-              <td>{{data.artifacts}}</td>
-          </tr>
         </div>
       </div>
-    </body>
+      <tr ng-repeat="data in beaconCtrl.artifacts | filter:query">
+          <td>{{data.exhibits}}</td>
+          <td>{{data.artifacts}}</td>
+      </tr>
+    </div>
+  </body>
 </html>
