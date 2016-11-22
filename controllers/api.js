@@ -57,7 +57,8 @@ var dotenv  = require('dotenv').config(),
                   console.log(`stdout: ${stdout}`);
                   res.send(bodyParser.json(stdout));
                   console.log(`stderr: ${stderr}`);
-                })
+                }
+              });
               callback();
         }
 }
