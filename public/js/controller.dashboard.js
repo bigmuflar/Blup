@@ -44,6 +44,7 @@ function dCount(dashboard){
     console.log('Count Devices ', i);
     i++;
   }
+  return i;
 }
 
 function fCtrl() {
