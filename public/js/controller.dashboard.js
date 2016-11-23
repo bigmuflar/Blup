@@ -38,9 +38,9 @@ function dashboard(clientFactory, $http){
 
 };
 
-function dCount(dashboard){
+function dCount(){
   var dCount = this;
-  for(var i = 0;i>device.length;i++){
+  for(var i = 0;i>dashboard.device.length;i++){
     console.log('Count Devices ', i);
     i++;
   }
