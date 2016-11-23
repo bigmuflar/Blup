@@ -73,7 +73,7 @@
                                     <i class="fa fa-mobile fa-5x"></i>
                                 </div>
                                 <h6 class="text-uppercase">Devices</h6>
-                                <h1 class="display-1">{{1}}</h1>
+                                <h1 class="display-1 ng-cloak">{{1}}</h1>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                                     <i class="fa fa-bluetooth-b fa-4x"></i>
                                 </div>
                                 <h6 class="text-uppercase">Beacons</h6>
-                                <h1 class="display-1">{{dashboard.device.length}}</h1>
+                                <h1 class="display-1 ng-cloak">{{dashboard.device.length}}</h1>
                             </div>
                         </div>
                     </div>
@@ -118,8 +118,8 @@
                 <div class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder text-xs-center" ng-repeat="device in dashboard.device">
                         <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-                        <h4 ng-cloak>{{device.name}}</h4>
-                        <span class="text-muted" ng-cloak>{{device.eddystone_url.url}}</span>
+                        <h4 class="ng-cloak">{{device.name}}</h4>
+                        <span class="text-muted ng-cloak">{{device.eddystone_url.url}}</span>
                     </div>
                 </div>
 
