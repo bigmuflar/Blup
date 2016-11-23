@@ -115,9 +115,9 @@
 
                 <hr>
 
-                <div class="row placeholders" ng-repeat="device in dashboard.device">
+                <div class="row placeholders" ng-repeat="device in dashboard.device" ng-cloak>
                     <div class="col-xs-6 col-sm-3 placeholder text-xs-center">
-                        <img ngsrc="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                        <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
                         <h4>{{device.id.name}}</h4>
                         <span class="text-muted">{{device.advertisers.eddystone_url.url}}</span>
                     </div>
@@ -131,7 +131,7 @@
                 <hr>
                 <h2>Current Exhibitions</h2>
                 <div class="card-columns">
-                    <div class="card" ng-repeat="exhibit in dashboard.exhibits">
+                    <div class="card" ng-repeat="exhibit in dashboard.exhibits" ng-cloak>
                         <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">{{exhibit.title}}</h4>
