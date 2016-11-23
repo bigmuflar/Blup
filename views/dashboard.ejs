@@ -135,7 +135,7 @@
                 <h2>Current Exhibitions</h2>
                 <div class="card-columns">
                     <div class="card" ng-repeat="exhibit in dashboard.exhibits">
-                        <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" err-src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Preview+currently+unavailable&w=300&h=220" alt="Card image cap">
+                        <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" fallback-src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Preview+currently+unavailable&w=300&h=220" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title" ng-cloak>{{exhibit.title}}</h4>
                             <h5>Exhibition open from <span ng-cloak>{{exhibit.start_date}} to {{exhibit.end_date}}</span></h5>

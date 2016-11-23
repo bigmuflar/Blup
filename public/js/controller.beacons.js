@@ -1,15 +1,14 @@
 angular.module('module.dashboard', [])
     .controller('BeaconController', beaconCtrl)
-    .directive('errSrc', function() {
-      return {
-        link: function(scope, element, attrs) {
-          element.bind('error', function() {
-            if (attrs.src != attrs.errSrc) {
-              attrs.$set('src', attrs.errSrc);
-            }
+    .directive('fallbackSrc', function () {
+      var fallbackSrc = {
+        link: function postLink(scope, iElement, iAttrs) {
+          iElement.bind('error', function() {
+            angular.element(this).attr("src", iAttrs.fallbackSrc);
           });
         }
-      }
+       }
+       return fallbackSrc;
     });
 
 beaconCtrl.$inject = ['clientFactory','$http'];
