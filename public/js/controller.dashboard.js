@@ -1,6 +1,5 @@
 angular.module('module.dashboard', [])
       .controller('floorCtrl', fCtrl)
-      .controller('DeviceCount', dCount)
       .controller('DashboardController', dashboard);
 
 dashboard.$inject = ['clientFactory','$http'];
@@ -38,14 +37,7 @@ function dashboard(clientFactory, $http){
 
 };
 
-// function dCount(){
-//   var dCount = this;
-//   for(var i = 0;i<device.length;i++){
-//     console.log('Count Devices ', i);
-//     i++;
-//   }
-//   return i;
-// }
+
 
 function fCtrl() {
   var fCtrl = this;
