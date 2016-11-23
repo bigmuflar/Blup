@@ -115,11 +115,11 @@
 
                 <hr>
 
-                <div class="row placeholders" ng-repeat="device in dashboard.device" ng-cloak>
-                    <div class="col-xs-6 col-sm-3 placeholder text-xs-center">
+                <div class="row placeholders">
+                    <div class="col-xs-6 col-sm-3 placeholder text-xs-center" ng-repeat="device in dashboard.device">
                         <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-                        <h4>{{device.id.name}}</h4>
-                        <span class="text-muted">{{device.advertisers.eddystone_url.url}}</span>
+                        <h4 ng-cloak>{{device.id.name}}</h4>
+                        <span class="text-muted" ng-cloak>{{device.advertisers.eddystone_url.url}}</span>
                     </div>
                 </div>
 
@@ -131,11 +131,11 @@
                 <hr>
                 <h2>Current Exhibitions</h2>
                 <div class="card-columns">
-                    <div class="card" ng-repeat="exhibit in dashboard.exhibits" ng-cloak>
+                    <div class="card" ng-repeat="exhibit in dashboard.exhibits">
                         <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Card image cap">
                         <div class="card-block">
-                            <h4 class="card-title">{{exhibit.title}}</h4>
-                            <h5>Exhibition open from <span>{{exhibit.start_date}} to {{exhibit.end_date}}</span></h5>
+                            <h4 class="card-title" ng-cloak>{{exhibit.title}}</h4>
+                            <h5>Exhibition open from <span ng-cloak>{{exhibit.start_date}} to {{exhibit.end_date}}</span></h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Add</a>
                         </div>
@@ -160,9 +160,9 @@
                 <div class="card" ng-repeat="object in dashboard.artifacts">
                     <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
                     <div class="card-block">
-                        <h4 class="card-title">{{object.title}}</h4>
-                        <span>{{object.object_date}}</span>
-                        <p class="card-text">{{object.description}}</p>
+                        <h4 class="card-title" ng-cloak>{{object.title}}</h4>
+                        <span ng-cloak>{{object.object_date}}</span>
+                        <p class="card-text" ng-cloak>{{object.description}}</p>
                         <a href="#" class="btn btn-primary">Add</a>
                     </div>
                 </div>
