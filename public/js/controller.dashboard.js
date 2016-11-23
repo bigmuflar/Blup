@@ -38,14 +38,14 @@ function dashboard(clientFactory, $http){
 
 };
 
-function dCount(){
-  var dCount = this;
-  for(var i = 0;i>dashboard.device.length;i++){
-    console.log('Count Devices ', i);
-    i++;
-  }
-  return i;
-}
+// function dCount(){
+//   var dCount = this;
+//   for(var i = 0;i<device.length;i++){
+//     console.log('Count Devices ', i);
+//     i++;
+//   }
+//   return i;
+// }
 
 function fCtrl() {
   var fCtrl = this;

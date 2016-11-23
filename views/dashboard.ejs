@@ -14,7 +14,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
-    <body class="container">
+    <body ng-controller="DashboardController as dashboard" class="container">
       <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
         <a class="navbar-brand" href="/"><img src="images/client_logo.png" /></a>
         <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
@@ -65,7 +65,7 @@
                 <h1 class="display-1 hidden-xs-down">
                 Brooklyn Museum
                 </h1>
-                <div ng-controller="DeviceCount as count" class="row">
+                <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-inverse card-success">
                             <div class="card-block bg-success">
@@ -84,7 +84,7 @@
                                     <i class="fa fa-bluetooth-b fa-4x"></i>
                                 </div>
                                 <h6 class="text-uppercase">Beacons</h6>
-                                <h1 class="display-1">{{count}}</h1>
+                                <h1 class="display-1">{{dashboard.device.length}}</h1>
                             </div>
                         </div>
                     </div>
