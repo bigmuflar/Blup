@@ -119,10 +119,10 @@
                     <div class="col-xs-6 col-sm-3 placeholder text-xs-center" ng-repeat="device in dashboard.device">
                         <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
                         <h4 class="ng-cloak">{{device.name}}</h4>
-                        <div ng-repeat="status in dashboard.status" class="battery">
-                           {{status.battery_percentage}}%
+                        <div class="battery">
+                           {{device.battery_percentage}}%
                         </div>
-                        <span ng-repeat="url in dashboard.eddystone_url" class="text-muted ng-cloak">{{url.url}}</span>
+                        <span class="text-muted ng-cloak">{{device.url}}</span>
                     </div>
                 </div>
 
