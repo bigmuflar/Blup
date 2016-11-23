@@ -28,7 +28,7 @@ function beaconCtrl(clientFactory, $http){
         beaconCtrl.eddystone_url = success.data.eddystone_url
         beaconCtrl.status = success.data.status_report
         beaconCtrl.metadata = success.data.shadow
-        console.log('devices api is working', success.data);
+        console.log('devices api is working', success.data.eddystone_url);
       }, function(error){
         console.log('error on API', error);
       });
