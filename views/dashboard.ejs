@@ -118,8 +118,8 @@
                 <div class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder text-xs-center" ng-repeat="device in dashboard.device">
                         <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-                        <h4 ng-cloak>{{device.id.name}}</h4>
-                        <span class="text-muted" ng-cloak>{{device.advertisers.eddystone_url.url}}</span>
+                        <h4 ng-cloak>{{device.name}}</h4>
+                        <span class="text-muted" ng-cloak>{{device.eddystone_url.url}}</span>
                     </div>
                 </div>
 
