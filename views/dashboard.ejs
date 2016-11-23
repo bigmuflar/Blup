@@ -120,9 +120,9 @@
                         <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
                         <h4 class="ng-cloak">{{device.name}}</h4>
                         <div class="battery">
-                           {{device.status_report.battery_percentage}}%
+                           {{device.settings.battery}}%
                         </div>
-                        <span class="text-muted ng-cloak">{{device.eddystone_url.url}}</span>
+                        <span class="text-muted ng-cloak">{{device.settings.url}}</span>
                     </div>
                 </div>
 
