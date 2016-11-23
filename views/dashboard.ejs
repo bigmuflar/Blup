@@ -115,21 +115,11 @@
 
                 <hr>
 
-                <div class="row placeholders">
+                <div class="row placeholders" ng-repeat="device in dashboard.device">
                     <div class="col-xs-6 col-sm-3 placeholder text-xs-center">
-                        <img src="/images/beacon_blue.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-                        <h4>Beacon Name</h4>
-                        <span class="text-muted">UUID</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder text-xs-center">
-                        <img src="/images/beacon_green.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-                        <h4>Beacon Name</h4>
-                        <span class="text-muted">UUID</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder text-xs-center">
-                        <img src="/images/beacon_purple.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
-                        <h4>Beacon Name</h4>
-                        <span class="text-muted">UUID</span>
+                        <img ngsrc="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                        <h4>{{device.id.name}}</h4>
+                        <span class="text-muted">{{device.advertisers.eddystone_url.url}}</span>
                     </div>
                 </div>
 
