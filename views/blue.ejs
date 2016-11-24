@@ -48,17 +48,17 @@
           </div>
         </div>
       </div>
-      <div class="input-group search">
+      <div ng-controller="BeaconController as search" class="input-group search">
         <input type="text" class="form-control" placeholder="Search" aria-label="Text input with dropdown button" ng-model="searchText">
-        <div class="input-group-btn">
+        <!-- <div class="input-group-btn">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Exhibits</button>
             <div class="dropdown-menu" ng-model="queryBy">
               <a class="dropdown-item" href="#">Exhibits</a>
               <a class="dropdown-item" href="#">Artifacts</a>
             </div>
-        </div>
+        </div> -->
       </div>
-      <tr ng-model="data.$" ng-repeat="data in beaconCtrl.artifacts | filter:searchText">
+      <tr ng-repeat="data in search.artifacts | filter:searchText">
         <div class="card-columns">
           <div class="card">
             <div class="card-block">
