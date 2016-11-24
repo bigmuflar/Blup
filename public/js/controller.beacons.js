@@ -1,15 +1,6 @@
 angular.module('module.dashboard', [])
-    .controller('BeaconController', beaconCtrl)
-    .directive('fallbackSrc', function () {
-      var fallbackSrc = {
-        link: function postLink(scope, iElement, iAttrs) {
-          iElement.bind('error', function() {
-            angular.element(this).attr("src", iAttrs.fallbackSrc);
-          });
-        }
-       }
-       return fallbackSrc;
-    });
+    .controller('BeaconController', beaconCtrl);
+
 
 beaconCtrl.$inject = ['clientFactory','$http'];
 

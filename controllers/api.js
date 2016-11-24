@@ -58,6 +58,27 @@ var dotenv  = require('dotenv').config(),
                   console.log(`stderr: ${stderr}`);
                 }
               });
+        },
+        translateText: function (input, target, callback) => {
+          // Instantiates a client
+          const translate = Translate({
+            // The Translate API uses an API key for authentication. This sample looks
+            // for the key in an environment variable.
+            key: process.env.TRANSLATE_API_KEY
+          });
+
+          // Translates the text into the target language. "input" can be a string for
+          // translating a single piece of text, or an array of strings for translating
+          // multiple texts.
+          translate.translate(input, target, (err, translation) => {
+            if (err) {
+              callback(err);
+              return;
+            }
+            console.log('Text: %j', input);
+            console.log('Translation: %j', translation);
+            callback();
+          });
         }
 
 }

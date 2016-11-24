@@ -18,6 +18,9 @@ function clientFactory($http) {
         },
         getDevices: function(){
             return $http.get('/api/client/devices');
+        },
+        getTranslate: function(){
+            return $http.get('/api/client/translate');
         }
     }
 }
