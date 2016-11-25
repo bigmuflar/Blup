@@ -8,20 +8,18 @@ body {
   font-size: 14px;
   margin: 0 auto;
 }
-/*
-.right {
-  float: right;
-  position: relative;
-  top: 6px;
-}
-
-.top {
-  margin-top: -30px;
-}
 
 .input-group.search.ng-scope {
     margin: 0 auto;
 }
+
+.card {
+    max-width: 400px;
+}
+/*
+
+
+
 
 #notebooks {
   background: whitesmoke;
