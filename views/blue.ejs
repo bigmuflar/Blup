@@ -52,7 +52,7 @@
       </div>
       <!--Search Exhibit Information -->
       <div ng-controller="BeaconController as search" class="input-group search">
-        <input type="text" id="query" ng-model="query" onfocus="pxtrack.emit('counter', '1')"/>
+        <input type="text" placeholder="Search Collections" id="query" ng-model="query" onfocus="pxtrack.emit('counter', '1')"/>
         <select ng-model="orderList" onchange="pxtrack.emit('counter', '2')">
           <option value="title">By title</option>
           <option value="-object_date">Newest</option>
@@ -60,9 +60,16 @@
         </select>
         <ul id="notebook_ul">
           <li ng-repeat="data in search.artifacts | filter:query | orderBy: orderList">
-            name: {{data.title}}<br/>
-            artist: {{data.procesor}}<br/>
-            <div class="right top">{{data.object_date}}</div>
+
+            <div class="card">
+              <img class="card-img-top" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+                <div class="card-block">
+                    name: {{data.title}}<br/>
+                    date: {{data.object_date}}<br/>
+                    medium: {{data.procesor}}<br/>
+                    museum location: {{data.museum_location.name}}<br/>
+                </div>
+            </div>
           </li>
         </ul>
         <span>Number of exhibits: {{data.length}}</span>
