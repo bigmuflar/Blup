@@ -13,8 +13,8 @@ body {
     margin: 0 auto;
 }
 
-.card {
-    max-width: 400px;
+.input-group.card {
+    width: 400px;
 }
 /*
 
