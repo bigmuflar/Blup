@@ -48,7 +48,7 @@ ul {
   border-right: none;
 }
 
-/*li {
+li {
   list-style: none;
   background-color: rgba(0, 0, 0, 0.05);
   background-image:
@@ -66,7 +66,7 @@ ul {
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 3px;
-}*/
+}
 
 #query {
   width: 100%;

@@ -52,19 +52,21 @@
       </div>
       <!--Search Exhibit Information -->
       <div ng-controller="BeaconController as search" class="input-group search">
-        <input type="text" placeholder="Search Museum Collections" id="query" ng-model="query" onfocus="pxtrack.emit('counter', '1')"/>
-        <div class="input-group-btn">
-          <select type="button" class="btn btn-secondary dropdown-toggle"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="orderList" onchange="pxtrack.emit('counter', '2')">
-              <option class="dropdown-item" value="title">By title</option>
-              <option class="dropdown-item" value="-object_date">Newest</option>
-              <option class="dropdown-item" value="object_date">Oldest</option>
-          </select>
+        <div>
+          <input type="text" placeholder="Search Museum Collections" id="query" ng-model="query" onfocus="pxtrack.emit('counter', '1')"/>
+          <div class="input-group-btn">
+            <select type="button" class="btn btn-secondary dropdown-toggle"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="orderList" onchange="pxtrack.emit('counter', '2')">
+                <option class="dropdown-item" value="title">By title</option>
+                <option class="dropdown-item" value="-object_date">Newest</option>
+                <option class="dropdown-item" value="object_date">Oldest</option>
+            </select>
+          </div>
         </div>
         <div class="card-group">
           <div ng-repeat="data in search.artifacts | filter:query | orderBy: orderList">
             <div class="card">
-              <img class="card-img-top" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+              <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{data.primary_image}}" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">{{data.title}}</h4>
                     <h6 class="card-subtitle">{{data.object_date}}</h6>
