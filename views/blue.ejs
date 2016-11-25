@@ -61,22 +61,24 @@
               <option class="dropdown-item" value="object_date">Oldest</option>
           </select>
         </div>
-        <ul id="notebook_ul">
-          <li ng-repeat="data in search.artifacts | filter:query | orderBy: orderList">
-
+        <div class="card-group">
+          <div ng-repeat="data in search.artifacts | filter:query | orderBy: orderList">
             <div class="card">
               <img class="card-img-top" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
                 <div class="card-block">
-                    name: {{data.title}}<br/>
-                    date: {{data.object_date}}<br/>
-                    medium: {{data.procesor}}<br/>
-                    museum location: {{data.museum_location.name}}<br/>
+                    <h4 class="card-title">{{data.title}}</h4>
+                    <h6 class="card-subtitle">{{data.object_date}}</h6>
+                    <h6 class="subtitle">{{data.medium}}</h6>
+                    museum location: <br/>
+                    <div class="card-footer">
+                      <i>{{data.museum_location.name}}</i>
+                      <button class="btn-secondary">More</button>
+                    </div>
                 </div>
+              </div>
             </div>
-          </li>
-        </ul>
-        <span>Number of exhibits: {{data.length}}</span>
-      </div>
-
+          </div>
+        </div>
+    </div>
   </body>
 </html>
