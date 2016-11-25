@@ -51,8 +51,8 @@
         </div>
       </div>
       <!--Search Exhibit Information -->
-      <div ng-controller="BeaconController as search">
-        <div class="input-group search">
+      <div ng-controller="BeaconController as search" class="input-group search">
+        <div class="input-group-btn">
           <input class="form-control" type="text" aria-label="Text input with dropdown button" placeholder="Search Museum Collections" ng-model="query" ng-focus="pxtrack.emit('counter', '1')"/>
           <div class="input-group-btn">
             <button class="btn btn-secondary dropdown-toggle" type="button"
