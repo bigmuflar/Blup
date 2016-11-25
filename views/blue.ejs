@@ -56,10 +56,11 @@
           <input class="form-control" type="text" aria-label="Text input with dropdown button" placeholder="Search Museum Collections" id="query" ng-model="query" ng-focus="pxtrack.emit('counter', '1')"/>
           <div class="input-group-btn">
             <button class="btn btn-secondary dropdown-toggle" type="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="orderList" ng-change="pxtrack.emit('counter', '2')"><option class="dropdown-item" value="title" ng-selected="query">By title</option></button>
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="orderList" ng-change="pxtrack.emit('counter', '2')">Search by {{query}}</button>
                 <div class="drop-down">
-                  <option class="dropdown-item" value="-object_date">Newest</option>
-                  <option class="dropdown-item" value="object_date">Oldest</option>
+                  <a class="dropdown-item" value="title" ng-selected="query">By title</a>
+                  <a class="dropdown-item" value="-object_date">Newest</a>
+                  <a class="dropdown-item" value="object_date">Oldest</a>
                 </div>
             </select>
           </div>
