@@ -9,6 +9,7 @@
         <title>BLUP</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/beacon.css" />
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -48,7 +49,6 @@
           </div>
         </div>
       </div>
-      <div ng-controller="BeaconController as search" class="input-group search">
         <input type="text" class="form-control" placeholder="Search" aria-label="Text input with dropdown button" ng-model="searchText">
         <!-- <div class="input-group-btn">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Exhibits</button>
@@ -58,16 +58,23 @@
             </div>
         </div> -->
       </div>
-      <tr ng-repeat="data in search.artifacts | filter:searchText">
-        <div class="card-columns">
-          <div class="card">
-            <div class="card-block">
-              <td>{{data.title}}</td>
-              <td>{{data.description}}</td>
-            </div>
-          </div>
-        </div>
-      </tr>
+
+
+    <div ng-controller="BeaconController as search" class="input-group search">
+      <input type="text" id="query" ng-model="query" onfocus="pxtrack.emit('counter', '1')"/>
+      <select ng-model="orderList" onchange="pxtrack.emit('counter', '2')">
+        <option value="title">By title</option>
+        <option value="-age">Newest</option>
+        <option value="age">Oldest</option>
+      </select>
+      <ul id="notebook_ul">
+        <li ng-repeat="data in search.artifacts | filter:query | orderBy: orderList">
+          name: {{data.title}}<br/>
+          artist: {{data.procesor}}<br/>
+          <div class="right top">{{data.object_date}}</div>
+        </li>
+      </ul>
+      <span>Number of exhibits: {{data.length}}</span>
     </div>
   </body>
 </html>
