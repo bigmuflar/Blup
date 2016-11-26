@@ -2,6 +2,8 @@ var dotenv  = require('dotenv').config(),
     request = require('request'),
     express = require('express'),
     bodyParser = require('body-parser'),
+    url = require('url'),
+    watson = require('watson-developer-cloud'),
     app = express(), // initialize express
     exec = require('child_process').exec;
 
@@ -58,6 +60,22 @@ var dotenv  = require('dotenv').config(),
                   console.log(`stderr: ${stderr}`);
                 }
               });
+        },
+        speech: (req, res) => {
+           var query = url.parse(req.url, true).query;
+           var text_to_speech = watson.text_to_speech({
+             username: process.env.TEXT_TO_SPEECH_USERNAME,
+             password: process.env.TEXT_TO_SPEECH_PASSWORD,
+             version: 'v1',
+             url: 'https://stream.watsonplatform.net/text-to-speech/api'
+           });
+
+           var params = {
+             text: query.text,
+             voice: 'en-US_AllisonVoice', // Optional voice
+             accept: 'audio/wav'
+           };
+           text_to_speech.synthesize(params).pipe(res);
         }
 
 }

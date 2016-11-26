@@ -24,10 +24,10 @@ module.exports = function(app) {
     	res.render('dashboard', req.session);
     });
 
-    //USER INFORMATION ONCE LOGGED IN
+    // USER INFORMATION ONCE LOGGED IN
     app.get('/whoami', Auth.whoami);
 
-    //Beacon routes
+    // BEACON ROUTES
     app.get('/purple', (req, res) => {
       console.log('This is purple');
       res.render('purple')
@@ -41,8 +41,11 @@ module.exports = function(app) {
       res.render('blue')
     });
 
-    //API routes
+    // API ROUTES
     app.get('/api/client/object', API.object);
     app.get('/api/client/exhibit', API.exhibit);
     app.get('/api/client/devices', API.devices);
+
+    // WATSON TEXT TO SPEECH ROUTES
+     app.get('/api/speak', API.speech);
 };

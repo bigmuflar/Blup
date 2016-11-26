@@ -2,8 +2,10 @@ require('colors') // awesome colors in your console logs!
 
 var HTTP = require('http'),
     HTTPS = require('https'),
+    watson = require('watson-developer-cloud'),
     config = require('./package'),
     request = require('request'),
+    url = require('url'),
     mongoose = require('mongoose').connect('mongodb://localhost/'.concat(config.name), ( error ) => {
         if( error ) {
             console.error('ERROR starting mongoose!', error);

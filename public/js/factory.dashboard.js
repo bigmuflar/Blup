@@ -21,6 +21,9 @@ function clientFactory($http) {
         },
         getTranslate: function(){
             return $http.get('/api/client/translate');
+        },
+        getSpeech: function(){
+            return $http.get('/api/speak');
         }
     }
 }

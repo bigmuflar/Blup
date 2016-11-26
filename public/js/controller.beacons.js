@@ -1,8 +1,10 @@
 angular.module('module.dashboard', [])
-    .controller('BeaconController', beaconCtrl);
+    .controller('BeaconController', beaconCtrl)
+    .controller('Speakit', speakit);
 
 
 beaconCtrl.$inject = ['clientFactory','$http'];
+speakit.$inject = ['clientFactory', '$http'];
 
 function beaconCtrl(clientFactory, $http){
     var beaconCtrl = this;
@@ -35,3 +37,15 @@ function beaconCtrl(clientFactory, $http){
         console.log('error on API', error);
       });
 };
+
+function speakit(clientFactory, $http){
+  var speakit = this,
+      audio = document.getElementById('audio'),
+      wavsource = document.getElementById('wavsource'),
+      this.translate = document.getElementById('translate-text');
+
+      wavsource.src = '/api/speak?text=Click+on+the+word+'+this.translate;
+
+      audio.load();
+      audio.play();
+}

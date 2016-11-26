@@ -19,28 +19,72 @@
 
     </head>
     <body ng-controller="BeaconController as beaconCtrl">
+     <div class="beacon-item">
       <div class="title" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 96783}:true">
-        <hr>
-        <h2 class="card-title text-xs-center">{{object.title}}</h2>
-        <div class="card-block">
-            <div class="card">
-                <img class="card-img-top img-fluid" style="margin:0 auto;" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
-                <div class="card-block text-xs-center">
-                    <h4 class="card-subtitle">{{object.object_date}}</h4>
-                    <h5 class="list-group-item-text">{{object.medium}}</h5>
-                    <h6 class="list-group-item-text">{{object.artists.name}}</h6>
-                    <p class="card-text">{{object.description}}</p>
-                <div class="card-footer">
-                  <span class="fa fa-google-plus-square"></span>
-                  <span class="fa fa-facebook-square"></span>
-                  <span class="fa fa-linkedin-square"></span>
-                  <span class="fa fa-pinterest-square"></span>
-                  <span class="fa fa-reddit-square"></span>
-                  <span class="fa fa-twitter-square"></span>
-                </div>
-                </div>
-            </div>
-        </div>
+         <hr>
+         <h2 class="card-title text-xs-center">{{object.title}}</h2>
+         <div class="card-block">
+           <div class="card">
+               <img class="card-img-top img-fluid" style="margin:0 auto;" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Generic placeholder image">
+               <div class="card-block text-xs-center">
+                   <h4 class="card-subtitle">{{object.object_date}}</h4>
+                   <h5 class="list-group-item-text">{{object.medium}}</h5>
+                   <h6 class="list-group-item-text">{{object.artists.name}}</h6>
+                   <p class="card-text" id="translate-text">{{object.description}}</p>
+
+                   <audio controls preload="auto" id="audio">
+                      <source id="wavsource" type="audio/wav">
+                   </audio>
+               <div class="card-footer">
+                 <h5>Share</h5>
+                 <div class="social">
+                   <span class="fa fa-google-plus-square fa-3x" href="#"></span>
+                   <span class="fa fa-facebook-square fa-3x" href="#"></span>
+                   <span class="fa fa-linkedin-square fa-3x" href="#"></span>
+                   <span class="fa fa-pinterest-square fa-3x" href="#"></span>
+                   <span class="fa fa-reddit-square fa-3x" href="#"></span>
+                   <span class="fa fa-twitter-square fa-3x" href="#"></span>
+                 </div>
+               </tr>
+
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
      </div>
-    </body>
+     <!--Search Exhibit Information -->
+     <div ng-controller="BeaconController as search" class="cards">
+       <div class="input-group search">
+         <input class="form-control" type="text" aria-label="Text input with dropdown button" placeholder="Search Museum Collections" ng-model="query"/>
+         <div class="input-group-btn">
+           <button class="btn btn-secondary dropdown-toggle" type="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="orderList">Search</button>
+               <div class="dropdown-menu">
+                 <a class="dropdown-item" href="#" value="title" ng-selected="query">By Title</a>
+                 <a class="dropdown-item" href="#" value="-object_date">By Newest</a>
+                 <a class="dropdown-item" href="#" value="object_date">By Oldest</a>
+               </div>
+           </select>
+         </div>
+       </div>
+       <div class="card-columns">
+         <div class="repeat-box" ng-repeat="data in search.artifacts | filter:query | orderBy: orderList">
+           <div class="card repeat">
+             <img class="card-img-top img-thumbnail" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{data.primary_image}}" alt="Card image cap">
+               <div class="card-block">
+                 <div class="card-middle">
+                   <h4 class="card-title">{{data.title}}</h4>
+                   <h6 class="card-subtitle">{{data.object_date}}</h6>
+                   <h6 class="subtitle">{{data.medium}}</h6>
+                   Museum location: <i>{{data.museum_location.name}}</i><br/>
+                 </div>
+                   <div class="card-footer">
+                     <button class="btn btn-primary">Map It</button>
+                   </div>
+               </div>
+             </div>
+           </div>
+         </div>
+   </body>
 </html>
