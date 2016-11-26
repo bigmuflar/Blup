@@ -32,7 +32,7 @@
                    <h6 class="list-group-item-text">{{object.artists.name}}</h6>
                    <p class="card-text" id="translate-text">{{object.description}}</p>
 
-                   <audio controls preload="auto" id="audio">
+                   <audio ng-controller="SpeakIt as speak" controls preload="auto" id="audio">
                       <source id="wavsource" type="audio/wav">
                    </audio>
                <div class="card-footer">
@@ -80,11 +80,15 @@
                    Museum location: <i>{{data.museum_location.name}}</i><br/>
                  </div>
                    <div class="card-footer">
-                     <button class="btn btn-primary">Map It</button>
+                     <button class="btn btn-primary">Find It</button>
                    </div>
                </div>
              </div>
            </div>
          </div>
+         <!-- FOOTER -->
+         <footer>
+             <% include ./footer %>
+         </footer>
    </body>
 </html>
