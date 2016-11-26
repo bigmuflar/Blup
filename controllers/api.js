@@ -23,7 +23,6 @@ var dotenv  = require('dotenv').config(),
               // console.log("response",response);
               res.send(body);
             }else{
-              console.log('error on object api');
               res.send('error api', error);
             }
           }
@@ -36,7 +35,6 @@ var dotenv  = require('dotenv').config(),
                 'api_key': process.env.API_KEY
               }
             };
-            console.log(options);
             function callback(error, response, body) {
               if (!error && response.statusCode == 200) {
                 // console.log(response.data);
@@ -76,6 +74,7 @@ var dotenv  = require('dotenv').config(),
              accept: 'audio/wav'
            };
            text_to_speech.synthesize(params).pipe(res);
+           console.log('hitting speech API');
         }
 
 }
