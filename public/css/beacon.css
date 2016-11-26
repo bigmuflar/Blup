@@ -53,6 +53,10 @@ img.card-img-top.img-thumbnail{
     border: none;
 }
 
+.card.repeat {
+    border-radius: 10px;
+}
+
 .card-group {
     margin-top: 50px;
     text-align: center;
