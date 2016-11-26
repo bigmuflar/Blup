@@ -13,6 +13,16 @@ body {
     margin: 0 auto;
 }
 
+.repeat-box.ng-scope {
+    width: 250px;
+    float: left;
+}
+
+button.btn.btn-primary {
+    display: block;
+    margin: 0 auto;
+}
+
 .input-group.card {
     max-width: 400px;
 }
@@ -21,7 +31,9 @@ body {
     width: 500px;
     margin: 0 auto;
 }
-
+span.social{
+  margin: 20px;
+}
 
 /*
 
