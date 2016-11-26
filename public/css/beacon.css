@@ -16,6 +16,13 @@ body {
 .input-group.card {
     max-width: 400px;
 }
+
+.cards.ng-scope {
+    width: 500px;
+    margin: 0 auto;
+}
+
+
 /*
 
 

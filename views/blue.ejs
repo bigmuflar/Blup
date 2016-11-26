@@ -68,7 +68,7 @@
         <div class="card-group">
           <div class="repeat-box" ng-repeat="data in search.artifacts | filter:query | orderBy: orderList">
             <div class="card">
-              <img class="card-img-top img-fluid" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{data.primary_image}}" alt="Card image cap">
+              <img class="card-img-top img-thumbnail" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{data.primary_image}}" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">{{data.title}}</h4>
                     <h6 class="card-subtitle">{{data.object_date}}</h6>
