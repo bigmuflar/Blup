@@ -62,6 +62,9 @@ img.card-img-top.img-thumbnail{
     background: none !important;
     border: none;
 }
+.card-columns {
+    margin-top: 45px;
+}
 
 
 /*
