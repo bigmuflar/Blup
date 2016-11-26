@@ -30,10 +30,32 @@ button.btn.btn-primary {
 .cards.ng-scope {
     width: 500px;
     margin: 0 auto;
+    border: none;
 }
 span.social{
   margin: 20px;
 }
+
+img.card-img-top.img-thumbnail{
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border: none;
+}
+
+.card-group {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.card-footer {
+    background: none !important;
+    border: none;
+}
+
 
 /*
 
