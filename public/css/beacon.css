@@ -46,6 +46,10 @@ img.card-img-top.img-thumbnail{
   border: none;
 }
 
+.card {
+    border: none;
+}
+
 .card-group {
     margin-top: 50px;
     text-align: center;
