@@ -42,9 +42,9 @@ function speakit(clientFactory, $http){
   var speakit = this,
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
-      this.translate = document.getElementById('translate-text');
+      translate = document.getElementById('translate-text');
 
-      wavsource.src = '/api/speak?text=Click+on+the+word+'+this.translate;
+      wavsource.src = '/api/speak?text='+translate;
 
       audio.load();
       audio.play();
