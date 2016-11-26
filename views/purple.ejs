@@ -9,6 +9,7 @@
         <title>BLUP</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/beacon.css" />
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -31,10 +32,11 @@
                    <h5 class="list-group-item-text">{{object.medium}}</h5>
                    <h6 class="list-group-item-text">{{object.artists.name}}</h6>
                    <p class="card-text" id="translate-text">{{object.description}}</p>
-
-                   <audio ng-controller="SpeakIt as speak" controls preload="auto" id="audio">
-                      <source id="wavsource" type="audio/wav">
-                   </audio>
+                   <div class="audio-box" ng-controller="SpeakIt as speak">
+                     <audio controls preload="auto" id="audio">
+                        <source id="wavsource" type="audio/wav">
+                     </audio>
+                   </div>
                <div class="card-footer">
                  <h5>Share</h5>
                  <div class="social">
