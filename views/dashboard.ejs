@@ -117,7 +117,7 @@
 
                 <div class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder text-xs-center" ng-repeat="device in dashboard.device">
-                        <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                        <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder image">
                         <h4 class="ng-cloak">{{device.name}}</h4>
                         <div class="battery">
                            {{device.settings.battery}}%
@@ -135,7 +135,7 @@
                 <h2>Current Exhibitions</h2>
                 <div class="card-columns">
                     <div class="card" ng-repeat="exhibit in dashboard.exhibits">
-                        <img fallback-src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Preview+currently+unavailable&w=300&h=220" class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Card image cap">
+                        <img fallback-src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Preview+currently+unavailable&w=300&h=220" class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Generic placeholder image">
                         <div class="card-block">
                             <h4 class="card-title" ng-cloak>{{exhibit.title}}</h4>
                             <h5>Exhibition open from <span ng-cloak>{{exhibit.start_date}} to {{exhibit.end_date}}</span></h5>
@@ -161,7 +161,7 @@
             <h2 id="artifacts">Museum Artifacts</h2>
             <div class="card-columns">
                 <div class="card" ng-repeat="object in dashboard.artifacts">
-                    <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
+                    <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Generic placeholder image">
                     <div class="card-block">
                         <h4 class="card-title" ng-cloak>{{object.title}}</h4>
                         <span ng-cloak>{{object.object_date}}</span>
@@ -207,7 +207,7 @@
              <select ng-model="selectedFloor" ng-options="items for item in floors"></select>
               <form class="form-horizontal col-sm-12">
                 <div class="maps">
-                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{selectedFloor}}F.jpg"
+                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{selectedFloor}}F.jpg" alt="Generic placeholder image" />
                 </div>
               </form>
             </div>
