@@ -8,6 +8,7 @@ function beaconCtrl(clientFactory, $http){
     var beaconCtrl = this;
     this.query = {};
     this.queryBy = '$';
+    this.orderList = "title";
     console.log('hitting beacon dashboard');
 
       clientFactory.getExhibit().then(function(success){
@@ -33,5 +34,4 @@ function beaconCtrl(clientFactory, $http){
       }, function(error){
         console.log('error on API', error);
       });
-
 };

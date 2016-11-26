@@ -53,10 +53,10 @@
       <!--Search Exhibit Information -->
       <div ng-controller="BeaconController as search">
         <div class="input-group search">
-          <input class="form-control" type="text" aria-label="Text input with dropdown button" placeholder="Search Museum Collections" ng-model="query" ng-focus="pxtrack.emit('counter', '1')"/>
+          <input class="form-control" type="text" aria-label="Text input with dropdown button" placeholder="Search Museum Collections" ng-model="query"/>
           <div class="input-group-btn">
             <button class="btn btn-secondary dropdown-toggle" type="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="orderList" ng-change="pxtrack.emit('counter', '2')">Search {{query}}</button>
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="orderList">Search</button>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#" value="title" ng-selected="query">By Title</a>
                   <a class="dropdown-item" href="#" value="-object_date">By Newest</a>
