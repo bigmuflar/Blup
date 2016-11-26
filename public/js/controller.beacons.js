@@ -38,12 +38,12 @@ function beaconCtrl(clientFactory, $http){
       });
 };
 
-function speakit(clientFactory, $http){
+function speakit(beaconCtrl, $http){
   var speakit = this,
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
-      translate = beaconCtrl.exhibits.description;
-      // translate = document.getElementById('translate-text');
+      // translate = beaconCtrl.exhibits.description;
+      translate = document.getElementsByClassName('translate-text');
 
       wavsource.src = '/api/speak?text='+translate;
 
