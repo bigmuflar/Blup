@@ -27,9 +27,12 @@ button.btn.btn-primary {
     max-width: 400px;
 }
 
-.cards.ng-scope {
+.input-group.search {
     width: 500px;
     margin: 0 auto;
+}
+
+.cards.ng-scope {
     border: none;
 }
 span.social{
