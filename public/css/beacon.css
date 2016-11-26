@@ -38,8 +38,8 @@ span.social{
 
 img.card-img-top.img-thumbnail{
   display: block;
-  max-width:350px;
-  max-height:125px;
+  max-width: 250px;
+  max-height: 200px;
   width: auto;
   height: auto;
   margin: 0 auto;
