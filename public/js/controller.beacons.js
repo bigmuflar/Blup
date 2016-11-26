@@ -38,11 +38,11 @@ function beaconCtrl(clientFactory, $http){
       });
 };
 
-function speakit(beaconCtrl, $http){
+function speakit(beaconCtrl.artifacts, $http){
   var speakit = this,
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
-      translate = beaconCtrl.artifacts;
+      translate = beaconCtrl.artifacts.description;
       // translate = document.getElementsByClassName('translate-text');
 
       wavsource.src = '/api/speak?text='+translate;
