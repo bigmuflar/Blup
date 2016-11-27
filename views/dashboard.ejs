@@ -59,10 +59,6 @@
                 <p class="hidden-md-up">
                     <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Find</button>
                 </p>
-
-                <h2 class="display-2 hidden-xs-down">
-                Beacon Management
-                </h2>
                 <div id="Status" class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-inverse card-success">
@@ -98,7 +94,7 @@
                         <div class="battery">
                            {{device.settings.battery}}%
                         </div>
-                        <span class="text-muted ng-cloak"><a nghref="{{device.settings.eddystone_url}}">View Beacon Site</a></span>
+                        <span class="text-muted ng-cloak"><a ng-href="{{device.settings.eddystone_url}}">View Beacon Site</a></span>
                     </div>
                 </div>
 
