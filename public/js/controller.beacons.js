@@ -45,7 +45,7 @@ function speakit(beaconCtrl, $http){
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
       // translate = beaconCtrl.artifacts.description;
-      translate = document.getElementById('translate-text');
+      translate = document.getElementById('translate-text').innerHTML;
 
       wavsource.src = '/api/speak?text='+translate;
 
