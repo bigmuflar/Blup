@@ -49,8 +49,8 @@ module.exports = function(app) {
     // WATSON TEXT TO SPEECH ROUTES
     app.get('/api/speak', API.speech);
 
-    // WATSON VOICE ROUTES
-    // Return the list of voices
-    app.get('/api/voices', API.voices);
+    // // WATSON VOICE ROUTES
+    // // Return the list of voices
+    // app.get('/api/voices', API.voices);
 
 };
