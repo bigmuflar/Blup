@@ -9,6 +9,10 @@ body {
   margin: 0 auto;
 }
 
+footer{
+  text-align: center;
+}
+
 .input-group.search{
       width: 400px;
       margin: 0 auto;

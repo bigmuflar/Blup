@@ -22,7 +22,6 @@
     <body ng-controller="BeaconController as beaconCtrl" class="search-box">
       <div class="beacon-item">
         <div class="title" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 3054}:true">
-          <hr>
           <h2 class="card-title text-xs-center">{{object.title}}</h2>
           <div class="card-block">
             <div class="card">
@@ -31,7 +30,13 @@
                     <h4 class="card-subtitle">{{object.object_date}}</h4>
                     <h5 class="list-group-item-text">{{object.medium}}</h5>
                     <h6 class="list-group-item-text">{{object.artists.name}}</h6>
-                    <p class="card-text">{{object.description}}</p>
+                    <p class="card-text" id="translate-text">Ghahvehkhaneh or "coffeehouse" painting genre. Religious narrative painting depicting scenes from the Battle of Karbala which commemorates the martyrdom of Imam Husayn. This tragedy, which is at the core of Shi'ite belief, occurred on the tenth of the month of Muharram, A.H. 61 (October 10, A.D. 680) when Imam Husayn was killed by the Sunni caliph Yazid in the Karbala desert (70 miles from Kufa, Iraq). In the painting, the individual scenes from the battle and the life of Imam Husayn are presented from left to right, but without logical progression. The central figure of the painting is 'Abbas (Husayn's half brother and standard bearer), mounted on a white horse stabbing a member of Yazid's army. Depicted on the left are scenes from the battle showing the agonies of Husayn and his followers. On the right are scenes from Paradise including Husayn and his followers above corresponding scenes from the underworld populated by Yazid and his supporters. The expressive, charged scenes depicted in gory details with vibrant colors seek an emotional response from an audience at a ta‘zieh theatrical performance, where paintings such as this one served as pardeh (curtains or portable backdrop paintings) for a reenactment of the Karbala tragedy.
+                      The name of the patron and city of production (Darvish 'Abbas Uvaysi, Isfahan) as well as the artist's name ('Abbas al-Musavi) are found in two important inscriptions in the painting.</p>
+                    <div class="audio-box" ng-controller="Speakit as speak">
+                      <audio controls preload="none" id="audio">
+                         <source id="wavsource" type="audio/wav">
+                      </audio>
+                    </div>
                 <div class="card-footer">
                   <h5>Share</h5>
                   <div class="social">
