@@ -41,5 +41,13 @@ function dashboard(clientFactory, $http){
 
 function fCtrl() {
   var fCtrl = this;
-  floors = ['1', '2', '3', '4', '5'];
+  this.model: null,
+  this.availableOptions: [
+      {id: '1', name: '1st Floor'},
+      {id: '2', name: '2nd Floor'},
+      {id: '3', name: '3rd Floor'},
+      {id: '3', name: '4th Floor'},
+      {id: '3', name: '5th Floor'}
+    ]
+    console.log('hitting floors');
 };

@@ -21,7 +21,7 @@
             ☰
         </button>
         <div class="form-group search col-xs-7 col-sm-5 col-md-4">
-          <input type="text" class="form-control" placeholder="Search" ng-focus="#artifacts" ng-blur="focused = false" /> ng-model="userSearch">
+          <input type="text" class="form-control" placeholder="Search" ng-focus="#artifacts" ng-blur="focused = false" />
         </div>
         <div ng-controller="DashboardController as dashboard" class="collapse navbar-toggleable-xs" id="collapsingNavbar">
             <ul class="nav navbar-nav pull-right">
@@ -156,14 +156,24 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
               <h3 id="myModalLabel">Museum Map</h3>
             </div
-            <div class="modal-body">
+
+            <form name="myForm">
+              <label for="repeatSelect"> Repeat select: </label>
+              <select name="repeatSelect" id="repeatSelect" ng-model="fCtrl.model">
+                <option ng-repeat="option in fCtrl.availableOptions" value="{{option.id}}">{{option.name}}</option>
+              </select>
+            </form>
+            <hr>
+            <tt>model = {{fCtrl.model}}</tt><br/>
+
+            <!-- <div class="modal-body">
              <select ng-model="fCtrl.floor" ng-options="items for item in floors"></select>
               <form class="form-horizontal col-sm-12">
                 <div class="maps">
                   <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{fCtrl.floor}}F.jpg" alt="Generic placeholder image" />
                 </div>
               </form>
-            </div>
+            </div> -->
             <div class="modal-footer">
             </div>
           </div>
