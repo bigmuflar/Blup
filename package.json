@@ -23,6 +23,7 @@
     "morgan": "^1.7.0",
     "nodemailer": "^2.6.4",
     "request": "^2.78.0",
+    "router": "^1.1.4",
     "url": "^0.11.0",
     "watson-developer-cloud": "^2.9.0"
   }
