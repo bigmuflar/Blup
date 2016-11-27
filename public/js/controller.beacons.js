@@ -40,6 +40,7 @@ function beaconCtrl(clientFactory, $http){
 
 function speakit(beaconCtrl.artifacts, $http){
   var speakit = this,
+      this.words = {},
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
       translate = beaconCtrl.artifacts.description;

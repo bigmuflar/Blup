@@ -77,5 +77,13 @@ var dotenv  = require('dotenv').config(),
            text_to_speech.synthesize(params).pipe(res);
            console.log('hitting speech API');
         }
+      //   (req, res, next) => {
+      //    textToSpeech.voices(null, (error, voices) => {
+      //      if (error) {
+      //        return next(error);
+      //      }
+      //      res.json(voices);
+      //    });
+      //  });
 
 }
