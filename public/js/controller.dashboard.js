@@ -42,14 +42,14 @@ function dashboard(clientFactory, $http){
 function fCtrl() {
   var fCtrl = this;
   this.data = {
+    model: {id: '1'},
     availableOptions: [
       {id: '1', name: '1st Floor'},
       {id: '2', name: '2nd Floor'},
       {id: '3', name: '3rd Floor'},
       {id: '4', name: '4th Floor'},
       {id: '5', name: '5th Floor'}
-    ],
-    selectedOption: {id: '1', name: '1st Floor'}
+    ]
   };
     console.log('hitting floors');
 };
