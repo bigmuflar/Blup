@@ -31,7 +31,7 @@
                    <h4 class="card-subtitle">{{object.object_date}}</h4>
                    <h5 class="list-group-item-text">{{object.medium}}</h5>
                    <h6 class="list-group-item-text">{{object.artists.name}}</h6>
-                   <p class="card-text" ng-class="translate-text" ng-model="name"><span ng-bind="name"></span></p>
+                   <p class="card-text" ng-class="translate-text" ng-model="object.description"><span ng-bind="object.description"></span></p>
                    <div class="audio-box" ng-controller="Speakit as speak">
                      <audio controls preload="auto" id="audio">
                         <source id="wavsource" type="audio/wav">
