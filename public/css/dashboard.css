@@ -29,6 +29,10 @@ button.btn.btn-primary-outline.btn-sm {
     height: 30px;
 }
 
+.maps img{
+      width: 100%;
+}
+
 /* User Nav */
 .open>.dropdown-menu {
     /*margin-left: -100px;*/
