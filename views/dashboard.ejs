@@ -158,19 +158,21 @@
             </div
 
             <form name="myForm">
-              <label for="repeatSelect"> Repeat select: </label>
+              <label for="repeatSelect"> Select Museum Floor: </label>
               <select name="repeatSelect" id="repeatSelect" ng-model="fCtrl.data.model">
                 <option ng-repeat="option in fCtrl.data.availableOptions" value="{{option.id}}">{{option.name}}</option>
               </select>
             </form>
             <hr>
-            <tt>model = {{fCtrl.data.model}}</tt><br/>
+            <div class="maps">
+              <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{fCtrl.data.model}}F.jpg" alt="Generic placeholder image" />
+            </div>
 
             <!-- <div class="modal-body">
              <select ng-model="fCtrl.floor" ng-options="items for item in floors"></select>
               <form class="form-horizontal col-sm-12">
                 <div class="maps">
-                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{fCtrl.floor}}F.jpg" alt="Generic placeholder image" />
+                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{fCtrl.data.model}}F.jpg" alt="Generic placeholder image" />
                 </div>
               </form>
             </div> -->
