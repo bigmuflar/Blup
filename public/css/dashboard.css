@@ -36,6 +36,7 @@ button.btn.btn-primary-outline.btn-sm {
 .form {
     width: 150px;
     margin: 0 auto;
+    padding-top: 15px;
 }
 
 /* User Nav */
