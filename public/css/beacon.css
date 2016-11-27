@@ -68,5 +68,11 @@ img.card-img-top.img-thumbnail{
     border: none;
 }
 .card-columns {
-    margin-top: 45px;
+    padding-top: 45px;
+    margin: 0 auto !important;
+    display: block;
+}
+.card-block {
+    max-width: 800px;
+    margin: 0 auto;
 }
