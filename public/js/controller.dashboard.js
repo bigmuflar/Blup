@@ -49,6 +49,6 @@ function fCtrl() {
       {id: '3', name: '3rd Floor'},
       {id: '3', name: '4th Floor'},
       {id: '3', name: '5th Floor'}
-    ]
+    ]};
     console.log('hitting floors');
 };
