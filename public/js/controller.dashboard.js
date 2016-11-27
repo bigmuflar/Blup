@@ -41,5 +41,5 @@ function dashboard(clientFactory, $http){
 
 function fCtrl() {
   var fCtrl = this;
-  this.floors = ['1', '2', '3', '4', '5'];
+  floors = ['1', '2', '3', '4', '5'];
 };

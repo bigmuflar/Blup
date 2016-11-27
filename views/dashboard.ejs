@@ -21,7 +21,7 @@
             ☰
         </button>
         <div class="form-group search col-xs-7 col-sm-5 col-md-4">
-          <input type="text" class="form-control" placeholder="Search" ng-focus="#artifacts" ng-model="userSearch">
+          <input type="text" class="form-control" placeholder="Search" ng-focus="#artifacts" ng-blur="focused = false" /> ng-model="userSearch">
         </div>
         <div ng-controller="DashboardController as dashboard" class="collapse navbar-toggleable-xs" id="collapsingNavbar">
             <ul class="nav navbar-nav pull-right">
@@ -127,7 +127,7 @@
 
             <a id="flexbox"></a>
             <hr>
-            <h2 id="artifacts">Museum Artifacts</h2>
+            <h2 id="artifacts" ng-show="#artifacts">Museum Artifacts</h2>
             <div class="card-columns">
                 <div class="card" ng-repeat="object in dashboard.artifacts">
                     <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="No Image Available">
@@ -149,7 +149,7 @@
 
 
     <!-- Modal -->
-    <div ng-controller="floorCtrl" class="modal fade" id="mapModal" tabindex="-1" role="dialog">
+    <div ng-controller="floorCtrl as fCtrl" class="modal fade" id="mapModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document" >
           <div class="modal-content">
             <div class="modal-header">
@@ -157,10 +157,10 @@
               <h3 id="myModalLabel">Museum Map</h3>
             </div
             <div class="modal-body">
-             <select ng-model="selectedFloor" ng-options="items for item in floors"></select>
+             <select ng-model="fCtrl.floor" ng-options="items for item in floors"></select>
               <form class="form-horizontal col-sm-12">
                 <div class="maps">
-                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{selectedFloor}}F.jpg" alt="Generic placeholder image" />
+                  <img ng-src="https://s3.amazonaws.com/brooklynmuseum.org-public/visit/images/Floor_Plan_REV_201511_for_web_{{fCtrl.floor}}F.jpg" alt="Generic placeholder image" />
                 </div>
               </form>
             </div>
