@@ -49,6 +49,5 @@ function speakit(beaconCtrl, $http){
       wavsource.src = '/api/speak?text='+translate;
 
       audio.load();
-      audio.play();
       console.log('executed audio');
 }
