@@ -71,7 +71,6 @@ var dotenv  = require('dotenv').config(),
            var params = {
              text: query.text,
              voice: 'en-US_AllisonVoice', // Optional voice
-             autoPlay: false,
              accept: 'audio/wav'
            };
            text_to_speech.synthesize(params).pipe(res);
