@@ -50,7 +50,7 @@ function fCtrl() {
       {id: '5', name: '5th Floor'},
       {id: '6', name: '6th Floor'},
     ],
-    selectedOption: {id: '1', name: '1st Floor'} //This sets the default value of the select in the ui
+    selectedOption: {id: 1, name: '1st Floor'} //This sets the default value of the select in the ui
     }
     console.log('hitting floors');
 };
