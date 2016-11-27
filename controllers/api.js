@@ -70,7 +70,7 @@ var dotenv  = require('dotenv').config(),
 
            var params = {
              text: query.text,
-             voice: 'pt-BR_IsabelaVoice', // Optional voice
+             voice: 'en-US_LisaVoice', // Optional voice
              accept: 'audio/wav'
            };
            text_to_speech.synthesize(params).pipe(res);
