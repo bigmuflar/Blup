@@ -39,7 +39,7 @@ function beaconCtrl(clientFactory, $http){
       });
 };
 
-function speakit(beaconCtrl.artifacts, $http){
+function speakit(beaconCtrl, $http){
   var speakit = this,
       this.words = {},
       audio = document.getElementById('audio'),
