@@ -16,7 +16,7 @@ body {
 
 .repeat-box.ng-scope {
     width: 250px;
-    float: left;
+    margin: 0 auto;
 }
 
 button.btn.btn-primary {
