@@ -11,6 +11,7 @@ function beaconCtrl(clientFactory, $http){
     this.query = {};
     this.queryBy = '$';
     this.orderList = "title";
+    this.name = 'Whirled';
     console.log('hitting beacon dashboard');
 
       clientFactory.getExhibit().then(function(success){
@@ -43,7 +44,7 @@ function speakit(beaconCtrl.artifacts, $http){
       this.words = {},
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
-      translate = beaconCtrl.artifacts.description;
+      words = beaconCtrl.artifacts.description;
       // translate = document.getElementsByClassName('translate-text');
 
       wavsource.src = '/api/speak?text='+translate;
