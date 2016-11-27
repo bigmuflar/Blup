@@ -41,7 +41,7 @@ function dashboard(clientFactory, $http){
 
 function fCtrl() {
   var fCtrl = this;
-  this.model: null,
+  this.model: null;
   this.availableOptions: [
       {id: '1', name: '1st Floor'},
       {id: '2', name: '2nd Floor'},
