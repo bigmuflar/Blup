@@ -158,9 +158,11 @@
             </div
 
             <form class="form" name="myForm">
-              <label for="repeatSelect"> Select Museum Floor: </label>
-              <select class="form-control" data-style="btn btn-primary" name="custom-select repeatSelect" ng-model="fCtrl.data.selectedOption" ng-options="option.name for option in fCtrl.data.availableOptions track by option.id" id="repeatSelect" >
-              </select>
+              <div class="form">
+                <label for="repeatSelect"> Select Museum Floor: </label>
+                <select class="form-control" data-style="btn btn-primary" name="custom-select repeatSelect" ng-model="fCtrl.data.selectedOption" ng-options="option.name for option in fCtrl.data.availableOptions track by option.id" id="repeatSelect" >
+                </select>
+              </div>
             </form>
             <hr>
             <div class="maps">
