@@ -45,8 +45,8 @@
         <div class="row row-offcanvas row-offcanvas-left">
             <div class="col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="nav-item"><a class="nav-link" href="#beacons">Beacons</a></li>
                     <li class="nav-item"><a class="nav-link" href="#status">Status</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#beacons">Beacons</a></li>
                     <li class="nav-item"><a class="nav-link" href="#exhibits">Exhibits</a></li>
                     <li class="nav-item"><a class="nav-link" href="#artifacts">Artifacts</a></li>
                     <li class="nav-item"><a class="nav-link" href="#mapModal">Map</a></li>
@@ -65,7 +65,7 @@
                 <h2 class="display-2 hidden-xs-down">
                 Beacon Management
                 </h2>
-                <div class="row">
+                <div id="Status" class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-inverse card-success">
                             <div class="card-block bg-success">
@@ -93,7 +93,7 @@
 
                 <hr>
 
-                <div class="row placeholders">
+                <div id="beacons" class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder text-xs-center" ng-repeat="device in dashboard.device">
                         <img ng-src="/images/beacon_{{device.color}}.png" class="center-block img-responsive img-circle" alt="Generic placeholder image">
                         <h4 class="ng-cloak">{{device.name}}</h4>
@@ -110,7 +110,7 @@
 
                 <a id="flexbox"></a>
                 <hr>
-                <h2>Current Exhibitions</h2>
+                <h2 id="exhibits">Current Exhibitions</h2>
                 <div class="card-columns">
                     <div class="card" ng-repeat="exhibit in dashboard.exhibits">
                         <img fallback-src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Preview+currently+unavailable&w=300&h=220" class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="No Image Available">
