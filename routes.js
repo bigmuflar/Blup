@@ -1,8 +1,7 @@
 'use strict'
 
 var Auth = require('./controllers/auth'),
-    API = require('./controllers/api.js'),
-    router = express.Router();
+    API = require('./controllers/api.js');
 
 module.exports = function(app) {
 
@@ -49,32 +48,6 @@ module.exports = function(app) {
 
     // WATSON TEXT TO SPEECH ROUTES
     app.get('/api/speak', API.speech);
-
-    // // a middleware sub-stack shows request info for any type of HTTP request to the /user/:id path
-    // router.use('/api/client/object/:id', function (req, res, next) {
-    //   console.log('Request URL:', req.originalUrl)
-    //   next()
-    // }, function (req, res, next) {
-    //   console.log('Request Type:', req.method)
-    //   next()
-    // })
-    //
-    // // a middleware sub-stack that handles GET requests to the /user/:id path
-    // router.get('/api/client/object/:id', function (req, res, next) {
-    //   // if the user ID is 0, skip to the next router
-    //   if (req.params.id === '0') next('route')
-    //   // otherwise pass control to the next middleware function in this stack
-    //   else next()
-    // }, function (req, res, next) {
-    //   // render a regular page
-    //   res.render('regular')
-    // })
-    //
-    // // handler for the /user/:id path, which renders a special page
-    // router.get('/api/client/object/:id', function (req, res, next) {
-    //   console.log(req.params.id)
-    //   res.render('special')
-    // })
 
     // // WATSON VOICE ROUTES
     // // Return the list of voices
