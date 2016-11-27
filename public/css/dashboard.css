@@ -29,8 +29,13 @@ button.btn.btn-primary-outline.btn-sm {
     height: 30px;
 }
 
+/* MAP MODAL */
 .maps img{
       width: 100%;
+}
+.form {
+    width: 150px;
+    margin: 0 auto;
 }
 
 /* User Nav */
