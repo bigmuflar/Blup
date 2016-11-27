@@ -21,7 +21,7 @@
             ☰
         </button>
         <div class="form-group search col-xs-7 col-sm-5 col-md-4">
-          <input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
+          <input type="text" class="form-control" placeholder="Search" ng-focus="#artifacts" ng-model="userSearch">
         </div>
         <div ng-controller="DashboardController as dashboard" class="collapse navbar-toggleable-xs" id="collapsingNavbar">
             <ul class="nav navbar-nav pull-right">
@@ -62,9 +62,9 @@
                     <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Find</button>
                 </p>
 
-                <h1 class="display-1 hidden-xs-down">
-                Brooklyn Museum
-                </h1>
+                <h2 class="display-1 hidden-xs-down">
+                Beacon Management
+                </h2>
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-inverse card-success">
@@ -88,28 +88,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-3 col-md-6">
-                        <div class="card card-inverse card-info">
-                            <div class="card-block bg-info">
-                                <div class="rotate">
-                                    <i class="fa fa-battery-full fa-5x"></i>
-                                </div>
-                                <h6 class="text-uppercase">Battery Status</h6>
-                                <h1 class="display-1">125</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card card-inverse card-warning">
-                            <div class="card-block bg-warning">
-                                <div class="rotate">
-                                    <i class="fa fa-share fa-5x"></i>
-                                </div>
-                                <h6 class="text-uppercase">Shares</h6>
-                                <h1 class="display-1">36</h1>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <!--/row-->
 
@@ -135,7 +113,7 @@
                 <h2>Current Exhibitions</h2>
                 <div class="card-columns">
                     <div class="card" ng-repeat="exhibit in dashboard.exhibits">
-                        <img fallback-src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Preview+currently+unavailable&w=300&h=220" class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="Generic placeholder image">
+                        <img fallback-src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Preview+currently+unavailable&w=300&h=220" class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/exhibitions/size2/{{exhibit.primary_image}}" alt="No Image Available">
                         <div class="card-block">
                             <h4 class="card-title" ng-cloak>{{exhibit.title}}</h4>
                             <h5>Exhibition open from <span ng-cloak>{{exhibit.start_date}} to {{exhibit.end_date}}</span></h5>
@@ -143,15 +121,6 @@
                             <a href="#" class="btn btn-primary">Add</a>
                         </div>
                     </div>
-<!--
-                    <div class="card card-inverse" ng-style="{'background-image': url(api.primary_image)}">
-                        <div class="card-block">
-                            <h3 class="card-title">{{api.title}}</h3>
-                            <span>{{api.start_date}} - {{api.end_date}}</span>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-secondary-outline">Outline</a>
-                        </div>
-                    </div> -->
                 <!--/card-columns-->
 
             </div>
@@ -161,7 +130,7 @@
             <h2 id="artifacts">Museum Artifacts</h2>
             <div class="card-columns">
                 <div class="card" ng-repeat="object in dashboard.artifacts">
-                    <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Generic placeholder image">
+                    <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="No Image Available">
                     <div class="card-block">
                         <h4 class="card-title" ng-cloak>{{object.title}}</h4>
                         <span ng-cloak>{{object.object_date}}</span>
@@ -170,22 +139,6 @@
                     </div>
                 </div>
               </div>
-
-              <!-- <a id="flexbox"></a>
-              <hr>
-              <h2 id="origin">Object Origins</h2>
-              <div class="card-columns">
-                  <div class="card" ng-repeat="object in getObject.data">
-                      <img class="card-img-top img-responsive" ng-src="https://d1lfxha3ugu3d4.cloudfront.net/images/opencollection/objects/size2/{{object.primary_image}}" alt="Card image cap">
-                      <div class="card-block">
-                          <h4 class="card-title">{{object.title}}</h4>
-                          <span>{{object.object_date}}</span>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Button</a>
-                      </div>
-                  </div>
-              </div> -->
-            <!--/main col-->
         </div>
 
     </div>

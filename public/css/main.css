@@ -42,6 +42,7 @@ body [class*="col-lg-"] {
 
 footer {
     font-size: 14px;
+    text-align: center;
 }
 div#features {
     top: -50px;
