@@ -159,12 +159,12 @@
 
             <form name="myForm">
               <label for="repeatSelect"> Repeat select: </label>
-              <select name="repeatSelect" id="repeatSelect" ng-model="fCtrl.model">
-                <option ng-repeat="option in fCtrl.availableOptions" value="{{option.id}}">{{option.name}}</option>
+              <select name="repeatSelect" id="repeatSelect" ng-model="fCtrl.data.model">
+                <option ng-repeat="option in fCtrl.data.availableOptions" value="{{option.id}}">{{option.name}}</option>
               </select>
             </form>
             <hr>
-            <tt>model = {{fCtrl.model}}</tt><br/>
+            <tt>model = {{fCtrl.data.model}}</tt><br/>
 
             <!-- <div class="modal-body">
              <select ng-model="fCtrl.floor" ng-options="items for item in floors"></select>
