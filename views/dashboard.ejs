@@ -159,7 +159,7 @@
 
             <form name="myForm">
               <label for="repeatSelect"> Select Museum Floor: </label>
-              <select name="custom-select repeatSelect" ng-model="fCtrl.data.model" id="repeatSelect" >
+              <select name="custom-select repeatSelect" ng-model="fCtrl.data.availableOptions" id="repeatSelect" >
                 <option ng-repeat="option in fCtrl.data.availableOptions" value="{{option.id}}">{{option.name}}</option>
               </select>
             </form>
