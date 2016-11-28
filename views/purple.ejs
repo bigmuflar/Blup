@@ -35,17 +35,9 @@
                      Works on Paper Rotation, Islamic Galleries, June 2009 Ladan Akbarnia
                    </p>
                    <div class="audio-box" ng-controller="Speakit as speak">
-                     <audio id="audio">
+                     <audio controls preload="none" id="audio" ng-click="this.play();">
                         <source id="wavsource" type="audio/wav">
                      </audio>
-                     <div id="controls">
-                        <span id="loading">loading</span>
-                        <button id="play" style="display:none">play</button>
-                        <button id="pause" style="display:none" >pause</button>
-                      </div>
-                      <div id="progress">
-                        <div id="bar"></div>
-                      </div>
                    </div>
                <div class="card-footer">
                  <h5>Share</h5>
