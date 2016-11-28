@@ -13,6 +13,7 @@
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.9/angular-touch.js"></script>
         <script src="/js/controller.beacons.js"></script>
         <script src="/js/factory.dashboard.js"></script>
 
@@ -35,7 +36,7 @@
                      Works on Paper Rotation, Islamic Galleries, June 2009 Ladan Akbarnia
                    </p>
                    <div class="audio-box" ng-controller="Speakit as speak">
-                     <audio controls preload="none" id="audio">
+                     <audio controls preload="none" id="audio" ng-click="audio.play()">
                         <source id="wavsource" type="audio/wav">
                      </audio>
                    </div>
