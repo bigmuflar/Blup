@@ -51,25 +51,5 @@ function speakit(beaconCtrl, $http){
 
       audio.load();
 
-      var soundSprite = [
-        {start: 0, end: 3000},
-        {start: 3500, end: 6789}
-      ];
-
-      element.addEventListener('touchstart', function(ev) {
-        audio.play();
-        playSoundFile(0);
-      })
-
-      function playSoundFile(idx) {
-        audio.currentPosition = soundSprite[idx].start;
-        var x = setInterval(function() {
-          if(audio.currentPosition >= soundSprite[idx].end) {
-            audio.pause(); // There is no stop() in HTML5
-            clearInterval(x);
-          }
-        }, 50);
-      }
-
       console.log('executed audio');
 }
