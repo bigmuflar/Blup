@@ -96,5 +96,14 @@
          <footer ng-cloak>
              <% include ./footer %>
          </footer>
+         <script>
+         $("#ok").click(function() {
+           audio = document.getElementById('audio');
+           $( this ).slideUp();
+           audio.play(); // Play the empty element to get control
+           audio.src = 'beep-url'; // Set the real audio source
+           beeper = setInterval(function() { audio.play(); } ,1000 * 60);
+         });
+         </script>
    </body>
 </html>
