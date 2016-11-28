@@ -70,7 +70,7 @@ var dotenv  = require('dotenv').config(),
            var params = {
              text: query.text,
              voice: 'en-US_LisaVoice', // Optional voice
-             accept: 'audio/ogg; codecs=opus'
+             accept: 'audio/wav'
            };
            text_to_speech.synthesize(params).pipe(res);
            console.log('hitting speech API');
