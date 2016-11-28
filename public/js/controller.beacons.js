@@ -48,6 +48,30 @@ function speakit(beaconCtrl, $http){
       translate = document.getElementById('translate-text').innerHTML;
 
       wavsource.src = '/api/speak?text='+translate;
+      addToPlayQueue = function (event) {
+          event.preventDefault();
+          var track = this.dataset.track;
+          queue.push(track);
+      };
+
+      trackEnded = function (event) {
+          console.log("Track just ended");
+          isPlaying = false;
+      };
+
+      for (i = 0; i < button.length; i++)
+          button[i].addEventListener("click", addToPlayQueue);
+
+      for (i = 0; i < audio.length; i++)
+          audio[i].addEventListener("ended", trackEnded);
+
+      //Run loop
+      setInterval(function () {
+          if (queue.length > 0 && isPlaying === false) {
+              document.getElementById(queue.pop()).play();
+              isPlaying = true;
+          }
+      }, 500);
 
       audio.load();
 
