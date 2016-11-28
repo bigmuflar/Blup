@@ -47,9 +47,21 @@ function speakit(beaconCtrl, $http){
       pause = document.getElementById('pause'),
       loading = document.getElementById('loading'),
       bar = document.getElementById('bar'),
-      translate = document.getElementById('translate-text').innerHTML;
-
+      translate = document.getElementById('translate-text').innerHTML,
+      progress = document.getElementById('progress');
       wavsource.src = '/api/speak?text='+translate;
+
+      progress.addEventListener('click', function(e) {
+
+        // calculate the normalized position clicked
+        var clickPosition = (e.pageX  - this.offsetLeft) / this.offsetWidth;
+        var clickTime = clickPosition * audio.duration;
+
+        // move the playhead to the correct position
+        audio.currentTime = clickTime;
+      });
+
+
 
       function displayControls() {
            loading.style.display = "none";
