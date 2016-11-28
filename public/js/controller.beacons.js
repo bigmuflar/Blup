@@ -49,5 +49,13 @@ function speakit(beaconCtrl, $http){
       wavsource.src = '/api/speak?text='+translate;
       audio.load();
 
+      $("#ok").click(function() {
+        audio = document.getElementById('audio');
+        $( this ).slideUp();
+        audio.play(); // Play the empty element to get control
+        audio.src = 'beep-url'; // Set the real audio source
+        beeper = setInterval(function() { audio.play(); } ,1000 * 60);
+      });
+
       console.log('executed audio');
 }
