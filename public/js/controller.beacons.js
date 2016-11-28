@@ -43,12 +43,18 @@ function speakit(beaconCtrl, $http){
   var speakit = this,
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
+      button = document.getElementById('button'),
       // translate = beaconCtrl.artifacts.description;
       translate = document.getElementById('translate-text').innerHTML;
 
       wavsource.src = '/api/speak?text='+translate;
 
       audio.load();
+
+      var onClick = function() {
+          audio.play(); // audio will load and then play
+      };
+      button.addEventListener('click', onClick, false);
 
       console.log('executed audio');
 }
