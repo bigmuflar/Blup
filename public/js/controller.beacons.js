@@ -43,10 +43,48 @@ function speakit(beaconCtrl, $http){
   var speakit = this,
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
-      // translate = beaconCtrl.artifacts.description;
+      play = document.getElementById('play'),
+      pause = document.getElementById('pause'),
+      loading = document.getElementById('loading'),
+      bar = document.getElementById('bar'),
       translate = document.getElementById('translate-text').innerHTML;
 
       wavsource.src = '/api/speak?text='+translate;
+
+      function displayControls() {
+           loading.style.display = "none";
+           play.style.display = "block";
+        }
+
+        // check that the media is ready before displaying the controls
+        if (audio.paused) {
+           displayControls();
+        } else {
+           // not ready yet - wait for canplay event
+           audio.addEventListener('canplay', function() {
+              displayControls();
+           });
+        }
+
+        play.addEventListener('click', function() {
+           audio.play();
+           play.style.display = "none";
+           pause.style.display = "block";
+        });
+
+        pause.addEventListener('click', function() {
+           audio.pause();
+           pause.style.display = "none";
+           play.style.display = "block";
+        });
+
+        // display progress
+
+        audio.addEventListener('timeupdate', function() {
+           //sets the percentage
+           bar.style.width = parseInt(((audio.currentTime / audio.duration) * 100), 10) + "%";
+        });
+
 
       audio.load();
       audio.play();
