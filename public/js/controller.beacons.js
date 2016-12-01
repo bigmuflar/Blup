@@ -41,15 +41,16 @@ function beaconCtrl(clientFactory, $http){
 
 function speakit(beaconCtrl, $http){
   var speakit = this,
-      audio = document.getElementById('audio'),
-      wavsource = document.getElementById('wavsource'),
-      button = document.getElementById('button'),
+      audio = document.createElement('audio'),
+      // audiosource = document.getElementById('wavsource'),
+      // button = document.getElementById('button'),
       // translate = beaconCtrl.artifacts.description;
       translate = document.getElementById('translate-text').innerHTML;
 
-      wavsource.src = '/api/speak?text='+translate;
-
+      audio.src = '/api/speak?text='+translate;
+      audio.autobuffer = true;
       audio.load();
+      audio.muted = true; // makes no difference on iOS :(
 
       console.log('executed audio');
 }
