@@ -14,8 +14,8 @@ footer{
 }
 
 .input-group.search{
-      width: 400px;
       margin: 0 auto;
+      max-width: 375px;
 }
 
 .repeat-box.ng-scope {
@@ -79,4 +79,24 @@ img.card-img-top.img-thumbnail{
 .card-block {
     max-width: 800px;
     margin: 0 auto;
+}
+#controls {
+   width: 80px;
+   float: left;
+}
+
+#progress {
+   margin-left: 80px;
+   border: 1px solid black;
+}
+
+#bar {
+   height: 20px;
+   background-color: green;
+   width: 0;
+}
+#progress {
+   margin-left: 80px;
+   border: 1px solid black;
+   cursor: pointer;
 }

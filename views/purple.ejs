@@ -13,6 +13,7 @@
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.9/angular-touch.js"></script>
         <script src="/js/controller.beacons.js"></script>
         <script src="/js/factory.dashboard.js"></script>
 
@@ -36,7 +37,7 @@
                    </p>
                    <div class="audio-box" ng-controller="Speakit as speak">
                      <audio controls preload="none" id="audio">
-                        <source id="wavsource" type="audio/wav">
+                        <source id="wavsource" type="audio/ogg" ng-click="audio.play();">
                      </audio>
                    </div>
                <div class="card-footer">

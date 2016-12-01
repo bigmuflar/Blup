@@ -1,4 +1,4 @@
-angular.module('module.dashboard', [])
+angular.module('module.dashboard', ['ngTouch'])
     .controller('BeaconController', beaconCtrl)
     .controller('Speakit', speakit);
 
@@ -43,11 +43,13 @@ function speakit(beaconCtrl, $http){
   var speakit = this,
       audio = document.getElementById('audio'),
       wavsource = document.getElementById('wavsource'),
+      button = document.getElementById('button'),
       // translate = beaconCtrl.artifacts.description;
       translate = document.getElementById('translate-text').innerHTML;
 
       wavsource.src = '/api/speak?text='+translate;
 
       audio.load();
+
       console.log('executed audio');
 }
