@@ -40,18 +40,10 @@
                         <source id="wavsource" type="audio/ogg" ng-click="audio.play();">
                      </audio>
                      <script>
-<<<<<<< HEAD
-                     function Track(spriteLength, audioLead) {
-                       var track = this,
-                           audio = document.createElement('audio');
-                           translate = document.getElementById('translate-text').innerHTML;
-                       audio.src = '/api/speak?text='+translate;
-=======
                      function Track(src, spriteLength, audioLead) {
                        var track = this,
                            audio = document.createElement('audio');
                        audio.src = src;
->>>>>>> 98abda06dd9e5e792d90aa7d4ab4549f5c7b3388
                        audio.autobuffer = true;
                        audio.load();
                        audio.muted = true; // makes no difference on iOS :(
@@ -163,26 +155,15 @@
                            }
                          }
                        };
-<<<<<<< HEAD
-                     })(1, 1, 0.25);
-=======
                      })('myaudiosprite.mp3', 1, 1, 0.25);
->>>>>>> 98abda06dd9e5e792d90aa7d4ab4549f5c7b3388
 
                      // myaudiosprite.mp3 is the complete audio sprite
                      // 1 = the number of tracks, increase this for the desktop
                      // 1 = the length of the individual audio clip
-                     // 0.25 = the lead on the audio - hopefully zero, but in case any junk is added
-
-
-<<<<<<< HEAD
                      // Usage: player.play(position)
 
 
                      </script>
-=======
-                     // Usage: player.play(position)                     </script>
->>>>>>> 98abda06dd9e5e792d90aa7d4ab4549f5c7b3388
                    </div>
                <div class="card-footer">
                  <h5>Share</h5>
