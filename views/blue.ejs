@@ -19,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
-    <body ng-controller="BeaconController as beaconCtrl" class="search-box">
+    <body ng-controller="BeaconController as beaconCtrl">
       <div class="beacon-item">
         <div class="title" ng-repeat="object in beaconCtrl.artifacts | filter: {id: 3054}:true">
           <h2 class="card-title text-xs-center">{{object.title}}</h2>
@@ -86,7 +86,6 @@
                     </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
     </div>
