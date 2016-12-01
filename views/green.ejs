@@ -8,11 +8,12 @@
 
         <title>BLUP</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" />
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="/css/beacon.css" />
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.9/angular-touch.js"></script>
         <script src="/js/controller.beacons.js"></script>
         <script src="/js/factory.dashboard.js"></script>
 
@@ -30,7 +31,8 @@
                     <h4 class="card-subtitle">{{object.object_date}}</h4>
                     <h5 class="list-group-item-text">{{object.medium}}</h5>
                     <h6 class="list-group-item-text">{{object.artists.name}}</h6>
-                    <p class="card-text" id="translate-text">Folding invalid chair, walnut, cane, and iron. Has iron frame, supported on casters painted black and decorated with gold and red lines, and gold, red, and green scrolls. Within the iron frame at the seat, back, and footrest panels are walnut frames with new caning. At the crest of the chair back is a shallow-carved stylized anthemion with incised line decoration. On either side of this are panels of walnut burl veneer and below is a curved, molded crest rail. The back of the chair has been upholstered in new fabric, the arms in new leather. The chair has a ratchet mechanism, which allows it to be folded up completely, opened as a chair, opened further as a lounge chair with foot rest (an iron brace falls to support the foot rest and an iron foot brace rises above the foot rest) and opened still further, when the back is let down to horizontal (also supported by an iron brace) to form a cot. Copy of patent attached to correspondence file.
+                    <p class="card-text" id="translate-text">Folding invalid chair, walnut, cane, and iron. Has iron frame, supported on casters painted black and decorated with gold and red lines, and gold, red, and green scrolls. Within the iron frame at the seat, back, and footrest panels are walnut frames with new caning. At the crest of the chair back is a shallow-carved stylized anthemion with incised line decoration.
+                       On either side of this are panels of walnut burl veneer and below is a curved, molded crest rail. The back of the chair has been upholstered in new fabric, the arms in new leather. The chair has a ratchet mechanism, which allows it to be folded up completely, opened as a chair, opened further as a lounge chair with foot rest (an iron brace falls to support the foot rest and an iron foot brace rises above the foot rest) and opened still further, when the back is let down to horizontal (also supported by an iron brace) to form a cot. Copy of patent attached to correspondence file.
                         Condition: Generally good. Caning and upholstery are modern. Cushions are lacking. Paint on iron frame is scraped and worn throughout but basically in good condition and stable. Some rust, especially at feet and ratchets, also where paint has flaked. Wear to wood at back of crest rail. Chip missing on back of proper right scroll on crest rail.</p>
                     <div class="audio-box" ng-controller="Speakit as speak">
                       <audio controls preload="none" id="audio">
@@ -87,10 +89,10 @@
                 </div>
               </div>
             </div>
-          </div>
+        </div>
       </div>
       <!-- FOOTER -->
-      <footer>
+      <footer ng-cloak>
           <% include ./footer %>
       </footer>
 </body>
