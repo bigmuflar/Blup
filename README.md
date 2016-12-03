@@ -1,22 +1,24 @@
-# MEAN and Simple Auth
-> Implement a simple registration / login form using this code base as a starting point!
+# Bluetooth Beacon Location Proximity App
+> Analytics platform for a museum using estimote beacons
 
 MEAN Stack:
 - Mongo / mongoose
 - Express 4+
 - Angular 1.5+
 - Node 4+
-- Bootstrap 3+
+- Bootstrap 4+
 
 ### Getting Started
 
 - Install [NodeJS](https://nodejs.org/en/)
 - Install [MongoDB](https://www.mongodb.com/download-center?jmp=nav)
 - Install module dependecies
-```bash
-    $ npm i; npm i -g nodemon
-```
-- Start the app!
-```bash
-    $ npm run dev
-```
+
+### API KEYS NEEDED 
+1. Watson Text to Speech - https://www.ibm.com/watson/developercloud/text-to-speech.html
+2. Estimote Beacon API (you need estimote beacons for this) - http://developer.estimote.com
+
+Once you have the API Keys you will need to make a .env file with the key user and password.
+
+
+
