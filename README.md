@@ -1,5 +1,5 @@
 # Bluetooth Beacon Location Proximity App
-> Analytics platform for a museum using estimote beacons
+> Analytics platform for a museum using Estimote beacons
 
 MEAN Stack:
 - Mongo / mongoose
@@ -12,11 +12,11 @@ MEAN Stack:
 
 - Install [NodeJS](https://nodejs.org/en/)
 - Install [MongoDB](https://www.mongodb.com/download-center?jmp=nav)
-- Install module dependecies
+- Install module dependencies
 
 ### API KEYS NEEDED 
 1. Watson Text to Speech - https://www.ibm.com/watson/developercloud/text-to-speech.html
-2. Estimote Beacon API (you need estimote beacons for this) - http://developer.estimote.com
+2. Estimote Beacon API (you need Estimote beacons for this) - http://developer.estimote.com
 
 Once you have the API Keys you will need to make a .env file with the key user and password.
 
