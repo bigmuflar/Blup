@@ -41,10 +41,18 @@ function beaconCtrl(clientFactory, $http){
 
 function speakit(beaconCtrl, $http){
   var speakit = this,
+      currentSprite = {}, // current sprite being played
+      audioSprite = document.getElementById('audio'),
       translate = document.getElementById('translate-text').innerHTML,
       src = '/api/speak?text='+translate,
       audiosource = document.getElementById('wavsource'),
-      button = document.getElementById('button');
+      button = document.getElementById('button'),
+      onTimeUpdate = function() {   // time update handler to ensure we stop when a sprite is complete
+          if (this.currentTime >= currentSprite.start + currentSprite.length) {
+              this.pause();
+          }
+      };
+      audioSprite.addEventListener('timeupdate', onTimeUpdate, false);
       audio.load();
       audio.play();
       console.log('executed audio');
