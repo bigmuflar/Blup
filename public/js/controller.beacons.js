@@ -6,6 +6,7 @@ angular.module('module.dashboard', ['ngTouch'])
 beaconCtrl.$inject = ['clientFactory','$http'];
 speakit.$inject = ['clientFactory', '$http'];
 
+
 function beaconCtrl(clientFactory, $http){
     var beaconCtrl = this;
     this.query = {};
@@ -40,20 +41,9 @@ function beaconCtrl(clientFactory, $http){
 };
 
 function speakit(beaconCtrl, $http){
-  var speakit = this,
-      currentSprite = {}, // current sprite being played
-      audioSprite = document.getElementById('audio'),
-      translate = document.getElementById('translate-text').innerHTML,
-      src = '/api/speak?text='+translate,
-      audiosource = document.getElementById('wavsource'),
-      button = document.getElementById('button'),
-      onTimeUpdate = function() {   // time update handler to ensure we stop when a sprite is complete
-          if (this.currentTime >= currentSprite.start + currentSprite.length) {
-              this.pause();
-          }
-      };
-      audioSprite.addEventListener('timeupdate', onTimeUpdate, false);
-      audio.load();
-      audio.play();
+   var speakit = this,
+       speakit.url = 'http://tts.dev/tts-backend/index.php';
+
+
       console.log('executed audio');
 }
