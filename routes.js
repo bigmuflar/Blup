@@ -30,15 +30,18 @@ module.exports = function(app) {
     // BEACON ROUTES
     app.get('/purple', (req, res) => {
       console.log('This is purple');
-      res.render('purple')
+      res.redirect('https://www.youtube.com/tv#/watch?v=IVT0r0XaOig')
+      // res.render('purple')
     });
     app.get('/green', (req, res) => {
       console.log('This is green');
-      res.render('green')
+      res.redirect('https://www.youtube.com/embed/BKb3_mu5JBM')
+      // res.render('green')
     });
     app.get('/blue', (req, res) => {
       console.log('This is blue');
-      res.render('blue')
+      res.redirect('https://www.youtube.com/embed/dfWfXC5O-d8')
+      // res.render('blue')
     });
 
     // API ROUTES
