@@ -30,7 +30,7 @@ module.exports = function(app) {
     // BEACON ROUTES
     app.get('/purple', (req, res) => {
       console.log('This is purple');
-      res.redirect('https://www.youtube.com/tv#/watch?v=IVT0r0XaOig')
+      res.redirect('https://www.bitcoin.com/choose-your-wallet/unlimited')
       // res.render('purple')
     });
     app.get('/green', (req, res) => {
